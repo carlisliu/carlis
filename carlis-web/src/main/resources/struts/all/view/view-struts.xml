@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<package name="view" namespace="/view" extends="base">
+		
+		<action name="home" class="homeAction">
+			<result name="success">/view/index.jsp</result>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+	
+		<action name="contact">
+			<result name="success">/view/contact.jsp</result>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+		
+		<action name="products" class="productAction">
+			<result name="success">/view/products.jsp</result>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+		
+		<action name="productDetail" class="productAction" method="detail">
+			<result name="success">/view/product-detail.jsp</result>
+			<result name="none" type="redirect">/view/home.html</result>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+		
+		<action name="cases">
+			<result name="success">/view/cases.jsp</result>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+		
+		<action name="video" class="videoAction">
+			<result name="success">/view/video.jsp</result>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+		
+		<action name="introduction">
+			<result name="success">/view/introduction.jsp</result>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+		
+		<action name="message" class="messageAction">
+			<result name="success" type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">status,msg</param>
+			</result>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+	</package>
+</struts>

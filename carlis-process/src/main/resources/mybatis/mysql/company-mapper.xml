@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="xyz.flym.carlis.persistence.mapper.CompanyMapper">
+	<resultMap type="xyz.flym.carlis.persistence.domain.Company" id="companyMap">
+		<id column="id" property="id" />
+		<result column="name" property="name" />
+		<result column="address" property="address" />
+		<result column="keywords" property="keywords" />
+		<result column="tel" property="tel" />
+		<result column="cell" property="cell" />
+		<result column="fax" property="fax" />
+		<result column="copyright" property="copyright" />
+		<result column="website" property="website" />
+		<result column="e_mail" property="email" />
+		<result column="contact" property="contact" />
+		<result column="introduction" property="introduction" />
+		<result column="memo" property="memo" />
+	</resultMap>
+	
+	<sql id="selectAllCompanyColumns">
+		<![CDATA[
+			select id,
+			       name,
+			       keywords,
+			       address,
+			       tel,
+			       cell,
+			       fax,
+			       copyright,
+			       website,
+			       e_mail,
+			       contact,
+			       introduction,
+			       memo
+			  from company 
+	  	]]>
+	</sql>
+	
+	<select id="getCompany" resultMap="companyMap">
+		<include refid="selectAllCompanyColumns"></include>
+		<![CDATA[
+			limit 0, 1
+		]]>
+	</select>
+
+	<insert id="save" parameterType="xyz.flym.carlis.persistence.domain.Company" statementType="PREPARED">
+		<![CDATA[
+		insert into company
+		  (name,
+		   address,
+		   keywords,
+		   tel,
+		   cell,
+		   fax,
+		   copyright,
+		   website,
+		   e_mail,
+		   contact,
+		   introduction,
+		   memo)
+		values
+		  (#{name},
+		   #{address},
+		   #{keywords},
+		   #{tel},
+		   #{cell},
+		   #{fax},
+		   #{copyright},
+		   #{website},
+		   #{email},
+		   #{contact},
+		   #{introduction},
+		   #{memo})
+		]]>
+	</insert>
+	
+	<update id="update" parameterType="xyz.flym.carlis.persistence.domain.Company" statementType="PREPARED">
+		update company
+		   set name         = #{name},
+		       address      = #{address},
+		       keywords     = #{keywords},
+		       tel          = #{tel},
+		       cell         = #{cell},
+		       fax          = #{fax},
+		       copyright    = #{copyright},
+		       website      = #{website},
+		       e_mail       = #{email},
+		       contact      = #{contact},
+		       introduction = #{introduction},
+		       memo         = #{memo}
+		 where id = #{id}
+	</update>
+	
+</mapper>

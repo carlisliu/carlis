@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="xyz.flym.carlis.persistence.mapper.VideoMapper">
+	<resultMap type="xyz.flym.carlis.persistence.domain.Video" id="videoMap">
+		<id column="id" property="id" />
+		<result column="name" property="name" />
+		<result column="url" property="url" />
+		<result column="in_index" property="inIndex" />
+		<result column="embed_code" property="embedCode" />
+		<result column="memo" property="memo" />
+	</resultMap>
+	
+	<sql id="selectAllVideoColumns">
+		<![CDATA[
+			select id,
+			       name,
+			       url,
+			       in_index,
+			       embed_code,
+			       memo
+			  from videos
+	  	]]>
+	</sql>
+	
+	<select id="findAllVideos" resultMap="videoMap">
+		<include refid="selectAllVideoColumns"></include>
+	</select>
+	
+	<select id="findVideoById" resultMap="videoMap">
+		<include refid="selectAllVideoColumns"></include>
+		<![CDATA[
+			where id = #{id}
+		]]>
+	</select>
+	
+	<select id="findVideosWithLimit" resultMap="videoMap">
+		<include refid="selectAllVideoColumns"></include>
+		<![CDATA[
+		    where in_index = '1'
+			limit 0, #{limit}
+		]]>
+	</select>
+	
+	<select id="findVideoByName" resultMap="videoMap">
+		<include refid="selectAllVideoColumns"></include>
+		<![CDATA[
+			where name = #{name}
+		]]>
+	</select>
+
+	<insert id="save" parameterType="xyz.flym.carlis.persistence.domain.Video" statementType="PREPARED">
+		<![CDATA[
+		insert into videos
+		  (name,
+		   url,
+		   memo,
+		   embed_code,
+		   in_index)
+		values
+		  (#{name},
+		   #{url},
+		   #{memo},
+		   #{embedCode},
+		   #{inIndex})
+		]]>
+	</insert>
+	
+	<update id="update" parameterType="xyz.flym.carlis.persistence.domain.Video" statementType="PREPARED">
+		<![CDATA[
+			update videos set name = #{name}, url = #{url}, memo = #{memo}, embed_code = #{embedCode}, in_index = #{inIndex} where id = #{id}
+		]]>
+	</update>
+	
+	<delete id="delete">
+		<![CDATA[
+			delete from videos where id = #{id}
+		]]>
+	</delete>
+	
+</mapper>

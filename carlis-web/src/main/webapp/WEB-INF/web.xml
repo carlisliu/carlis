@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="wxjc-web" version="2.5">
+	<welcome-file-list>
+		<welcome-file>/index.jsp</welcome-file>
+	</welcome-file-list>
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath*:/spring_web/**/*-spring.xml,classpath*:/spring/**/*-spring.xml</param-value>
+	</context-param>
+	<context-param>
+		<param-name>AppStartupListener</param-name>
+		<param-value>xyz.flym.carlis.web.listeners.impl.ConfigListener,xyz.flym.carlis.web.listeners.impl.SettingListener</param-value>
+	</context-param>
+	<listener>
+		<listener-class>xyz.flym.carlis.web.listeners.AppStartupListener</listener-class>
+	</listener>
+	<filter>
+		<filter-name>login-filter</filter-name>
+		<init-param>
+			<param-name>ignore</param-name>
+			<param-value>login.jsp,404.jsp,500.jsp</param-value>
+		</init-param>
+		<filter-class>xyz.flym.carlis.web.filter.AdminLoginFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>login-filter</filter-name>
+		<url-pattern>*.jsp</url-pattern>
+	</filter-mapping>
+	<filter>
+		<filter-name>struts2-prepare</filter-name>
+		<filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareFilter</filter-class>
+		<init-param>
+			<param-name>config</param-name>
+			<param-value>struts-default.xml,struts-plugin.xml,struts/struts.xml</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>struts2-prepare</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<filter>
+		<filter-name>sitemesh</filter-name>
+		<filter-class>com.opensymphony.module.sitemesh.filter.PageFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>sitemesh</filter-name>
+		<url-pattern>*</url-pattern>
+	</filter-mapping>
+	<filter>
+		<filter-name>struts</filter-name>
+		<filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsExecuteFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>struts</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+</web-app>

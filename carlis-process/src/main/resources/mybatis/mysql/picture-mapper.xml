@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="xyz.flym.carlis.persistence.mapper.PictureMapper">
+	<resultMap type="Picture" id="pictureMap">
+		<id column="id" property="id" />
+		<result column="type" property="type" />
+		<result column="file_name" property="fileName" />
+		<result column="in_index" property="inIndex" />
+	</resultMap>
+	
+	<sql id="selectAllSettingColumns">
+		<![CDATA[
+			select id,
+			       type,
+			       file_name,
+			       in_index
+			  from pictures 
+	  	]]>
+	</sql>
+
+	<select id="findPicturesByType" resultMap="pictureMap">
+		<include refid="selectAllSettingColumns"></include>
+		<![CDATA[
+			where type = #{type}
+	     order by file_name desc
+		]]>
+	</select>
+	
+	<select id="findPicturesByParams" resultMap="pictureMap">
+		<include refid="selectAllSettingColumns"></include>
+		<![CDATA[
+			where 1=1
+		]]>
+		<if test="picture.type!=null">
+			 and type = #{picture.type}
+		</if>
+		<if test="picture.inIndex!=null">
+			 and in_index = #{picture.inIndex,jdbcType=CHAR,javaType=Boolean}
+		</if>
+		<if test="limit!=0">
+			 limit 0, #{limit}
+		</if>
+	</select>
+	
+	<select id="findById" resultMap="pictureMap">
+		<include refid="selectAllSettingColumns"></include>
+		<![CDATA[
+			where id = #{id}
+		]]>
+	</select>
+	
+	<update id="update" parameterType="Setting" statementType="PREPARED">
+		<![CDATA[
+			update pictures set file_name = #{fileName}, in_index = #{inIndex} where id = #{id}
+		]]>
+	</update>
+	
+	<insert id="save" parameterType="Setting" statementType="PREPARED">
+		<![CDATA[
+			insert into pictures (type, file_name, in_index) values (#{type}, #{fileName}, #{inIndex})
+		]]>
+	</insert>
+	
+	<delete id="deleteById" parameterType="int" statementType="PREPARED">
+		<![CDATA[
+			delete from pictures where id = #{id}
+		]]>
+	</delete>
+	
+</mapper>

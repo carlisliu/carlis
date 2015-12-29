@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.ui.theme" value="simple"/>
+	<constant name="struts.custom.i18n.resources" value="messages/message" />
+	<constant name="struts.action.excludePattern" value="/dwr.*"></constant>
+	<constant name="struts.action.extension" value="html,action"></constant>
+	
+	<package name="base" namespace="/" extends="json-default">
+<!-- 		<default-interceptor-ref name="loginStack"></default-interceptor-ref> -->
+		<default-action-ref name="notFound" />
+		<global-results>
+			<result name="error" type="redirect">/admin/500.jsp</result>
+			<result name="login" type="redirect">/admin/login.jsp</result>
+		</global-results>
+		<global-exception-mappings>
+			<exception-mapping exception="java.lang.Exception" result="error" />
+		</global-exception-mappings>
+		<action name="notFound">
+			<result>/404.jsp</result>
+		</action>
+		<action name="">
+			<result>/admin/login.jsp</result>
+		</action>
+	</package>
+
+	<include file="struts/security-struts.xml" />
+	<include file="struts/all/view/view-struts.xml" />
+	<include file="struts/all/admin/admin-struts.xml" />
+
+</struts>

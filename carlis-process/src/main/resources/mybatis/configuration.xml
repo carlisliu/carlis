@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+		<!-- 全局的映射器启用或禁用缓存。 -->
+		<setting name="cacheEnabled" value="true" />
+		<!-- 全局启用或禁用延迟加载 -->
+		<setting name="lazyLoadingEnabled" value="true" />
+		<!-- 允许或不允许多种结果集从一个单独的语句中返回 -->
+		<setting name="multipleResultSetsEnabled" value="true" />
+		<!-- 使用列标签代替列名 -->
+		<setting name="useColumnLabel" value="true" />
+		<!-- 允许JDBC支持生成的键 -->
+		<setting name="useGeneratedKeys" value="false" />
+		<!-- 配置默认的执行器 -->
+		<setting name="defaultExecutorType" value="SIMPLE" />
+		<!-- 设置超时时间 -->
+		<setting name="defaultStatementTimeout" value="25000" />
+	</settings>
+	
+	<typeAliases>
+		<typeAlias alias="User" type="xyz.flym.carlis.persistence.domain.User" />
+		<typeAlias alias="Category" type="xyz.flym.carlis.persistence.domain.Category" />
+		<typeAlias alias="Product" type="xyz.flym.carlis.persistence.domain.Product" />
+		<typeAlias alias="Company" type="xyz.flym.carlis.persistence.domain.Company" />
+		<typeAlias alias="Message" type="xyz.flym.carlis.persistence.domain.Message" />
+		<typeAlias alias="Video" type="xyz.flym.carlis.persistence.domain.Message" />
+		<typeAlias alias="Upload" type="xyz.flym.carlis.persistence.domain.Upload" />
+		<typeAlias alias="Setting" type="xyz.flym.carlis.persistence.domain.Setting"/>
+		<typeAlias alias="Picture" type="xyz.flym.carlis.persistence.domain.Picture"/>
+	</typeAliases>
+	
+	<typeHandlers>
+		<typeHandler javaType="Boolean" jdbcType="CHAR" handler="xyz.flym.carlis.persistence.mybatic.extension.type.BooleanTypeHandler"/>
+	</typeHandlers>
+
+</configuration>
