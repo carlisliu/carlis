@@ -9,7 +9,6 @@
 	
 	<bean id="loginAction" class="xyz.flym.carlis.web.action.admin.auth.LoginAction" scope="prototype">
 		<property name="userService" ref="userService"></property>
-		<property name="companyService" ref="companyService"></property>
 	</bean>
 	<bean id="logoutAction" class="xyz.flym.carlis.web.action.admin.auth.LogoutAction" scope="prototype">
 	</bean>

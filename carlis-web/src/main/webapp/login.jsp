@@ -13,10 +13,10 @@
 			</script>
 		<![endif]-->
         <!-- Bootstrap -->
-        <link rel="stylesheet" media="screen" href="${static}/css/bootstrap.min.css">
-        <link rel="stylesheet" media="screen" href="${static}/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" media="screen" href="${staticPath}/css/bootstrap.min.css">
+        <link rel="stylesheet" media="screen" href="${staticPath}/css/bootstrap-theme.min.css">
         <!-- Bootstrap Admin Theme -->
-        <link rel="stylesheet" media="screen" href="${static}/css/bootstrap-admin-theme.css">
+        <link rel="stylesheet" media="screen" href="${staticPath}/css/bootstrap-admin-theme.css">
         <!-- Custom styles -->
         <style type="text/css">
             .alert{
@@ -24,7 +24,7 @@
             }
         </style>
         <script type="text/javascript">
-        	window['__static__'] = '${static}';
+        	window['__static__'] = '${staticPath}';
         </script>
     </head>
     <body class="bootstrap-admin-without-padding">
@@ -34,7 +34,7 @@
                     <div class="alert alert-info">
                         System Login...
                     </div>
-                    <form method="post" action="${action}/doLogin.action" class="bootstrap-admin-login-form">
+                    <form method="post" action="${action}/admin/doLogin.action" class="bootstrap-admin-login-form">
                         <h1>登录</h1>
                         <div class="form-group">
                             <input class="form-control required" type="text" name="loginId" id="loginId" placeholder="登录名">
@@ -47,8 +47,8 @@
                 </div>
             </div>
         </div>
-		<script type="text/javascript" src="${static}/js/sea-modules/seajs/3.0.0/sea.js" id="seajsnode"></script>
-		<script type="text/javascript" src="${static}/js/sea-modules/seajs/3.0.0/sea-config.js"></script>
+		<script type="text/javascript" src="${staticPath}/js/sea-modules/seajs/3.0.0/sea.js" id="seajsnode"></script>
+		<script type="text/javascript" src="${staticPath}/js/sea-modules/seajs/3.0.0/sea-config.js"></script>
         <script type="text/javascript">
         	seajs.use(['jquery', 'bootstrap', 'validate'], function($){
         		$(function() {
