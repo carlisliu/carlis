@@ -1,19 +1,14 @@
 <decorators defaultdir="/decorators">
     <excludes>
-    	<pattern>/403.jsp</pattern>
-        <pattern>/404.jsp</pattern>
-        <pattern>/500.jsp</pattern>
-        <pattern>/admin/500.jsp</pattern>
-        <pattern>/admin/login.jsp</pattern>
+        <pattern>/error.jsp</pattern>
+        <pattern>/login.jsp</pattern>
         <pattern>/security/login.action*</pattern>
         <pattern>/admin/doLogin.action</pattern>
         <pattern>/view/*.action</pattern>
-        <pattern>/view/map.jsp</pattern>
         <pattern>/view/update-browser.jsp</pattern>
     </excludes> 
     <decorator name="view" page="view/index.jsp">
-    	<pattern>/</pattern>
-    	<pattern>/view/*.html</pattern>
+    	<pattern>*.html</pattern>
     </decorator>
     <decorator name="default" page="admin/main.jsp">
         <pattern>/admin/*.action</pattern>

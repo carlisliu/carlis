@@ -7,67 +7,10 @@
 	<bean id="userMapper" parent="baseDao">
 		<property name="mapperInterface" value="xyz.flym.carlis.persistence.mapper.UserMapper" />
 	</bean>
-	<bean id="companyMapper" parent="baseDao">
-		<property name="mapperInterface" value="xyz.flym.carlis.persistence.mapper.CompanyMapper" />
-	</bean>
-	<bean id="categoryMapper" parent="baseDao">
-		<property name="mapperInterface" value="xyz.flym.carlis.persistence.mapper.CategoryMapper" />
-	</bean>
-	<bean id="productMapper" parent="baseDao">
-		<property name="mapperInterface" value="xyz.flym.carlis.persistence.mapper.ProductMapper" />
-	</bean>
-	<bean id="videoMapper" parent="baseDao">
-		<property name="mapperInterface" value="xyz.flym.carlis.persistence.mapper.VideoMapper" />
-	</bean>
-	<bean id="uploadMapper" parent="baseDao">
-		<property name="mapperInterface" value="xyz.flym.carlis.persistence.mapper.UploadMapper" />
-	</bean>
-	<bean id="messageMapper" parent="baseDao">
-		<property name="mapperInterface" value="xyz.flym.carlis.persistence.mapper.MessageMapper" />
-	</bean>
-	<bean id="settingMapper" parent="baseDao">
-		<property name="mapperInterface" value="xyz.flym.carlis.persistence.mapper.SettingMapper" />
-	</bean>
-	<bean id="pictureMapper" parent="baseDao">
-		<property name="mapperInterface" value="xyz.flym.carlis.persistence.mapper.PictureMapper" />
-	</bean>
-
+	
 	<!-- Service -->
 	<bean id="userService" class="xyz.flym.carlis.service.impl.UserServiceImpl">
 		<property name="userMapper" ref="userMapper" />
-	</bean>
-	
-	<bean id="companyService" class="xyz.flym.carlis.service.impl.CompanyServiceImpl">
-		<property name="companyMapper" ref="companyMapper" />
-	</bean>
-	
-	<bean id="categoryService" class="xyz.flym.carlis.service.impl.CategoryServiceImpl">
-		<property name="categoryMapper" ref="categoryMapper" />
-	</bean>
-	
-	<bean id="productService" class="xyz.flym.carlis.service.impl.ProductServiceImpl">
-		<property name="productMapper" ref="productMapper" />
-		<property name="uploadService" ref="uploadService"></property>
-	</bean>
-	
-	<bean id="videoService" class="xyz.flym.carlis.service.impl.VideoServiceImpl">
-		<property name="videoMapper" ref="videoMapper" />
-	</bean>
-	
-	<bean id="uploadService" class="xyz.flym.carlis.service.impl.UploadServiceImpl">
-		<property name="uploadMapper" ref="uploadMapper" />
-	</bean>
-	
-	<bean id="messageService" class="xyz.flym.carlis.service.impl.MessageServiceImpl">
-		<property name="messageMapper" ref="messageMapper" />
-	</bean>
-	
-	<bean id="settingService" class="xyz.flym.carlis.service.impl.SettingServiceImpl">
-		<property name="settingMapper" ref="settingMapper" />
-	</bean>
-	
-	<bean id="pictureService" class="xyz.flym.carlis.service.impl.PictureServiceImpl">
-		<property name="pictureMapper" ref="pictureMapper" />
 	</bean>
 	
 </beans>

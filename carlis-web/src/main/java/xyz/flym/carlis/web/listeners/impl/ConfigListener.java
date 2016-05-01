@@ -1,7 +1,13 @@
 package xyz.flym.carlis.web.listeners.impl;
 
+import java.util.Iterator;
+import java.util.Map;
+
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 import xyz.flym.carlis.utils.Env;
 import xyz.flym.carlis.web.listeners.SystemStartupListener;
@@ -13,18 +19,18 @@ import xyz.flym.carlis.web.listeners.SystemStartupListener;
  */
 public class ConfigListener implements SystemStartupListener {
 
-	private static final String ROOT_PATH = "rootPath";
-	private static final String ASSETS_PATH = "assetsPath";
-	private static final String ADMIN_ASSET_PATH = "adminAsset";
-	private static final String ADMIN_ROOT = "adminRoot";
+	private static Log LOG = LogFactory.getLog(ConfigListener.class);
 
 	@Override
 	public void onStartup(ServletContextEvent sce) {
 		ServletContext context = sce.getServletContext();
-		context.setAttribute(ROOT_PATH, Env.getRootPath());
-		context.setAttribute(ASSETS_PATH, Env.getAssetsPath());
-		context.setAttribute(ADMIN_ROOT, Env.getAdminRoot());
-		context.setAttribute(ADMIN_ASSET_PATH, Env.getAdminAsset());
+		Map<String, String> ctx = Env.getPageContext();
+		Iterator<String> keys = ctx.keySet().iterator();
+		while (keys.hasNext()) {
+			String key = keys.next();
+			String value = ctx.get(key);
+			LOG.info("Setting page context " + key + " to " + value);
+			context.setAttribute(key, value);
+		}
 	}
-
 }

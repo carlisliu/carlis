@@ -5,25 +5,12 @@ import javax.servlet.ServletContext;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 
-import xyz.flym.carlis.persistence.domain.Company;
-
 /**
  * 
  * @author Carlis
  * 
  */
 public class ServletContextHelper {
-
-	/**
-	 * 
-	 * @param context
-	 * @param company
-	 */
-	public static void set(ServletContext context, Company company) {
-		if (context != null && company != null) {
-			context.setAttribute("company", company);
-		}
-	}
 
 	/**
 	 * 

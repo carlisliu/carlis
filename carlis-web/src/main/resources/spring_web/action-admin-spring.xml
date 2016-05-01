@@ -13,39 +13,8 @@
 	</bean>
 	<bean id="logoutAction" class="xyz.flym.carlis.web.action.admin.auth.LogoutAction" scope="prototype">
 	</bean>
-	<bean id="userSettingAction" class="xyz.flym.carlis.web.action.admin.auth.UserSettingAction" scope="prototype">
-		<property name="userService" ref="userService"></property>
-	</bean>
 	
-	<!-- admin section (start)-->
 	<bean id="adminGuideAction" class="xyz.flym.carlis.web.action.admin.GuideAction" scope="prototype">
 	</bean>
-	<bean id="adminCompanyAction" class="xyz.flym.carlis.web.action.admin.CompanyAction" scope="prototype">
-		<property name="companyService" ref="companyService"></property>
-	</bean>
-	<bean id="adminCategoryAction" class="xyz.flym.carlis.web.action.admin.CategoryAction" scope="prototype">
-		<property name="categoryService" ref="categoryService"></property>
-	</bean>
-	<bean id="adminProductAction" class="xyz.flym.carlis.web.action.admin.ProductAction" scope="prototype">
-		<property name="productService" ref="productService"></property>
-		<property name="categoryService" ref="categoryService"></property>
-	</bean>
-	<bean id="adminVideoAction" class="xyz.flym.carlis.web.action.admin.VideoAction" scope="prototype">
-		<property name="videoService" ref="videoService"></property>
-	</bean>
-	<bean id="adminUploadImageAction" class="xyz.flym.carlis.web.action.admin.UploadImages" scope="prototype">
-		<property name="uploadService" ref="uploadService"></property>
-	</bean>
-	<bean id="adminUserAction" class="xyz.flym.carlis.web.action.admin.UserAction" scope="prototype">
-		<property name="userService" ref="userService"></property>
-	</bean>
-	<bean id="adminMessageAction" class="xyz.flym.carlis.web.action.admin.MessageAction" scope="prototype">
-		<property name="messageService" ref="messageService"></property>
-	</bean>
-	<bean id="adminSettingAction" class="xyz.flym.carlis.web.action.admin.SettingAction" scope="prototype">
-		<property name="settingService" ref="settingService"></property>
-		<property name="pictureService" ref="pictureService"></property>
-	</bean>
-	<!-- admin section (end)-->
 	
 </beans>

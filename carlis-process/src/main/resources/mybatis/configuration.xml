@@ -21,14 +21,6 @@
 	
 	<typeAliases>
 		<typeAlias alias="User" type="xyz.flym.carlis.persistence.domain.User" />
-		<typeAlias alias="Category" type="xyz.flym.carlis.persistence.domain.Category" />
-		<typeAlias alias="Product" type="xyz.flym.carlis.persistence.domain.Product" />
-		<typeAlias alias="Company" type="xyz.flym.carlis.persistence.domain.Company" />
-		<typeAlias alias="Message" type="xyz.flym.carlis.persistence.domain.Message" />
-		<typeAlias alias="Video" type="xyz.flym.carlis.persistence.domain.Message" />
-		<typeAlias alias="Upload" type="xyz.flym.carlis.persistence.domain.Upload" />
-		<typeAlias alias="Setting" type="xyz.flym.carlis.persistence.domain.Setting"/>
-		<typeAlias alias="Picture" type="xyz.flym.carlis.persistence.domain.Picture"/>
 	</typeAliases>
 	
 	<typeHandlers>

@@ -22,7 +22,7 @@
 			<exception-mapping exception="java.lang.Exception" result="error" />
 		</global-exception-mappings>
 		<action name="notFound">
-			<result>/404.jsp</result>
+			<result>/error.jsp</result>
 		</action>
 		<action name="">
 			<result>/admin/login.jsp</result>

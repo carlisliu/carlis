@@ -4,24 +4,4 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean id="homeAction" class="xyz.flym.carlis.web.action.HomeAction" scope="prototype">
-		<property name="productService" ref="productService"></property>
-		<property name="videoService" ref="videoService"></property>
-		<property name="pictureService" ref="pictureService"></property>
-		<property name="settingService" ref="settingService"></property>
-	</bean>
-	
-	<bean id="productAction" class="xyz.flym.carlis.web.action.ProductAction" scope="prototype">
-		<property name="productService" ref="productService"></property>
-		<property name="categoryService" ref="categoryService"></property>
-	</bean>
-	
-	<bean id="messageAction" class="xyz.flym.carlis.web.action.MessageAction" scope="prototype">
-		<property name="messageService" ref="messageService"></property>
-	</bean>
-	
-	<bean id="videoAction" class="xyz.flym.carlis.web.action.VideoAction" scope="prototype">
-		<property name="videoService" ref="videoService"></property>
-	</bean>
-	
 </beans>
