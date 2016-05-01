@@ -8,7 +8,7 @@
         <!--[if lt IE 9]>
 			<script>
 				(function(){
-		    		window.location.href = '/view/update-browser.jsp';
+		    		window.location.href = '/update-browser.jsp';
 				})();
 			</script>
 		<![endif]-->

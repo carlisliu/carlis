@@ -2,7 +2,7 @@
  * Carlis
  */
 define(function(require, exports, module) {
-	var $ = require('jQuery'), util = require('../utils/util');
+	var $ = require('jquery'), util = require('../utils/util');
 	require('jgrowl');
 
 	function Base(container, template) {

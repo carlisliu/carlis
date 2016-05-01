@@ -2,7 +2,7 @@
  * Carlis
  */
 define(function(require, exports, module) {
-	var $ = require('jQuery');
+	var $ = require('jquery');
 	module.exports = {
 		inherits : function(ctor, superCtor) {
 			if (!superCtor || !superCtor.prototype) {

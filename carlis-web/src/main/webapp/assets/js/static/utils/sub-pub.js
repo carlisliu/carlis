@@ -2,7 +2,7 @@
  * Carlis
  */
 define(function(require, exports, module) {
-	var $ = require('jQuery'), _target = $({});
+	var $ = require('jquery'), _target = $({});
 
 	module.exports = {
 		subscribe : function(name, fn) {

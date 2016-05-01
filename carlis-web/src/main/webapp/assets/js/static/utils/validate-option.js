@@ -2,7 +2,7 @@
  * Carlis
  */
 define(function(require, exports, module) {
-	var $ = require('jQuery');
+	var $ = require('jquery');
 	module.exports = {
 		highlight : function(label) {
 			$(label).parents('.form-group').removeClass('has-success').addClass('has-error');
