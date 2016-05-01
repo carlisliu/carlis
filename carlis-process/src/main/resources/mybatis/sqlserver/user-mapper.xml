@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="xyz.flym.carlis.persistence.mapper.UserMapper">
+	<resultMap type="xyz.flym.carlis.persistence.domain.User" id="userMap">
+		<id column="id" property="id" />
+		<result column="login_id" property="loginId" />
+		<result column="login_name" property="loginName" />
+		<result column="password" property="password" />
+		<result column="admin" property="admin" />
+		<result column="memo" property="memo" />
+	</resultMap>
+	
+	<sql id="selectAllUserColumns">
+		<![CDATA[
+			select id,
+			       login_id,
+			       login_name,
+			       password,
+			       admin,
+			       memo
+			  from users 
+	  	]]>
+	</sql>
+
+	<select id="findUserByLoginId" resultMap="userMap">
+		<include refid="selectAllUserColumns"></include>
+		<![CDATA[
+			where login_id = #{loginId}
+		]]>
+	</select>
+	
+	<select id="findAllUsers" resultMap="userMap">
+		<include refid="selectAllUserColumns"></include>
+	</select>
+	
+	<update id="updatePassword" parameterType="String" statementType="PREPARED">
+		<![CDATA[
+			update users set password = #{newPassword} where login_id = #{loginId}
+		]]>
+	</update>
+	
+</mapper>
