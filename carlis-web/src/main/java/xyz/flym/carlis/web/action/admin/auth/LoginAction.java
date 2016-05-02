@@ -50,11 +50,11 @@ public class LoginAction extends SecurityBaseAction {
 	@Override
 	public void validate() {
 		if (StringUtils.isEmpty(this.loginId)) {
-			this.addFieldError("loginId", this.getText("", "登录ID"));
+			this.addFieldError("loginId", "登录账号为空");
 			return;
 		}
 		if (StringUtils.isEmpty(this.password)) {
-			this.addFieldError("password", this.getText("", "密码"));
+			this.addFieldError("password", "密码为空");
 		}
 	}
 
