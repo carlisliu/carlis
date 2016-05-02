@@ -21,15 +21,8 @@ public class UserServiceImpl implements UserService {
 	 */
 	@Override
 	public User findUser(String loginId) {
-		return userMapper.findUserByLoginId(loginId);
-	}
-
-	/**
-	 * 
-	 */
-	@Override
-	public List<User> findAllUsers() {
-		return userMapper.findAllUsers();
+		List<User> users = userMapper.findBy(new User(loginId));
+		return users == null || users.isEmpty() ? null : users.get(0);
 	}
 
 	@Override

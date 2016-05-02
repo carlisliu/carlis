@@ -13,6 +13,13 @@ public class User {
 	private boolean admin;
 	private String memo;
 
+	public User() {
+	}
+
+	public User(String loginId) {
+		this.loginId = loginId;
+	}
+
 	public int getId() {
 		return id;
 	}
