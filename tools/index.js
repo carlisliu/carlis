@@ -1,5 +1,7 @@
 "use strict";
 
+//SELECT * FROM SysObjects
+
 var tableNames = ['advertising',
     'base_admin_scenic_sopt_rela',
     'base_admin_token',
@@ -81,7 +83,7 @@ var template = `
 `;
 
 function config() {
-    
+
 }
 
 var content = "";
