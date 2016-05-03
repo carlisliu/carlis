@@ -24,16 +24,12 @@
 			  from users 
 	  	]]>
 	</sql>
-
+	
 	<select id="findBy" resultMap="userMap">
 		<include refid="selectAllUserColumns"></include>
 		<![CDATA[
 			where login_id = #{loginId}
 		]]>
-	</select>
-	
-	<select id="findAllUsers" resultMap="userMap">
-		<include refid="selectAllUserColumns"></include>
 	</select>
 	
 	<update id="updatePassword" parameterType="String" statementType="PREPARED">

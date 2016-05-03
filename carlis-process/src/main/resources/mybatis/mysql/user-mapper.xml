@@ -25,17 +25,6 @@
 	  	]]>
 	</sql>
 
-	<select id="findUserByLoginId" resultMap="userMap">
-		<include refid="selectAllUserColumns"></include>
-		<![CDATA[
-			where login_id = #{loginId}
-		]]>
-	</select>
-	
-	<select id="findAllUsers" resultMap="userMap">
-		<include refid="selectAllUserColumns"></include>
-	</select>
-	
 	<update id="updatePassword" parameterType="String" statementType="PREPARED">
 		<![CDATA[
 			update users set password = #{newPassword} where login_id = #{loginId}

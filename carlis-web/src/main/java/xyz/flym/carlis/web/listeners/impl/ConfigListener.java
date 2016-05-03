@@ -1,15 +1,11 @@
 package xyz.flym.carlis.web.listeners.impl;
 
-import java.util.Iterator;
-import java.util.Map;
-
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import xyz.flym.carlis.utils.Env;
 import xyz.flym.carlis.web.listeners.SystemStartupListener;
 
 /**
@@ -20,17 +16,17 @@ import xyz.flym.carlis.web.listeners.SystemStartupListener;
 public class ConfigListener implements SystemStartupListener {
 
 	private static Log LOG = LogFactory.getLog(ConfigListener.class);
+	private static final String ACTION_PATH = "action";
+	private static final String STATIC_PATH = "staticPath";
 
 	@Override
 	public void onStartup(ServletContextEvent sce) {
 		ServletContext context = sce.getServletContext();
-		Map<String, String> ctx = Env.getPageContext();
-		Iterator<String> keys = ctx.keySet().iterator();
-		while (keys.hasNext()) {
-			String key = keys.next();
-			String value = ctx.get(key);
-			LOG.info("Setting page context " + key + " to " + value);
-			context.setAttribute(key, value);
-		}
+		String contextPath = context.getContextPath();
+		context.setAttribute(ACTION_PATH, contextPath);
+		LOG.info("Setting page context " + ACTION_PATH + " to " + contextPath);
+		String staticPath = contextPath + "/assets";
+		context.setAttribute(STATIC_PATH, staticPath);
+		LOG.info("Setting page context " + STATIC_PATH + " to " + staticPath);
 	}
 }
