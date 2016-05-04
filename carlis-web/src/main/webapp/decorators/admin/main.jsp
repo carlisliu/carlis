@@ -92,35 +92,19 @@
                 <div class="col-md-2 bootstrap-admin-col-left" id="menu-contents">
                     <ul class="nav navbar-collapse collapse bootstrap-admin-navbar-side">
                         <li>
-                            <a href="${action}/guide.action"><i class="glyphicon glyphicon-chevron-right"></i>概述</a>
+                            <a href="#"><i class="glyphicon glyphicon-chevron-right"></i>地图概览</a>
                         </li>
                         <li>
-                            <a href="${action}/settingInit.action"><i class="glyphicon glyphicon-chevron-right"></i>网站全局设置</a>
+                            <a href="#"><i class="glyphicon glyphicon-chevron-right"></i>数据统计</a>
                         </li>
                         <li>
-                            <a href="${action}/categoryInit.action"><i class="glyphicon glyphicon-chevron-right"></i> 类别信息</a>
-                        </li>
-                        <li class="active">
-                            <a href="${action}/companyInit.action"><i class="glyphicon glyphicon-chevron-right"></i> 公司信息</a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0);"><i class="glyphicon glyphicon-chevron-down"></i>产品信息</a>
+                            <a href="javascript:void(0);"><i class="glyphicon glyphicon-chevron-down"></i>景区管理</a>
                             <ul class="nav navbar-collapse bootstrap-admin-navbar-side">
-                                <li><a href="${action}/createProductInit.action"><i class="glyphicon glyphicon-chevron-right"></i>新增</a></li>
-                                <li><a href="${action}/productQuery.action"><i class="glyphicon glyphicon-chevron-right"></i>查询</a></li>
+                                <li><a href="#"><i class="glyphicon glyphicon-chevron-right"></i>景区介绍</a></li>
+                                <li><a href="#"><i class="glyphicon glyphicon-chevron-right"></i>景区照片展示</a></li>
+                                <li><a href="#"><i class="glyphicon glyphicon-chevron-right"></i>景区相册</a></li>
+                                <li><a href="#"><i class="glyphicon glyphicon-chevron-right"></i>娱乐项目</a></li>
                             </ul>
-                        </li>
-                        <li>
-                            <a href="${action}/videoInit.action"><i class="glyphicon glyphicon-chevron-right"></i>视频信息</a>
-                        </li>
-                        <li>
-                            <a href="${action}/messagesInit.action"><i class="glyphicon glyphicon-chevron-right"></i>客户留言</a>
-                        </li>
-<!--                         <li> -->
-<%--                             <a href="${adminRoot}/userInit.action"><i class="glyphicon glyphicon-chevron-right"></i>用户设置</a> --%>
-<!--                         </li> -->
-                         <li>
-                            <a href="${action}/userSettingInit.action"><i class="glyphicon glyphicon-chevron-right"></i>用户设置</a>
                         </li>
                     </ul>
                 </div>
@@ -145,17 +129,5 @@
             </div>
         </div>
 		
-        <script type="text/javascript">
-        	seajs.use(['jquery', 'hover-dropdown'], function($){
-        		var path = window.location.pathname;
-        		path && $('#menu-contents ul li').removeClass('active').each(function(){
-        			var $this = $(this), href = $this.children('a').attr('href');
-        			if (href && href.indexOf(path) > -1) {
-        				$this.addClass('active');
-        				return false;
-        			}
-        		});
-        	});
-        </script>
     </body>
 </html>
