@@ -94,8 +94,9 @@
 			<artifactId>log4j-api</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>cn.bestwu</groupId>
-			<artifactId>ueditor</artifactId>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20151123</version>
 		</dependency>
 	</dependencies>
 	
