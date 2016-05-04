@@ -30,16 +30,16 @@ define('static/base/component', [ 'jquery', '../utils/util', '../utils/events' ]
 		
 		var data = this.data();
 		
-		this.emit('data', data);
+		this.emit('data', data, this);
 		
 		// add intercept for state check, if `check` event can proceed to this point, means all user validation already passed.
 		this.on('check', function(){
 			that.validated = true;
 		});
-		this.emit('check');
+		this.emit('check', this);
 		
 		if (this.validated) {
-			this.emit('submit', data);
+			this.emit('submit', data, this);
 		}
 		return this;
 	};
