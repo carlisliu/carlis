@@ -45,6 +45,14 @@ define(function(require, exports, module) {
 			}).replace(/\{(\d+)\}/g, function(m, i) {
 				return data[i] || '';
 			});
+		},
+		getData: function(container){
+			var data = {};
+			container.find('input[type=text], input[type=hidden], textarea, select').each(function(index, content) {
+				var $this = $(this), val = $.trim($this.val()), key = $this.attr('data-property');
+				data[key] = val;
+			});
+			return data;
 		}
 	}
 });
