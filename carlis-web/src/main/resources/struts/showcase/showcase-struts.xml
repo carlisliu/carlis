@@ -11,5 +11,26 @@
 			<interceptor-ref name="loginStack"></interceptor-ref>
 		</action>
 		
+		<action name="mybatisPager">
+			<result name="success">/pages/showcase/mybatis-pager.jsp</result>
+			<interceptor-ref name="loginStack"></interceptor-ref>
+		</action>
+		
+		<action name="testPager" class="mybatisPagerAction" method="testPager">
+			<result name="success" type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">status,message,users\[\d+\]\..+$</param>
+			</result>
+			<interceptor-ref name="loginStack"></interceptor-ref>
+		</action>
+		
+		<action name="testNoPager" class="mybatisPagerAction" method="testNoPager">
+			<result name="success" type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">status,message,users\[\d+\]\..+$</param>
+			</result>
+			<interceptor-ref name="loginStack"></interceptor-ref>
+		</action>
+		
 	</package>
 </struts>

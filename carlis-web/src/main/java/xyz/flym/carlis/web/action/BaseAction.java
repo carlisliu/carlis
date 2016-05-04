@@ -21,11 +21,11 @@ public class BaseAction extends ActionSupport {
 	private static final long serialVersionUID = 1L;
 
 	protected String status;
-	protected String msg;
+	protected String message;
 
 	protected void addJsonExecutionError(String error) {
 		this.status = FAIL;
-		this.msg = error;
+		this.message = error;
 	}
 
 	protected boolean isSuccessed() {
@@ -44,11 +44,11 @@ public class BaseAction extends ActionSupport {
 	}
 
 	public String getMsg() {
-		return msg;
+		return message;
 	}
 
 	public void setMsg(String msg) {
-		this.msg = msg;
+		this.message = msg;
 	}
 
 }

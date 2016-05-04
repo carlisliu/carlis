@@ -25,6 +25,19 @@
 	  	]]>
 	</sql>
 	
+	<select id="getAll" resultMap="userMap">
+		<![CDATA[
+			select id,
+			       login_id,
+			       login_name,
+			       password,
+			       admin,
+			       memo
+			  from users 
+			  order by id
+	  	]]>
+	</select>
+	
 	<select id="findBy" resultMap="userMap">
 		<include refid="selectAllUserColumns"></include>
 		<![CDATA[

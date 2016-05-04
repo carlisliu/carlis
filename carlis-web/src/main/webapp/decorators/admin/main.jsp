@@ -110,6 +110,7 @@
                             <a href="javascript:void(0);"><i class="glyphicon glyphicon-chevron-down"></i>示例</a>
                             <ul class="nav navbar-collapse bootstrap-admin-navbar-side">
                                 <li><a href="${rootPath}/showcase/ueditor.html"><i class="glyphicon glyphicon-chevron-right"></i>UEditor</a></li>
+                                <li><a href="${rootPath}/showcase/mybatisPager.html"><i class="glyphicon glyphicon-chevron-right"></i>mybatis分页</a></li>
                             </ul>
                         </li>
                     </ul>
