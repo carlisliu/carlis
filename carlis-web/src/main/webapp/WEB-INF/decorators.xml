@@ -3,6 +3,8 @@
         <pattern>/error.jsp</pattern>
         <pattern>/login.jsp</pattern>
         <pattern>/update-browser.jsp</pattern>
+        <pattern>*/**/ueditor/**/*.html</pattern>
+        
     </excludes> 
     
     <decorator name="default" page="admin/main.jsp">

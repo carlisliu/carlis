@@ -6,5 +6,10 @@
 <struts>
 	<package name="showcase" namespace="/showcase" extends="security">
 		
+		<action name="ueditor">
+			<result name="success">/pages/showcase/ueditor.jsp</result>
+			<interceptor-ref name="loginStack"></interceptor-ref>
+		</action>
+		
 	</package>
 </struts>

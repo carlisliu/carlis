@@ -8,7 +8,7 @@
 	<constant name="struts.devMode" value="false" />
 	<constant name="struts.ui.theme" value="simple"/>
 	<constant name="struts.custom.i18n.resources" value="messages/message" />
-	<constant name="struts.action.excludePattern" value="/dwr.*"></constant>
+	<constant name="struts.action.excludePattern" value="/dwr.*,.*/ueditor/.*"></constant>
 	<constant name="struts.action.extension" value="html,action"></constant>
 	
 	<package name="base" namespace="/" extends="json-default">
@@ -31,5 +31,6 @@
 
 	<include file="struts/security-struts.xml" />
 	<include file="struts/auth/auth-struts.xml" />
-
+	<include file="struts/showcase/showcase-struts.xml" />
+	
 </struts>

@@ -16,7 +16,7 @@ import xyz.flym.carlis.web.listeners.SystemStartupListener;
 public class ConfigListener implements SystemStartupListener {
 
 	private static Log LOG = LogFactory.getLog(ConfigListener.class);
-	private static final String ACTION_PATH = "action";
+	private static final String ACTION_PATH = "rootPath";
 	private static final String STATIC_PATH = "staticPath";
 
 	@Override

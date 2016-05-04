@@ -37,7 +37,7 @@
         </style>
         <script type="text/javascript" src="${staticPath}/js/sea-modules/seajs/3.0.0/sea.js" id="seajsnode"></script>
         <script type="text/javascript">
-        	window['__base__'] = '${action}';
+        	window['__base__'] = '${rootPath}';
         	window['__static__'] = '${staticPath}';
         </script>
         <script type="text/javascript" src="${staticPath}/js/sea-modules/seajs/3.0.0/sea-config.js"></script>
@@ -54,9 +54,9 @@
                                     <a href="#" role="button" class="dropdown-toggle" data-hover="dropdown"> <i class="glyphicon glyphicon-user"></i> ${sessionScope.__login_user__.loginName}<i class="caret"></i></a>
                                     <ul class="dropdown-menu">
 <%--                                         <li><a href="#">${company.name }</a></li> --%>
-                                        <li><a href="${adminRoot}/userSettingInit.action">修改密码</a></li>
+                                        <li><a href="${rootPath}/userSettingInit.action">修改密码</a></li>
                                         <li role="presentation" class="divider"></li>
-                                        <li><a href="${adminRoot}/doLogout.action">退出</a></li>
+                                        <li><a href="${rootPath}/doLogout.action">退出</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -78,7 +78,7 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand" href="${adminRoot}/guide.action">管理控制台</a>
+                            <a class="navbar-brand" href="${rootPath}/guide.action">管理控制台</a>
                         </div>
                     </div>
                 </div>
@@ -106,11 +106,19 @@
                                 <li><a href="#"><i class="glyphicon glyphicon-chevron-right"></i>娱乐项目</a></li>
                             </ul>
                         </li>
+                        <li>
+                            <a href="javascript:void(0);"><i class="glyphicon glyphicon-chevron-down"></i>示例</a>
+                            <ul class="nav navbar-collapse bootstrap-admin-navbar-side">
+                                <li><a href="${rootPath}/showcase/ueditor.html"><i class="glyphicon glyphicon-chevron-right"></i>UEditor</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
-
- 				<!-- content -->
-				<decorator:body/>
+                
+                <div style="padding-left:200px;">
+                	<!-- content -->
+					<decorator:body/>
+                </div>
 				
             </div>
         </div>
