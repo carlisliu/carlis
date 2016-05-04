@@ -15,22 +15,21 @@
 <!-- 		<default-interceptor-ref name="loginStack"></default-interceptor-ref> -->
 		<default-action-ref name="notFound" />
 		<global-results>
-			<result name="error" type="redirect">/admin/500.jsp</result>
-			<result name="login" type="redirect">/admin/login.jsp</result>
+			<result name="error" type="redirect">/500.jsp?msg=redirect</result>
+			<result name="login" type="redirect">/login.jsp</result>
 		</global-results>
 		<global-exception-mappings>
 			<exception-mapping exception="java.lang.Exception" result="error" />
 		</global-exception-mappings>
 		<action name="notFound">
-			<result>/error.jsp</result>
+			<result>/error.jsp?msg=notfound</result>
 		</action>
 		<action name="">
-			<result>/admin/login.jsp</result>
+			<result>/login.jsp</result>
 		</action>
 	</package>
 
 	<include file="struts/security-struts.xml" />
-	<include file="struts/all/view/view-struts.xml" />
-	<include file="struts/all/admin/admin-struts.xml" />
+	<include file="struts/auth/auth-struts.xml" />
 
 </struts>

@@ -2,15 +2,11 @@
     <excludes>
         <pattern>/error.jsp</pattern>
         <pattern>/login.jsp</pattern>
-        <pattern>/security/login.action*</pattern>
-        <pattern>/admin/doLogin.action</pattern>
-        <pattern>/view/*.action</pattern>
-        <pattern>/view/update-browser.jsp</pattern>
+        <pattern>/update-browser.jsp</pattern>
     </excludes> 
-    <decorator name="view" page="view/index.jsp">
-    	<pattern>*.html</pattern>
-    </decorator>
+    
     <decorator name="default" page="admin/main.jsp">
-        <pattern>/admin/*.action</pattern>
+        <pattern>*.html</pattern>
     </decorator>
+    
 </decorators>

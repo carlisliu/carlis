@@ -13,7 +13,7 @@
 	<bean id="logoutAction" class="xyz.flym.carlis.web.action.admin.auth.LogoutAction" scope="prototype">
 	</bean>
 	
-	<bean id="adminGuideAction" class="xyz.flym.carlis.web.action.admin.GuideAction" scope="prototype">
+	<bean id="homeAction" class="xyz.flym.carlis.web.action.admin.HomeAction" scope="prototype">
 	</bean>
 	
 </beans>

@@ -34,7 +34,7 @@
                     <div class="alert alert-info">
                         System Login...
                     </div>
-                    <form method="post" action="${action}/admin/doLogin.action" class="bootstrap-admin-login-form">
+                    <form method="post" action="${action}/doLogin.action" class="bootstrap-admin-login-form">
                         <h1>登录</h1>
                         <div class="form-group">
                             <input class="form-control required" type="text" name="loginId" id="loginId" placeholder="登录名">

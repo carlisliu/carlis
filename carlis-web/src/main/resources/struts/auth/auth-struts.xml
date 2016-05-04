@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<package name="auth" namespace="/" extends="security">
+		
+		<action name="doLogout" class="logoutAction">
+			<result name="success" type="redirect">/login.jsp</result>
+			<interceptor-ref name="loginStack"></interceptor-ref>
+		</action>
+		
+		<action name="doLogin" class="loginAction">
+			<result name="input">/login.jsp</result>
+			<result name="success" type="redirect">home.html</result>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+		
+		<action name="changePassword" class="userSettingAction">
+			<result name="success" type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">status,msg</param>
+			</result>
+			<interceptor-ref name="loginStack"></interceptor-ref>
+		</action>
+		
+		<action name="home" class="homeAction">
+			<result name="success">/pages/index.jsp</result>
+			<interceptor-ref name="loginStack"></interceptor-ref>
+		</action>
+		
+	</package>
+</struts>

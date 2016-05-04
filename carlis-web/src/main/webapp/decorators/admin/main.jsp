@@ -5,42 +5,42 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title><decorator:title default="${company.name }"/></title>
+        <title><decorator:title default="盛世爱游"/></title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<!--[if lt IE 9]>
 			<script>
 				(function(){
-		    		window.location.href = '/view/update-browser.jsp';
+		    		window.location.href = '/update-browser.jsp';
 				})();
 			</script>
 		<![endif]-->
         <!-- Bootstrap -->
-        <link rel="stylesheet" media="screen" href="${adminAsset}/css/bootstrap.min.css">
-        <link rel="stylesheet" media="screen" href="${adminAsset}/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" media="screen" href="${staticPath}/css/bootstrap.min.css">
+        <link rel="stylesheet" media="screen" href="${staticPath}/css/bootstrap-theme.min.css">
 
         <!-- Bootstrap Admin Theme -->
-        <link rel="stylesheet" media="screen" href="${adminAsset}/css/bootstrap-admin-theme.css">
-        <link rel="stylesheet" media="screen" href="${adminAsset}/css/bootstrap-admin-theme-change-size.css">
+        <link rel="stylesheet" media="screen" href="${staticPath}/css/bootstrap-admin-theme.css">
+        <link rel="stylesheet" media="screen" href="${staticPath}/css/bootstrap-admin-theme-change-size.css">
         
         <decorator:head/>
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
-           <script type="text/javascript" src="${adminAsset}/js/html5shiv.js"></script>
-           <script type="text/javascript" src="${adminAsset}/js/respond.min.js"></script>
+           <script type="text/javascript" src="${staticPath}/js/html5shiv.js"></script>
+           <script type="text/javascript" src="${staticPath}/js/respond.min.js"></script>
         <![endif]-->
         <style type="text/css">
         	.error {
         		color:#a94442;
         	}
         </style>
-        <script type="text/javascript" src="${adminAsset}/js/sea-modules/seajs/3.0.0/sea.js" id="seajsnode"></script>
+        <script type="text/javascript" src="${staticPath}/js/sea-modules/seajs/3.0.0/sea.js" id="seajsnode"></script>
         <script type="text/javascript">
-        	window['__base__'] = '${adminAsset}';
-        	window['__actionBase__'] = '${adminRoot}';
+        	window['__base__'] = '${action}';
+        	window['__static__'] = '${staticPath}';
         </script>
-        <script type="text/javascript" src="${adminAsset}/js/sea-modules/seajs/3.0.0/sea-config.js"></script>
+        <script type="text/javascript" src="${staticPath}/js/sea-modules/seajs/3.0.0/sea-config.js"></script>
     </head>
     <body  class="bootstrap-admin-with-small-navbar">
         <!-- small navbar -->
@@ -92,35 +92,35 @@
                 <div class="col-md-2 bootstrap-admin-col-left" id="menu-contents">
                     <ul class="nav navbar-collapse collapse bootstrap-admin-navbar-side">
                         <li>
-                            <a href="${adminRoot}/guide.action"><i class="glyphicon glyphicon-chevron-right"></i>概述</a>
+                            <a href="${action}/guide.action"><i class="glyphicon glyphicon-chevron-right"></i>概述</a>
                         </li>
                         <li>
-                            <a href="${adminRoot}/settingInit.action"><i class="glyphicon glyphicon-chevron-right"></i>网站全局设置</a>
+                            <a href="${action}/settingInit.action"><i class="glyphicon glyphicon-chevron-right"></i>网站全局设置</a>
                         </li>
                         <li>
-                            <a href="${adminRoot}/categoryInit.action"><i class="glyphicon glyphicon-chevron-right"></i> 类别信息</a>
+                            <a href="${action}/categoryInit.action"><i class="glyphicon glyphicon-chevron-right"></i> 类别信息</a>
                         </li>
                         <li class="active">
-                            <a href="${adminRoot}/companyInit.action"><i class="glyphicon glyphicon-chevron-right"></i> 公司信息</a>
+                            <a href="${action}/companyInit.action"><i class="glyphicon glyphicon-chevron-right"></i> 公司信息</a>
                         </li>
                         <li>
                             <a href="javascript:void(0);"><i class="glyphicon glyphicon-chevron-down"></i>产品信息</a>
                             <ul class="nav navbar-collapse bootstrap-admin-navbar-side">
-                                <li><a href="${adminRoot}/createProductInit.action"><i class="glyphicon glyphicon-chevron-right"></i>新增</a></li>
-                                <li><a href="${adminRoot}/productQuery.action"><i class="glyphicon glyphicon-chevron-right"></i>查询</a></li>
+                                <li><a href="${action}/createProductInit.action"><i class="glyphicon glyphicon-chevron-right"></i>新增</a></li>
+                                <li><a href="${action}/productQuery.action"><i class="glyphicon glyphicon-chevron-right"></i>查询</a></li>
                             </ul>
                         </li>
                         <li>
-                            <a href="${adminRoot}/videoInit.action"><i class="glyphicon glyphicon-chevron-right"></i>视频信息</a>
+                            <a href="${action}/videoInit.action"><i class="glyphicon glyphicon-chevron-right"></i>视频信息</a>
                         </li>
                         <li>
-                            <a href="${adminRoot}/messagesInit.action"><i class="glyphicon glyphicon-chevron-right"></i>客户留言</a>
+                            <a href="${action}/messagesInit.action"><i class="glyphicon glyphicon-chevron-right"></i>客户留言</a>
                         </li>
 <!--                         <li> -->
 <%--                             <a href="${adminRoot}/userInit.action"><i class="glyphicon glyphicon-chevron-right"></i>用户设置</a> --%>
 <!--                         </li> -->
                          <li>
-                            <a href="${adminRoot}/userSettingInit.action"><i class="glyphicon glyphicon-chevron-right"></i>用户设置</a>
+                            <a href="${action}/userSettingInit.action"><i class="glyphicon glyphicon-chevron-right"></i>用户设置</a>
                         </li>
                     </ul>
                 </div>
@@ -137,8 +137,8 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <footer role="contentinfo">
-                            <p class="left">${company.name }</p>
-                            <p class="right">${company.copyright } &nbsp; <a href="${company.website }" target="_blank">${company.website }</a></p>
+                            <p class="left">盛世爱游</p>
+                            <p class="right">盛世爱游 &nbsp; <a href="#" target="_blank">盛世爱游</a></p>
                         </footer>
                     </div>
                 </div>
@@ -146,7 +146,7 @@
         </div>
 		
         <script type="text/javascript">
-        	seajs.use(['jQuery', 'hover-dropdown'], function($){
+        	seajs.use(['jquery', 'hover-dropdown'], function($){
         		var path = window.location.pathname;
         		path && $('#menu-contents ul li').removeClass('active').each(function(){
         			var $this = $(this), href = $this.children('a').attr('href');
