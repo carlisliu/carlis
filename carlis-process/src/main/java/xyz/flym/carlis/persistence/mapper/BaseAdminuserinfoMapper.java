@@ -3,13 +3,13 @@ package xyz.flym.carlis.persistence.mapper;
 import xyz.flym.carlis.persistence.domain.BaseAdminuserinfo;
 
 public interface BaseAdminuserinfoMapper {
-    int deleteByPrimaryKey(Integer advertisingId);
+    int deleteByPrimaryKey(String userId);
 
     int insert(BaseAdminuserinfo record);
 
     int insertSelective(BaseAdminuserinfo record);
 
-    BaseAdminuserinfo selectByPrimaryKey(Integer advertisingId);
+    BaseAdminuserinfo selectByPrimaryKey(String userId);
 
     int updateByPrimaryKeySelective(BaseAdminuserinfo record);
 

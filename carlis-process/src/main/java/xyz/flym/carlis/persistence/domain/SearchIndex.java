@@ -3,40 +3,48 @@ package xyz.flym.carlis.persistence.domain;
 import java.util.Date;
 
 public class SearchIndex {
-    private Integer advertisingId;
+    private Integer searchIndexListId;
 
-    private Integer type;
+    private Integer regionId;
 
-    private Integer relaId;
+    private Integer scenicSpotCount;
+
+    private Integer landscapeCount;
 
     private Date createdOn;
 
     private Date modifiedOn;
 
-    private Integer orderNo;
-
-    public Integer getAdvertisingId() {
-        return advertisingId;
+    public Integer getSearchIndexListId() {
+        return searchIndexListId;
     }
 
-    public void setAdvertisingId(Integer advertisingId) {
-        this.advertisingId = advertisingId;
+    public void setSearchIndexListId(Integer searchIndexListId) {
+        this.searchIndexListId = searchIndexListId;
     }
 
-    public Integer getType() {
-        return type;
+    public Integer getRegionId() {
+        return regionId;
     }
 
-    public void setType(Integer type) {
-        this.type = type;
+    public void setRegionId(Integer regionId) {
+        this.regionId = regionId;
     }
 
-    public Integer getRelaId() {
-        return relaId;
+    public Integer getScenicSpotCount() {
+        return scenicSpotCount;
     }
 
-    public void setRelaId(Integer relaId) {
-        this.relaId = relaId;
+    public void setScenicSpotCount(Integer scenicSpotCount) {
+        this.scenicSpotCount = scenicSpotCount;
+    }
+
+    public Integer getLandscapeCount() {
+        return landscapeCount;
+    }
+
+    public void setLandscapeCount(Integer landscapeCount) {
+        this.landscapeCount = landscapeCount;
     }
 
     public Date getCreatedOn() {
@@ -53,13 +61,5 @@ public class SearchIndex {
 
     public void setModifiedOn(Date modifiedOn) {
         this.modifiedOn = modifiedOn;
-    }
-
-    public Integer getOrderNo() {
-        return orderNo;
-    }
-
-    public void setOrderNo(Integer orderNo) {
-        this.orderNo = orderNo;
     }
 }

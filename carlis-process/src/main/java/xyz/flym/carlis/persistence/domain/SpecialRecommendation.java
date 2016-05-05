@@ -3,24 +3,70 @@ package xyz.flym.carlis.persistence.domain;
 import java.util.Date;
 
 public class SpecialRecommendation {
-    private Integer advertisingId;
+    private Integer regionId;
+
+    private String name;
+
+    private String nameEn;
+
+    private Integer startLevel;
+
+    private Double price;
+
+    private String priceUnit;
 
     private Integer type;
-
-    private Integer relaId;
 
     private Date createdOn;
 
     private Date modifiedOn;
 
-    private Integer orderNo;
-
-    public Integer getAdvertisingId() {
-        return advertisingId;
+    public Integer getRegionId() {
+        return regionId;
     }
 
-    public void setAdvertisingId(Integer advertisingId) {
-        this.advertisingId = advertisingId;
+    public void setRegionId(Integer regionId) {
+        this.regionId = regionId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name == null ? null : name.trim();
+    }
+
+    public String getNameEn() {
+        return nameEn;
+    }
+
+    public void setNameEn(String nameEn) {
+        this.nameEn = nameEn == null ? null : nameEn.trim();
+    }
+
+    public Integer getStartLevel() {
+        return startLevel;
+    }
+
+    public void setStartLevel(Integer startLevel) {
+        this.startLevel = startLevel;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    public String getPriceUnit() {
+        return priceUnit;
+    }
+
+    public void setPriceUnit(String priceUnit) {
+        this.priceUnit = priceUnit == null ? null : priceUnit.trim();
     }
 
     public Integer getType() {
@@ -29,14 +75,6 @@ public class SpecialRecommendation {
 
     public void setType(Integer type) {
         this.type = type;
-    }
-
-    public Integer getRelaId() {
-        return relaId;
-    }
-
-    public void setRelaId(Integer relaId) {
-        this.relaId = relaId;
     }
 
     public Date getCreatedOn() {
@@ -53,13 +91,5 @@ public class SpecialRecommendation {
 
     public void setModifiedOn(Date modifiedOn) {
         this.modifiedOn = modifiedOn;
-    }
-
-    public Integer getOrderNo() {
-        return orderNo;
-    }
-
-    public void setOrderNo(Integer orderNo) {
-        this.orderNo = orderNo;
     }
 }

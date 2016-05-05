@@ -3,40 +3,58 @@ package xyz.flym.carlis.persistence.domain;
 import java.util.Date;
 
 public class JourneyBaseInfo {
-    private Integer advertisingId;
+    private Long journeyBaseInfoId;
 
-    private Integer type;
+    private Long userId;
 
-    private Integer relaId;
+    private String name;
+
+    private Long startFromId;
+
+    private Date date;
 
     private Date createdOn;
 
     private Date modifiedOn;
 
-    private Integer orderNo;
-
-    public Integer getAdvertisingId() {
-        return advertisingId;
+    public Long getJourneyBaseInfoId() {
+        return journeyBaseInfoId;
     }
 
-    public void setAdvertisingId(Integer advertisingId) {
-        this.advertisingId = advertisingId;
+    public void setJourneyBaseInfoId(Long journeyBaseInfoId) {
+        this.journeyBaseInfoId = journeyBaseInfoId;
     }
 
-    public Integer getType() {
-        return type;
+    public Long getUserId() {
+        return userId;
     }
 
-    public void setType(Integer type) {
-        this.type = type;
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
-    public Integer getRelaId() {
-        return relaId;
+    public String getName() {
+        return name;
     }
 
-    public void setRelaId(Integer relaId) {
-        this.relaId = relaId;
+    public void setName(String name) {
+        this.name = name == null ? null : name.trim();
+    }
+
+    public Long getStartFromId() {
+        return startFromId;
+    }
+
+    public void setStartFromId(Long startFromId) {
+        this.startFromId = startFromId;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     public Date getCreatedOn() {
@@ -53,13 +71,5 @@ public class JourneyBaseInfo {
 
     public void setModifiedOn(Date modifiedOn) {
         this.modifiedOn = modifiedOn;
-    }
-
-    public Integer getOrderNo() {
-        return orderNo;
-    }
-
-    public void setOrderNo(Integer orderNo) {
-        this.orderNo = orderNo;
     }
 }

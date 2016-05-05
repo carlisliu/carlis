@@ -3,40 +3,78 @@ package xyz.flym.carlis.persistence.domain;
 import java.util.Date;
 
 public class CityExtend {
-    private Integer advertisingId;
+    private Integer cityExtendId;
 
-    private Integer type;
+    private Integer cityId;
 
-    private Integer relaId;
+    private String title;
+
+    private String description;
+
+    private String imgPath;
+
+    private String type;
+
+    private Integer orderNo;
 
     private Date createdOn;
 
     private Date modifiedOn;
 
-    private Integer orderNo;
-
-    public Integer getAdvertisingId() {
-        return advertisingId;
+    public Integer getCityExtendId() {
+        return cityExtendId;
     }
 
-    public void setAdvertisingId(Integer advertisingId) {
-        this.advertisingId = advertisingId;
+    public void setCityExtendId(Integer cityExtendId) {
+        this.cityExtendId = cityExtendId;
     }
 
-    public Integer getType() {
+    public Integer getCityId() {
+        return cityId;
+    }
+
+    public void setCityId(Integer cityId) {
+        this.cityId = cityId;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title == null ? null : title.trim();
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description == null ? null : description.trim();
+    }
+
+    public String getImgPath() {
+        return imgPath;
+    }
+
+    public void setImgPath(String imgPath) {
+        this.imgPath = imgPath == null ? null : imgPath.trim();
+    }
+
+    public String getType() {
         return type;
     }
 
-    public void setType(Integer type) {
-        this.type = type;
+    public void setType(String type) {
+        this.type = type == null ? null : type.trim();
     }
 
-    public Integer getRelaId() {
-        return relaId;
+    public Integer getOrderNo() {
+        return orderNo;
     }
 
-    public void setRelaId(Integer relaId) {
-        this.relaId = relaId;
+    public void setOrderNo(Integer orderNo) {
+        this.orderNo = orderNo;
     }
 
     public Date getCreatedOn() {
@@ -53,13 +91,5 @@ public class CityExtend {
 
     public void setModifiedOn(Date modifiedOn) {
         this.modifiedOn = modifiedOn;
-    }
-
-    public Integer getOrderNo() {
-        return orderNo;
-    }
-
-    public void setOrderNo(Integer orderNo) {
-        this.orderNo = orderNo;
     }
 }

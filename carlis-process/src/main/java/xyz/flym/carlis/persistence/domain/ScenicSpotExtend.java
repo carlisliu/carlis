@@ -1,65 +1,53 @@
 package xyz.flym.carlis.persistence.domain;
 
-import java.util.Date;
-
 public class ScenicSpotExtend {
-    private Integer advertisingId;
+    private Integer scenicSpotExtendId;
 
-    private Integer type;
+    private Integer scenicSpotId;
 
-    private Integer relaId;
+    private String title;
 
-    private Date createdOn;
+    private String description;
 
-    private Date modifiedOn;
+    private String imgPath;
 
-    private Integer orderNo;
-
-    public Integer getAdvertisingId() {
-        return advertisingId;
+    public Integer getScenicSpotExtendId() {
+        return scenicSpotExtendId;
     }
 
-    public void setAdvertisingId(Integer advertisingId) {
-        this.advertisingId = advertisingId;
+    public void setScenicSpotExtendId(Integer scenicSpotExtendId) {
+        this.scenicSpotExtendId = scenicSpotExtendId;
     }
 
-    public Integer getType() {
-        return type;
+    public Integer getScenicSpotId() {
+        return scenicSpotId;
     }
 
-    public void setType(Integer type) {
-        this.type = type;
+    public void setScenicSpotId(Integer scenicSpotId) {
+        this.scenicSpotId = scenicSpotId;
     }
 
-    public Integer getRelaId() {
-        return relaId;
+    public String getTitle() {
+        return title;
     }
 
-    public void setRelaId(Integer relaId) {
-        this.relaId = relaId;
+    public void setTitle(String title) {
+        this.title = title == null ? null : title.trim();
     }
 
-    public Date getCreatedOn() {
-        return createdOn;
+    public String getDescription() {
+        return description;
     }
 
-    public void setCreatedOn(Date createdOn) {
-        this.createdOn = createdOn;
+    public void setDescription(String description) {
+        this.description = description == null ? null : description.trim();
     }
 
-    public Date getModifiedOn() {
-        return modifiedOn;
+    public String getImgPath() {
+        return imgPath;
     }
 
-    public void setModifiedOn(Date modifiedOn) {
-        this.modifiedOn = modifiedOn;
-    }
-
-    public Integer getOrderNo() {
-        return orderNo;
-    }
-
-    public void setOrderNo(Integer orderNo) {
-        this.orderNo = orderNo;
+    public void setImgPath(String imgPath) {
+        this.imgPath = imgPath == null ? null : imgPath.trim();
     }
 }

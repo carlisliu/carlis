@@ -8,10 +8,11 @@ function fcamelCase(all, letter) {
 }
 
 function table2Entity(tables) {
-    var result = [];
+    var result = {};
     tables.forEach(function(table) {
         var entity = table.replace(/_([\da-z])/gi, fcamelCase);
-        result.push(entity.charAt(0).toUpperCase() + entity.substr(1));
+        var name = entity.charAt(0).toUpperCase() + entity.substr(1);
+        result[table] = name;
     });
     return result;
 }
@@ -19,16 +20,20 @@ function table2Entity(tables) {
 function compose() {
     var tables = table2Entity(tableNames);
     var content = '';
-    tables.forEach(function  (table) {
-        var template = `<table tableName="advertising" domainObjectName="${table}"
-       enableCountByExample="false" enableUpdateByExample="false"
-       enableDeleteByExample="false" enableSelectByExample="false"
-       selectByExampleQueryId="false">
-</table>
-`;
-        content += template;
-    })
+    for(var name in tables) {
+    	content += render(name, tables[name]);
+    }
     return content;
+}
+
+function render(tableName, entityName) {
+	var template = `<table tableName="${tableName}" domainObjectName="${entityName}"
+	       enableCountByExample="false" enableUpdateByExample="false"
+	       enableDeleteByExample="false" enableSelectByExample="false"
+	       selectByExampleQueryId="false">
+	</table>
+	`;
+	return template;
 }
 
 var xmlContent = compose();

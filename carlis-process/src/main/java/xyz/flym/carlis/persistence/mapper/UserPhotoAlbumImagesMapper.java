@@ -3,13 +3,13 @@ package xyz.flym.carlis.persistence.mapper;
 import xyz.flym.carlis.persistence.domain.UserPhotoAlbumImages;
 
 public interface UserPhotoAlbumImagesMapper {
-    int deleteByPrimaryKey(Integer advertisingId);
+    int deleteByPrimaryKey(Long userPhotoAlbumImagesId);
 
     int insert(UserPhotoAlbumImages record);
 
     int insertSelective(UserPhotoAlbumImages record);
 
-    UserPhotoAlbumImages selectByPrimaryKey(Integer advertisingId);
+    UserPhotoAlbumImages selectByPrimaryKey(Long userPhotoAlbumImagesId);
 
     int updateByPrimaryKeySelective(UserPhotoAlbumImages record);
 

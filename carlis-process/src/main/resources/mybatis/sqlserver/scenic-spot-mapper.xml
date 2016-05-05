@@ -2,45 +2,167 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="xyz.flym.carlis.persistence.mapper.ScenicSpotMapper" >
   <resultMap id="BaseResultMap" type="xyz.flym.carlis.persistence.domain.ScenicSpot" >
-    <id column="advertising_id" property="advertisingId" jdbcType="INTEGER" />
-    <result column="type" property="type" jdbcType="INTEGER" />
-    <result column="rela_id" property="relaId" jdbcType="INTEGER" />
+    <id column="scenic_spot_id" property="scenicSpotId" jdbcType="INTEGER" />
+    <result column="region_id" property="regionId" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="NVARCHAR" />
+    <result column="name_en" property="nameEn" jdbcType="VARCHAR" />
+    <result column="center_point_x" property="centerPointX" jdbcType="DECIMAL" />
+    <result column="center_point_y" property="centerPointY" jdbcType="DECIMAL" />
+    <result column="description" property="description" jdbcType="NVARCHAR" />
+    <result column="address" property="address" jdbcType="NVARCHAR" />
+    <result column="bus_line" property="busLine" jdbcType="NVARCHAR" />
+    <result column="driving_directions" property="drivingDirections" jdbcType="NVARCHAR" />
+    <result column="start_level" property="startLevel" jdbcType="DOUBLE" />
+    <result column="history" property="history" jdbcType="NVARCHAR" />
+    <result column="price" property="price" jdbcType="DOUBLE" />
+    <result column="discount" property="discount" jdbcType="INTEGER" />
+    <result column="start_time1" property="startTime1" jdbcType="INTEGER" />
+    <result column="end_time1" property="endTime1" jdbcType="INTEGER" />
+    <result column="start_time2" property="startTime2" jdbcType="INTEGER" />
+    <result column="end_time2" property="endTime2" jdbcType="INTEGER" />
+    <result column="recommended_play_season" property="recommendedPlaySeason" jdbcType="NVARCHAR" />
+    <result column="recommended_play_time" property="recommendedPlayTime" jdbcType="NVARCHAR" />
+    <result column="comments_count" property="commentsCount" jdbcType="BIGINT" />
+    <result column="sos_tel" property="sosTel" jdbcType="VARCHAR" />
+    <result column="police_tel" property="policeTel" jdbcType="VARCHAR" />
     <result column="created_on" property="createdOn" jdbcType="TIMESTAMP" />
     <result column="modified_on" property="modifiedOn" jdbcType="TIMESTAMP" />
-    <result column="order_no" property="orderNo" jdbcType="INTEGER" />
+    <result column="slogan" property="slogan" jdbcType="NVARCHAR" />
+    <result column="thumbnail_path" property="thumbnailPath" jdbcType="VARCHAR" />
+    <result column="his_thumbnail_path" property="hisThumbnailPath" jdbcType="NVARCHAR" />
+    <result column="img_cover" property="imgCover" jdbcType="NVARCHAR" />
+    <result column="img_hot_search" property="imgHotSearch" jdbcType="NVARCHAR" />
+    <result column="img_search" property="imgSearch" jdbcType="NVARCHAR" />
+    <result column="status" property="status" jdbcType="BIT" />
+    <result column="createuserid" property="createuserid" jdbcType="NVARCHAR" />
+    <result column="createusername" property="createusername" jdbcType="NVARCHAR" />
+    <result column="modifyuserid" property="modifyuserid" jdbcType="NVARCHAR" />
+    <result column="modifyusername" property="modifyusername" jdbcType="NVARCHAR" />
+    <result column="isdelete" property="isdelete" jdbcType="BIT" />
+    <result column="is_hot_search" property="isHotSearch" jdbcType="BIT" />
+    <result column="img_traffic" property="imgTraffic" jdbcType="NVARCHAR" />
+    <result column="tags" property="tags" jdbcType="NVARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
-    advertising_id, type, rela_id, created_on, modified_on, order_no
+    scenic_spot_id, region_id, name, name_en, center_point_x, center_point_y, description, 
+    address, bus_line, driving_directions, start_level, history, price, discount, start_time1, 
+    end_time1, start_time2, end_time2, recommended_play_season, recommended_play_time, 
+    comments_count, sos_tel, police_tel, created_on, modified_on, slogan, thumbnail_path, 
+    his_thumbnail_path, img_cover, img_hot_search, img_search, status, createuserid, 
+    createusername, modifyuserid, modifyusername, isdelete, is_hot_search, img_traffic, 
+    tags
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
-    from advertising
-    where advertising_id = #{advertisingId,jdbcType=INTEGER}
+    from scenic_spot
+    where scenic_spot_id = #{scenicSpotId,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from advertising
-    where advertising_id = #{advertisingId,jdbcType=INTEGER}
+    delete from scenic_spot
+    where scenic_spot_id = #{scenicSpotId,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="xyz.flym.carlis.persistence.domain.ScenicSpot" >
-    insert into advertising (advertising_id, type, rela_id, 
-      created_on, modified_on, order_no
-      )
-    values (#{advertisingId,jdbcType=INTEGER}, #{type,jdbcType=INTEGER}, #{relaId,jdbcType=INTEGER}, 
-      #{createdOn,jdbcType=TIMESTAMP}, #{modifiedOn,jdbcType=TIMESTAMP}, #{orderNo,jdbcType=INTEGER}
-      )
+    insert into scenic_spot (scenic_spot_id, region_id, name, 
+      name_en, center_point_x, center_point_y, 
+      description, address, bus_line, 
+      driving_directions, start_level, history, 
+      price, discount, start_time1, 
+      end_time1, start_time2, end_time2, 
+      recommended_play_season, recommended_play_time, 
+      comments_count, sos_tel, police_tel, 
+      created_on, modified_on, slogan, 
+      thumbnail_path, his_thumbnail_path, img_cover, 
+      img_hot_search, img_search, status, 
+      createuserid, createusername, modifyuserid, 
+      modifyusername, isdelete, is_hot_search, 
+      img_traffic, tags)
+    values (#{scenicSpotId,jdbcType=INTEGER}, #{regionId,jdbcType=INTEGER}, #{name,jdbcType=NVARCHAR}, 
+      #{nameEn,jdbcType=VARCHAR}, #{centerPointX,jdbcType=DECIMAL}, #{centerPointY,jdbcType=DECIMAL}, 
+      #{description,jdbcType=NVARCHAR}, #{address,jdbcType=NVARCHAR}, #{busLine,jdbcType=NVARCHAR}, 
+      #{drivingDirections,jdbcType=NVARCHAR}, #{startLevel,jdbcType=DOUBLE}, #{history,jdbcType=NVARCHAR}, 
+      #{price,jdbcType=DOUBLE}, #{discount,jdbcType=INTEGER}, #{startTime1,jdbcType=INTEGER}, 
+      #{endTime1,jdbcType=INTEGER}, #{startTime2,jdbcType=INTEGER}, #{endTime2,jdbcType=INTEGER}, 
+      #{recommendedPlaySeason,jdbcType=NVARCHAR}, #{recommendedPlayTime,jdbcType=NVARCHAR}, 
+      #{commentsCount,jdbcType=BIGINT}, #{sosTel,jdbcType=VARCHAR}, #{policeTel,jdbcType=VARCHAR}, 
+      #{createdOn,jdbcType=TIMESTAMP}, #{modifiedOn,jdbcType=TIMESTAMP}, #{slogan,jdbcType=NVARCHAR}, 
+      #{thumbnailPath,jdbcType=VARCHAR}, #{hisThumbnailPath,jdbcType=NVARCHAR}, #{imgCover,jdbcType=NVARCHAR}, 
+      #{imgHotSearch,jdbcType=NVARCHAR}, #{imgSearch,jdbcType=NVARCHAR}, #{status,jdbcType=BIT}, 
+      #{createuserid,jdbcType=NVARCHAR}, #{createusername,jdbcType=NVARCHAR}, #{modifyuserid,jdbcType=NVARCHAR}, 
+      #{modifyusername,jdbcType=NVARCHAR}, #{isdelete,jdbcType=BIT}, #{isHotSearch,jdbcType=BIT}, 
+      #{imgTraffic,jdbcType=NVARCHAR}, #{tags,jdbcType=NVARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="xyz.flym.carlis.persistence.domain.ScenicSpot" >
-    insert into advertising
+    insert into scenic_spot
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="advertisingId != null" >
-        advertising_id,
+      <if test="scenicSpotId != null" >
+        scenic_spot_id,
       </if>
-      <if test="type != null" >
-        type,
+      <if test="regionId != null" >
+        region_id,
       </if>
-      <if test="relaId != null" >
-        rela_id,
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="nameEn != null" >
+        name_en,
+      </if>
+      <if test="centerPointX != null" >
+        center_point_x,
+      </if>
+      <if test="centerPointY != null" >
+        center_point_y,
+      </if>
+      <if test="description != null" >
+        description,
+      </if>
+      <if test="address != null" >
+        address,
+      </if>
+      <if test="busLine != null" >
+        bus_line,
+      </if>
+      <if test="drivingDirections != null" >
+        driving_directions,
+      </if>
+      <if test="startLevel != null" >
+        start_level,
+      </if>
+      <if test="history != null" >
+        history,
+      </if>
+      <if test="price != null" >
+        price,
+      </if>
+      <if test="discount != null" >
+        discount,
+      </if>
+      <if test="startTime1 != null" >
+        start_time1,
+      </if>
+      <if test="endTime1 != null" >
+        end_time1,
+      </if>
+      <if test="startTime2 != null" >
+        start_time2,
+      </if>
+      <if test="endTime2 != null" >
+        end_time2,
+      </if>
+      <if test="recommendedPlaySeason != null" >
+        recommended_play_season,
+      </if>
+      <if test="recommendedPlayTime != null" >
+        recommended_play_time,
+      </if>
+      <if test="commentsCount != null" >
+        comments_count,
+      </if>
+      <if test="sosTel != null" >
+        sos_tel,
+      </if>
+      <if test="policeTel != null" >
+        police_tel,
       </if>
       <if test="createdOn != null" >
         created_on,
@@ -48,19 +170,121 @@
       <if test="modifiedOn != null" >
         modified_on,
       </if>
-      <if test="orderNo != null" >
-        order_no,
+      <if test="slogan != null" >
+        slogan,
+      </if>
+      <if test="thumbnailPath != null" >
+        thumbnail_path,
+      </if>
+      <if test="hisThumbnailPath != null" >
+        his_thumbnail_path,
+      </if>
+      <if test="imgCover != null" >
+        img_cover,
+      </if>
+      <if test="imgHotSearch != null" >
+        img_hot_search,
+      </if>
+      <if test="imgSearch != null" >
+        img_search,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="createuserid != null" >
+        createuserid,
+      </if>
+      <if test="createusername != null" >
+        createusername,
+      </if>
+      <if test="modifyuserid != null" >
+        modifyuserid,
+      </if>
+      <if test="modifyusername != null" >
+        modifyusername,
+      </if>
+      <if test="isdelete != null" >
+        isdelete,
+      </if>
+      <if test="isHotSearch != null" >
+        is_hot_search,
+      </if>
+      <if test="imgTraffic != null" >
+        img_traffic,
+      </if>
+      <if test="tags != null" >
+        tags,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="advertisingId != null" >
-        #{advertisingId,jdbcType=INTEGER},
+      <if test="scenicSpotId != null" >
+        #{scenicSpotId,jdbcType=INTEGER},
       </if>
-      <if test="type != null" >
-        #{type,jdbcType=INTEGER},
+      <if test="regionId != null" >
+        #{regionId,jdbcType=INTEGER},
       </if>
-      <if test="relaId != null" >
-        #{relaId,jdbcType=INTEGER},
+      <if test="name != null" >
+        #{name,jdbcType=NVARCHAR},
+      </if>
+      <if test="nameEn != null" >
+        #{nameEn,jdbcType=VARCHAR},
+      </if>
+      <if test="centerPointX != null" >
+        #{centerPointX,jdbcType=DECIMAL},
+      </if>
+      <if test="centerPointY != null" >
+        #{centerPointY,jdbcType=DECIMAL},
+      </if>
+      <if test="description != null" >
+        #{description,jdbcType=NVARCHAR},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=NVARCHAR},
+      </if>
+      <if test="busLine != null" >
+        #{busLine,jdbcType=NVARCHAR},
+      </if>
+      <if test="drivingDirections != null" >
+        #{drivingDirections,jdbcType=NVARCHAR},
+      </if>
+      <if test="startLevel != null" >
+        #{startLevel,jdbcType=DOUBLE},
+      </if>
+      <if test="history != null" >
+        #{history,jdbcType=NVARCHAR},
+      </if>
+      <if test="price != null" >
+        #{price,jdbcType=DOUBLE},
+      </if>
+      <if test="discount != null" >
+        #{discount,jdbcType=INTEGER},
+      </if>
+      <if test="startTime1 != null" >
+        #{startTime1,jdbcType=INTEGER},
+      </if>
+      <if test="endTime1 != null" >
+        #{endTime1,jdbcType=INTEGER},
+      </if>
+      <if test="startTime2 != null" >
+        #{startTime2,jdbcType=INTEGER},
+      </if>
+      <if test="endTime2 != null" >
+        #{endTime2,jdbcType=INTEGER},
+      </if>
+      <if test="recommendedPlaySeason != null" >
+        #{recommendedPlaySeason,jdbcType=NVARCHAR},
+      </if>
+      <if test="recommendedPlayTime != null" >
+        #{recommendedPlayTime,jdbcType=NVARCHAR},
+      </if>
+      <if test="commentsCount != null" >
+        #{commentsCount,jdbcType=BIGINT},
+      </if>
+      <if test="sosTel != null" >
+        #{sosTel,jdbcType=VARCHAR},
+      </if>
+      <if test="policeTel != null" >
+        #{policeTel,jdbcType=VARCHAR},
       </if>
       <if test="createdOn != null" >
         #{createdOn,jdbcType=TIMESTAMP},
@@ -68,19 +292,121 @@
       <if test="modifiedOn != null" >
         #{modifiedOn,jdbcType=TIMESTAMP},
       </if>
-      <if test="orderNo != null" >
-        #{orderNo,jdbcType=INTEGER},
+      <if test="slogan != null" >
+        #{slogan,jdbcType=NVARCHAR},
+      </if>
+      <if test="thumbnailPath != null" >
+        #{thumbnailPath,jdbcType=VARCHAR},
+      </if>
+      <if test="hisThumbnailPath != null" >
+        #{hisThumbnailPath,jdbcType=NVARCHAR},
+      </if>
+      <if test="imgCover != null" >
+        #{imgCover,jdbcType=NVARCHAR},
+      </if>
+      <if test="imgHotSearch != null" >
+        #{imgHotSearch,jdbcType=NVARCHAR},
+      </if>
+      <if test="imgSearch != null" >
+        #{imgSearch,jdbcType=NVARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=BIT},
+      </if>
+      <if test="createuserid != null" >
+        #{createuserid,jdbcType=NVARCHAR},
+      </if>
+      <if test="createusername != null" >
+        #{createusername,jdbcType=NVARCHAR},
+      </if>
+      <if test="modifyuserid != null" >
+        #{modifyuserid,jdbcType=NVARCHAR},
+      </if>
+      <if test="modifyusername != null" >
+        #{modifyusername,jdbcType=NVARCHAR},
+      </if>
+      <if test="isdelete != null" >
+        #{isdelete,jdbcType=BIT},
+      </if>
+      <if test="isHotSearch != null" >
+        #{isHotSearch,jdbcType=BIT},
+      </if>
+      <if test="imgTraffic != null" >
+        #{imgTraffic,jdbcType=NVARCHAR},
+      </if>
+      <if test="tags != null" >
+        #{tags,jdbcType=NVARCHAR},
       </if>
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="xyz.flym.carlis.persistence.domain.ScenicSpot" >
-    update advertising
+    update scenic_spot
     <set >
-      <if test="type != null" >
-        type = #{type,jdbcType=INTEGER},
+      <if test="regionId != null" >
+        region_id = #{regionId,jdbcType=INTEGER},
       </if>
-      <if test="relaId != null" >
-        rela_id = #{relaId,jdbcType=INTEGER},
+      <if test="name != null" >
+        name = #{name,jdbcType=NVARCHAR},
+      </if>
+      <if test="nameEn != null" >
+        name_en = #{nameEn,jdbcType=VARCHAR},
+      </if>
+      <if test="centerPointX != null" >
+        center_point_x = #{centerPointX,jdbcType=DECIMAL},
+      </if>
+      <if test="centerPointY != null" >
+        center_point_y = #{centerPointY,jdbcType=DECIMAL},
+      </if>
+      <if test="description != null" >
+        description = #{description,jdbcType=NVARCHAR},
+      </if>
+      <if test="address != null" >
+        address = #{address,jdbcType=NVARCHAR},
+      </if>
+      <if test="busLine != null" >
+        bus_line = #{busLine,jdbcType=NVARCHAR},
+      </if>
+      <if test="drivingDirections != null" >
+        driving_directions = #{drivingDirections,jdbcType=NVARCHAR},
+      </if>
+      <if test="startLevel != null" >
+        start_level = #{startLevel,jdbcType=DOUBLE},
+      </if>
+      <if test="history != null" >
+        history = #{history,jdbcType=NVARCHAR},
+      </if>
+      <if test="price != null" >
+        price = #{price,jdbcType=DOUBLE},
+      </if>
+      <if test="discount != null" >
+        discount = #{discount,jdbcType=INTEGER},
+      </if>
+      <if test="startTime1 != null" >
+        start_time1 = #{startTime1,jdbcType=INTEGER},
+      </if>
+      <if test="endTime1 != null" >
+        end_time1 = #{endTime1,jdbcType=INTEGER},
+      </if>
+      <if test="startTime2 != null" >
+        start_time2 = #{startTime2,jdbcType=INTEGER},
+      </if>
+      <if test="endTime2 != null" >
+        end_time2 = #{endTime2,jdbcType=INTEGER},
+      </if>
+      <if test="recommendedPlaySeason != null" >
+        recommended_play_season = #{recommendedPlaySeason,jdbcType=NVARCHAR},
+      </if>
+      <if test="recommendedPlayTime != null" >
+        recommended_play_time = #{recommendedPlayTime,jdbcType=NVARCHAR},
+      </if>
+      <if test="commentsCount != null" >
+        comments_count = #{commentsCount,jdbcType=BIGINT},
+      </if>
+      <if test="sosTel != null" >
+        sos_tel = #{sosTel,jdbcType=VARCHAR},
+      </if>
+      <if test="policeTel != null" >
+        police_tel = #{policeTel,jdbcType=VARCHAR},
       </if>
       <if test="createdOn != null" >
         created_on = #{createdOn,jdbcType=TIMESTAMP},
@@ -88,19 +414,95 @@
       <if test="modifiedOn != null" >
         modified_on = #{modifiedOn,jdbcType=TIMESTAMP},
       </if>
-      <if test="orderNo != null" >
-        order_no = #{orderNo,jdbcType=INTEGER},
+      <if test="slogan != null" >
+        slogan = #{slogan,jdbcType=NVARCHAR},
+      </if>
+      <if test="thumbnailPath != null" >
+        thumbnail_path = #{thumbnailPath,jdbcType=VARCHAR},
+      </if>
+      <if test="hisThumbnailPath != null" >
+        his_thumbnail_path = #{hisThumbnailPath,jdbcType=NVARCHAR},
+      </if>
+      <if test="imgCover != null" >
+        img_cover = #{imgCover,jdbcType=NVARCHAR},
+      </if>
+      <if test="imgHotSearch != null" >
+        img_hot_search = #{imgHotSearch,jdbcType=NVARCHAR},
+      </if>
+      <if test="imgSearch != null" >
+        img_search = #{imgSearch,jdbcType=NVARCHAR},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=BIT},
+      </if>
+      <if test="createuserid != null" >
+        createuserid = #{createuserid,jdbcType=NVARCHAR},
+      </if>
+      <if test="createusername != null" >
+        createusername = #{createusername,jdbcType=NVARCHAR},
+      </if>
+      <if test="modifyuserid != null" >
+        modifyuserid = #{modifyuserid,jdbcType=NVARCHAR},
+      </if>
+      <if test="modifyusername != null" >
+        modifyusername = #{modifyusername,jdbcType=NVARCHAR},
+      </if>
+      <if test="isdelete != null" >
+        isdelete = #{isdelete,jdbcType=BIT},
+      </if>
+      <if test="isHotSearch != null" >
+        is_hot_search = #{isHotSearch,jdbcType=BIT},
+      </if>
+      <if test="imgTraffic != null" >
+        img_traffic = #{imgTraffic,jdbcType=NVARCHAR},
+      </if>
+      <if test="tags != null" >
+        tags = #{tags,jdbcType=NVARCHAR},
       </if>
     </set>
-    where advertising_id = #{advertisingId,jdbcType=INTEGER}
+    where scenic_spot_id = #{scenicSpotId,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="xyz.flym.carlis.persistence.domain.ScenicSpot" >
-    update advertising
-    set type = #{type,jdbcType=INTEGER},
-      rela_id = #{relaId,jdbcType=INTEGER},
+    update scenic_spot
+    set region_id = #{regionId,jdbcType=INTEGER},
+      name = #{name,jdbcType=NVARCHAR},
+      name_en = #{nameEn,jdbcType=VARCHAR},
+      center_point_x = #{centerPointX,jdbcType=DECIMAL},
+      center_point_y = #{centerPointY,jdbcType=DECIMAL},
+      description = #{description,jdbcType=NVARCHAR},
+      address = #{address,jdbcType=NVARCHAR},
+      bus_line = #{busLine,jdbcType=NVARCHAR},
+      driving_directions = #{drivingDirections,jdbcType=NVARCHAR},
+      start_level = #{startLevel,jdbcType=DOUBLE},
+      history = #{history,jdbcType=NVARCHAR},
+      price = #{price,jdbcType=DOUBLE},
+      discount = #{discount,jdbcType=INTEGER},
+      start_time1 = #{startTime1,jdbcType=INTEGER},
+      end_time1 = #{endTime1,jdbcType=INTEGER},
+      start_time2 = #{startTime2,jdbcType=INTEGER},
+      end_time2 = #{endTime2,jdbcType=INTEGER},
+      recommended_play_season = #{recommendedPlaySeason,jdbcType=NVARCHAR},
+      recommended_play_time = #{recommendedPlayTime,jdbcType=NVARCHAR},
+      comments_count = #{commentsCount,jdbcType=BIGINT},
+      sos_tel = #{sosTel,jdbcType=VARCHAR},
+      police_tel = #{policeTel,jdbcType=VARCHAR},
       created_on = #{createdOn,jdbcType=TIMESTAMP},
       modified_on = #{modifiedOn,jdbcType=TIMESTAMP},
-      order_no = #{orderNo,jdbcType=INTEGER}
-    where advertising_id = #{advertisingId,jdbcType=INTEGER}
+      slogan = #{slogan,jdbcType=NVARCHAR},
+      thumbnail_path = #{thumbnailPath,jdbcType=VARCHAR},
+      his_thumbnail_path = #{hisThumbnailPath,jdbcType=NVARCHAR},
+      img_cover = #{imgCover,jdbcType=NVARCHAR},
+      img_hot_search = #{imgHotSearch,jdbcType=NVARCHAR},
+      img_search = #{imgSearch,jdbcType=NVARCHAR},
+      status = #{status,jdbcType=BIT},
+      createuserid = #{createuserid,jdbcType=NVARCHAR},
+      createusername = #{createusername,jdbcType=NVARCHAR},
+      modifyuserid = #{modifyuserid,jdbcType=NVARCHAR},
+      modifyusername = #{modifyusername,jdbcType=NVARCHAR},
+      isdelete = #{isdelete,jdbcType=BIT},
+      is_hot_search = #{isHotSearch,jdbcType=BIT},
+      img_traffic = #{imgTraffic,jdbcType=NVARCHAR},
+      tags = #{tags,jdbcType=NVARCHAR}
+    where scenic_spot_id = #{scenicSpotId,jdbcType=INTEGER}
   </update>
 </mapper>

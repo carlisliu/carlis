@@ -3,40 +3,58 @@ package xyz.flym.carlis.persistence.domain;
 import java.util.Date;
 
 public class UserPhotoAlbumImages {
-    private Integer advertisingId;
+    private Long userPhotoAlbumImagesId;
 
-    private Integer type;
+    private Integer userPhotoAlbumId;
 
-    private Integer relaId;
+    private String sourceImgPath;
+
+    private String thumbnailPath;
+
+    private String listImgPath;
 
     private Date createdOn;
 
     private Date modifiedOn;
 
-    private Integer orderNo;
-
-    public Integer getAdvertisingId() {
-        return advertisingId;
+    public Long getUserPhotoAlbumImagesId() {
+        return userPhotoAlbumImagesId;
     }
 
-    public void setAdvertisingId(Integer advertisingId) {
-        this.advertisingId = advertisingId;
+    public void setUserPhotoAlbumImagesId(Long userPhotoAlbumImagesId) {
+        this.userPhotoAlbumImagesId = userPhotoAlbumImagesId;
     }
 
-    public Integer getType() {
-        return type;
+    public Integer getUserPhotoAlbumId() {
+        return userPhotoAlbumId;
     }
 
-    public void setType(Integer type) {
-        this.type = type;
+    public void setUserPhotoAlbumId(Integer userPhotoAlbumId) {
+        this.userPhotoAlbumId = userPhotoAlbumId;
     }
 
-    public Integer getRelaId() {
-        return relaId;
+    public String getSourceImgPath() {
+        return sourceImgPath;
     }
 
-    public void setRelaId(Integer relaId) {
-        this.relaId = relaId;
+    public void setSourceImgPath(String sourceImgPath) {
+        this.sourceImgPath = sourceImgPath == null ? null : sourceImgPath.trim();
+    }
+
+    public String getThumbnailPath() {
+        return thumbnailPath;
+    }
+
+    public void setThumbnailPath(String thumbnailPath) {
+        this.thumbnailPath = thumbnailPath == null ? null : thumbnailPath.trim();
+    }
+
+    public String getListImgPath() {
+        return listImgPath;
+    }
+
+    public void setListImgPath(String listImgPath) {
+        this.listImgPath = listImgPath == null ? null : listImgPath.trim();
     }
 
     public Date getCreatedOn() {
@@ -53,13 +71,5 @@ public class UserPhotoAlbumImages {
 
     public void setModifiedOn(Date modifiedOn) {
         this.modifiedOn = modifiedOn;
-    }
-
-    public Integer getOrderNo() {
-        return orderNo;
-    }
-
-    public void setOrderNo(Integer orderNo) {
-        this.orderNo = orderNo;
     }
 }

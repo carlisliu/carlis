@@ -2,105 +2,92 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="xyz.flym.carlis.persistence.mapper.BaseAdminTokenMapper" >
   <resultMap id="BaseResultMap" type="xyz.flym.carlis.persistence.domain.BaseAdminToken" >
-    <id column="advertising_id" property="advertisingId" jdbcType="INTEGER" />
-    <result column="type" property="type" jdbcType="INTEGER" />
-    <result column="rela_id" property="relaId" jdbcType="INTEGER" />
+    <id column="userid" property="userid" jdbcType="NVARCHAR" />
+    <result column="token" property="token" jdbcType="NCHAR" />
+    <result column="refresh_token" property="refreshToken" jdbcType="NCHAR" />
+    <result column="expired" property="expired" jdbcType="TIMESTAMP" />
     <result column="created_on" property="createdOn" jdbcType="TIMESTAMP" />
-    <result column="modified_on" property="modifiedOn" jdbcType="TIMESTAMP" />
-    <result column="order_no" property="orderNo" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Base_Column_List" >
-    advertising_id, type, rela_id, created_on, modified_on, order_no
+    userid, token, refresh_token, expired, created_on
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
     select 
     <include refid="Base_Column_List" />
-    from advertising
-    where advertising_id = #{advertisingId,jdbcType=INTEGER}
+    from base_admin_token
+    where userid = #{userid,jdbcType=NVARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from advertising
-    where advertising_id = #{advertisingId,jdbcType=INTEGER}
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from base_admin_token
+    where userid = #{userid,jdbcType=NVARCHAR}
   </delete>
   <insert id="insert" parameterType="xyz.flym.carlis.persistence.domain.BaseAdminToken" >
-    insert into advertising (advertising_id, type, rela_id, 
-      created_on, modified_on, order_no
-      )
-    values (#{advertisingId,jdbcType=INTEGER}, #{type,jdbcType=INTEGER}, #{relaId,jdbcType=INTEGER}, 
-      #{createdOn,jdbcType=TIMESTAMP}, #{modifiedOn,jdbcType=TIMESTAMP}, #{orderNo,jdbcType=INTEGER}
-      )
+    insert into base_admin_token (userid, token, refresh_token, 
+      expired, created_on)
+    values (#{userid,jdbcType=NVARCHAR}, #{token,jdbcType=NCHAR}, #{refreshToken,jdbcType=NCHAR}, 
+      #{expired,jdbcType=TIMESTAMP}, #{createdOn,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="xyz.flym.carlis.persistence.domain.BaseAdminToken" >
-    insert into advertising
+    insert into base_admin_token
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="advertisingId != null" >
-        advertising_id,
+      <if test="userid != null" >
+        userid,
       </if>
-      <if test="type != null" >
-        type,
+      <if test="token != null" >
+        token,
       </if>
-      <if test="relaId != null" >
-        rela_id,
+      <if test="refreshToken != null" >
+        refresh_token,
+      </if>
+      <if test="expired != null" >
+        expired,
       </if>
       <if test="createdOn != null" >
         created_on,
       </if>
-      <if test="modifiedOn != null" >
-        modified_on,
-      </if>
-      <if test="orderNo != null" >
-        order_no,
-      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="advertisingId != null" >
-        #{advertisingId,jdbcType=INTEGER},
+      <if test="userid != null" >
+        #{userid,jdbcType=NVARCHAR},
       </if>
-      <if test="type != null" >
-        #{type,jdbcType=INTEGER},
+      <if test="token != null" >
+        #{token,jdbcType=NCHAR},
       </if>
-      <if test="relaId != null" >
-        #{relaId,jdbcType=INTEGER},
+      <if test="refreshToken != null" >
+        #{refreshToken,jdbcType=NCHAR},
+      </if>
+      <if test="expired != null" >
+        #{expired,jdbcType=TIMESTAMP},
       </if>
       <if test="createdOn != null" >
         #{createdOn,jdbcType=TIMESTAMP},
       </if>
-      <if test="modifiedOn != null" >
-        #{modifiedOn,jdbcType=TIMESTAMP},
-      </if>
-      <if test="orderNo != null" >
-        #{orderNo,jdbcType=INTEGER},
-      </if>
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="xyz.flym.carlis.persistence.domain.BaseAdminToken" >
-    update advertising
+    update base_admin_token
     <set >
-      <if test="type != null" >
-        type = #{type,jdbcType=INTEGER},
+      <if test="token != null" >
+        token = #{token,jdbcType=NCHAR},
       </if>
-      <if test="relaId != null" >
-        rela_id = #{relaId,jdbcType=INTEGER},
+      <if test="refreshToken != null" >
+        refresh_token = #{refreshToken,jdbcType=NCHAR},
+      </if>
+      <if test="expired != null" >
+        expired = #{expired,jdbcType=TIMESTAMP},
       </if>
       <if test="createdOn != null" >
         created_on = #{createdOn,jdbcType=TIMESTAMP},
       </if>
-      <if test="modifiedOn != null" >
-        modified_on = #{modifiedOn,jdbcType=TIMESTAMP},
-      </if>
-      <if test="orderNo != null" >
-        order_no = #{orderNo,jdbcType=INTEGER},
-      </if>
     </set>
-    where advertising_id = #{advertisingId,jdbcType=INTEGER}
+    where userid = #{userid,jdbcType=NVARCHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="xyz.flym.carlis.persistence.domain.BaseAdminToken" >
-    update advertising
-    set type = #{type,jdbcType=INTEGER},
-      rela_id = #{relaId,jdbcType=INTEGER},
-      created_on = #{createdOn,jdbcType=TIMESTAMP},
-      modified_on = #{modifiedOn,jdbcType=TIMESTAMP},
-      order_no = #{orderNo,jdbcType=INTEGER}
-    where advertising_id = #{advertisingId,jdbcType=INTEGER}
+    update base_admin_token
+    set token = #{token,jdbcType=NCHAR},
+      refresh_token = #{refreshToken,jdbcType=NCHAR},
+      expired = #{expired,jdbcType=TIMESTAMP},
+      created_on = #{createdOn,jdbcType=TIMESTAMP}
+    where userid = #{userid,jdbcType=NVARCHAR}
   </update>
 </mapper>

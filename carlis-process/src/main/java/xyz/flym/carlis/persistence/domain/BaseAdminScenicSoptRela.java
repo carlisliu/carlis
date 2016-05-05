@@ -3,40 +3,26 @@ package xyz.flym.carlis.persistence.domain;
 import java.util.Date;
 
 public class BaseAdminScenicSoptRela {
-    private Integer advertisingId;
+    private String amdinUserid;
 
-    private Integer type;
-
-    private Integer relaId;
+    private Integer scenicSpotId;
 
     private Date createdOn;
 
-    private Date modifiedOn;
-
-    private Integer orderNo;
-
-    public Integer getAdvertisingId() {
-        return advertisingId;
+    public String getAmdinUserid() {
+        return amdinUserid;
     }
 
-    public void setAdvertisingId(Integer advertisingId) {
-        this.advertisingId = advertisingId;
+    public void setAmdinUserid(String amdinUserid) {
+        this.amdinUserid = amdinUserid == null ? null : amdinUserid.trim();
     }
 
-    public Integer getType() {
-        return type;
+    public Integer getScenicSpotId() {
+        return scenicSpotId;
     }
 
-    public void setType(Integer type) {
-        this.type = type;
-    }
-
-    public Integer getRelaId() {
-        return relaId;
-    }
-
-    public void setRelaId(Integer relaId) {
-        this.relaId = relaId;
+    public void setScenicSpotId(Integer scenicSpotId) {
+        this.scenicSpotId = scenicSpotId;
     }
 
     public Date getCreatedOn() {
@@ -45,21 +31,5 @@ public class BaseAdminScenicSoptRela {
 
     public void setCreatedOn(Date createdOn) {
         this.createdOn = createdOn;
-    }
-
-    public Date getModifiedOn() {
-        return modifiedOn;
-    }
-
-    public void setModifiedOn(Date modifiedOn) {
-        this.modifiedOn = modifiedOn;
-    }
-
-    public Integer getOrderNo() {
-        return orderNo;
-    }
-
-    public void setOrderNo(Integer orderNo) {
-        this.orderNo = orderNo;
     }
 }

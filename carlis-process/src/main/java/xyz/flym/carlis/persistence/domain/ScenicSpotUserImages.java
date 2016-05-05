@@ -1,42 +1,111 @@
 package xyz.flym.carlis.persistence.domain;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 public class ScenicSpotUserImages {
-    private Integer advertisingId;
+    private Integer scenicSpotUserImagesId;
 
-    private Integer type;
+    private Integer scenicSpotId;
 
-    private Integer relaId;
+    private Integer userId;
+
+    private String name;
+
+    private String sourceImgPath;
+
+    private String thumbnailPath;
+
+    private Long viewCount;
+
+    private Long praiseCount;
+
+    private BigDecimal pointX;
+
+    private BigDecimal pointY;
 
     private Date createdOn;
 
     private Date modifiedOn;
 
-    private Integer orderNo;
-
-    public Integer getAdvertisingId() {
-        return advertisingId;
+    public Integer getScenicSpotUserImagesId() {
+        return scenicSpotUserImagesId;
     }
 
-    public void setAdvertisingId(Integer advertisingId) {
-        this.advertisingId = advertisingId;
+    public void setScenicSpotUserImagesId(Integer scenicSpotUserImagesId) {
+        this.scenicSpotUserImagesId = scenicSpotUserImagesId;
     }
 
-    public Integer getType() {
-        return type;
+    public Integer getScenicSpotId() {
+        return scenicSpotId;
     }
 
-    public void setType(Integer type) {
-        this.type = type;
+    public void setScenicSpotId(Integer scenicSpotId) {
+        this.scenicSpotId = scenicSpotId;
     }
 
-    public Integer getRelaId() {
-        return relaId;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setRelaId(Integer relaId) {
-        this.relaId = relaId;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name == null ? null : name.trim();
+    }
+
+    public String getSourceImgPath() {
+        return sourceImgPath;
+    }
+
+    public void setSourceImgPath(String sourceImgPath) {
+        this.sourceImgPath = sourceImgPath == null ? null : sourceImgPath.trim();
+    }
+
+    public String getThumbnailPath() {
+        return thumbnailPath;
+    }
+
+    public void setThumbnailPath(String thumbnailPath) {
+        this.thumbnailPath = thumbnailPath == null ? null : thumbnailPath.trim();
+    }
+
+    public Long getViewCount() {
+        return viewCount;
+    }
+
+    public void setViewCount(Long viewCount) {
+        this.viewCount = viewCount;
+    }
+
+    public Long getPraiseCount() {
+        return praiseCount;
+    }
+
+    public void setPraiseCount(Long praiseCount) {
+        this.praiseCount = praiseCount;
+    }
+
+    public BigDecimal getPointX() {
+        return pointX;
+    }
+
+    public void setPointX(BigDecimal pointX) {
+        this.pointX = pointX;
+    }
+
+    public BigDecimal getPointY() {
+        return pointY;
+    }
+
+    public void setPointY(BigDecimal pointY) {
+        this.pointY = pointY;
     }
 
     public Date getCreatedOn() {
@@ -53,13 +122,5 @@ public class ScenicSpotUserImages {
 
     public void setModifiedOn(Date modifiedOn) {
         this.modifiedOn = modifiedOn;
-    }
-
-    public Integer getOrderNo() {
-        return orderNo;
-    }
-
-    public void setOrderNo(Integer orderNo) {
-        this.orderNo = orderNo;
     }
 }

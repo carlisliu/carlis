@@ -3,24 +3,58 @@ package xyz.flym.carlis.persistence.domain;
 import java.util.Date;
 
 public class ScenicSpotComments {
-    private Integer advertisingId;
+    private Integer scenicSpotCommentsId;
+
+    private Integer scenicSpotId;
+
+    private String title;
+
+    private String content;
 
     private Integer type;
 
-    private Integer relaId;
+    private Long praiseCount;
+
+    private Double score;
+
+    private Integer userId;
 
     private Date createdOn;
 
     private Date modifiedOn;
 
-    private Integer orderNo;
+    private Long treadCount;
 
-    public Integer getAdvertisingId() {
-        return advertisingId;
+    public Integer getScenicSpotCommentsId() {
+        return scenicSpotCommentsId;
     }
 
-    public void setAdvertisingId(Integer advertisingId) {
-        this.advertisingId = advertisingId;
+    public void setScenicSpotCommentsId(Integer scenicSpotCommentsId) {
+        this.scenicSpotCommentsId = scenicSpotCommentsId;
+    }
+
+    public Integer getScenicSpotId() {
+        return scenicSpotId;
+    }
+
+    public void setScenicSpotId(Integer scenicSpotId) {
+        this.scenicSpotId = scenicSpotId;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title == null ? null : title.trim();
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content == null ? null : content.trim();
     }
 
     public Integer getType() {
@@ -31,12 +65,28 @@ public class ScenicSpotComments {
         this.type = type;
     }
 
-    public Integer getRelaId() {
-        return relaId;
+    public Long getPraiseCount() {
+        return praiseCount;
     }
 
-    public void setRelaId(Integer relaId) {
-        this.relaId = relaId;
+    public void setPraiseCount(Long praiseCount) {
+        this.praiseCount = praiseCount;
+    }
+
+    public Double getScore() {
+        return score;
+    }
+
+    public void setScore(Double score) {
+        this.score = score;
+    }
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     public Date getCreatedOn() {
@@ -55,11 +105,11 @@ public class ScenicSpotComments {
         this.modifiedOn = modifiedOn;
     }
 
-    public Integer getOrderNo() {
-        return orderNo;
+    public Long getTreadCount() {
+        return treadCount;
     }
 
-    public void setOrderNo(Integer orderNo) {
-        this.orderNo = orderNo;
+    public void setTreadCount(Long treadCount) {
+        this.treadCount = treadCount;
     }
 }

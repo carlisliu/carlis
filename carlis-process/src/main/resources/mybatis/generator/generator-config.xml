@@ -17,18 +17,18 @@
                         password="7qJH*1ZnRG4D1fOy"/>
 
         <javaModelGenerator targetPackage="xyz.flym.carlis.persistence.domain"
-                            targetProject="G:/Github/workspace/carlis/carlis-process/src/main/java">
+                            targetProject="f:/Github/workspace/carlis/carlis-process/src/main/java">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
 
         <sqlMapGenerator targetPackage="mybatic/sqlserver"
-                         targetProject="G:/Github/workspace/carlis/carlis-process/src/main/java">
+                         targetProject="f:/Github/workspace/carlis/carlis-process/src/main/java">
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
 
         <javaClientGenerator targetPackage="xyz.flym.carlis.persistence.mapper"
-                             targetProject="G:/Github/workspace/carlis/carlis-process/src/main/java" type="XMLMAPPER">
+                             targetProject="f:/Github/workspace/carlis/carlis-process/src/main/java" type="XMLMAPPER">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 
@@ -37,286 +37,287 @@
 		       enableDeleteByExample="false" enableSelectByExample="false"
 		       selectByExampleQueryId="false">
 		</table>
-		<table tableName="advertising" domainObjectName="BaseAdminScenicSoptRela"
+		<table tableName="base_admin_scenic_sopt_rela" domainObjectName="BaseAdminScenicSoptRela"
 		       enableCountByExample="false" enableUpdateByExample="false"
 		       enableDeleteByExample="false" enableSelectByExample="false"
 		       selectByExampleQueryId="false">
 		</table>
-		<table tableName="advertising" domainObjectName="BaseAdminToken"
+		<table tableName="base_admin_token" domainObjectName="BaseAdminToken"
 		       enableCountByExample="false" enableUpdateByExample="false"
 		       enableDeleteByExample="false" enableSelectByExample="false"
 		       selectByExampleQueryId="false">
 		</table>
-		<table tableName="advertising" domainObjectName="BaseAdminuserinfo"
+		<table tableName="base_adminuserinfo" domainObjectName="BaseAdminuserinfo"
 		       enableCountByExample="false" enableUpdateByExample="false"
 		       enableDeleteByExample="false" enableSelectByExample="false"
 		       selectByExampleQueryId="false">
 		</table>
-		<table tableName="advertising" domainObjectName="BaseRoleright"
+		<table tableName="base_roleright" domainObjectName="BaseRoleright"
 		       enableCountByExample="false" enableUpdateByExample="false"
 		       enableDeleteByExample="false" enableSelectByExample="false"
 		       selectByExampleQueryId="false">
 		</table>
-		<table tableName="advertising" domainObjectName="BaseRoles"
+		<table tableName="base_roles" domainObjectName="BaseRoles"
 		       enableCountByExample="false" enableUpdateByExample="false"
 		       enableDeleteByExample="false" enableSelectByExample="false"
 		       selectByExampleQueryId="false">
 		</table>
-		<table tableName="advertising" domainObjectName="BaseSysloginlog"
+		<table tableName="base_sysloginlog" domainObjectName="BaseSysloginlog"
 		       enableCountByExample="false" enableUpdateByExample="false"
 		       enableDeleteByExample="false" enableSelectByExample="false"
 		       selectByExampleQueryId="false">
 		</table>
-		<table tableName="advertising" domainObjectName="BaseSysmenu"
+		<table tableName="base_sysmenu" domainObjectName="BaseSysmenu"
 		       enableCountByExample="false" enableUpdateByExample="false"
 		       enableDeleteByExample="false" enableSelectByExample="false"
 		       selectByExampleQueryId="false">
 		</table>
-		<table tableName="advertising" domainObjectName="BaseUserScenicspot"
+		<table tableName="base_user_scenicspot" domainObjectName="BaseUserScenicspot"
 		       enableCountByExample="false" enableUpdateByExample="false"
 		       enableDeleteByExample="false" enableSelectByExample="false"
 		       selectByExampleQueryId="false">
 		</table>
-		<table tableName="advertising" domainObjectName="BaseUserright"
+		<table tableName="base_userright" domainObjectName="BaseUserright"
 		       enableCountByExample="false" enableUpdateByExample="false"
 		       enableDeleteByExample="false" enableSelectByExample="false"
 		       selectByExampleQueryId="false">
 		</table>
-		<table tableName="advertising" domainObjectName="BaseUserrole"
+		<table tableName="base_userrole" domainObjectName="BaseUserrole"
 		       enableCountByExample="false" enableUpdateByExample="false"
 		       enableDeleteByExample="false" enableSelectByExample="false"
 		       selectByExampleQueryId="false">
 		</table>
-		<table tableName="advertising" domainObjectName="City"
+		<table tableName="city" domainObjectName="City"
 		       enableCountByExample="false" enableUpdateByExample="false"
 		       enableDeleteByExample="false" enableSelectByExample="false"
 		       selectByExampleQueryId="false">
 		</table>
-		<table tableName="advertising" domainObjectName="CityExtend"
+		<table tableName="city_extend" domainObjectName="CityExtend"
 		       enableCountByExample="false" enableUpdateByExample="false"
 		       enableDeleteByExample="false" enableSelectByExample="false"
 		       selectByExampleQueryId="false">
 		</table>
-		<table tableName="advertising" domainObjectName="CityImages"
+		<table tableName="city_images" domainObjectName="CityImages"
 		       enableCountByExample="false" enableUpdateByExample="false"
 		       enableDeleteByExample="false" enableSelectByExample="false"
 		       selectByExampleQueryId="false">
 		</table>
-		<table tableName="advertising" domainObjectName="CitySpecialRecommendation"
+		<table tableName="city_special_recommendation" domainObjectName="CitySpecialRecommendation"
 		       enableCountByExample="false" enableUpdateByExample="false"
 		       enableDeleteByExample="false" enableSelectByExample="false"
 		       selectByExampleQueryId="false">
 		</table>
-		<table tableName="advertising" domainObjectName="County"
+		<table tableName="county" domainObjectName="County"
 		       enableCountByExample="false" enableUpdateByExample="false"
 		       enableDeleteByExample="false" enableSelectByExample="false"
 		       selectByExampleQueryId="false">
 		</table>
-		<table tableName="advertising" domainObjectName="CountyImages"
+		<table tableName="county_images" domainObjectName="CountyImages"
 		       enableCountByExample="false" enableUpdateByExample="false"
 		       enableDeleteByExample="false" enableSelectByExample="false"
 		       selectByExampleQueryId="false">
 		</table>
-		<table tableName="advertising" domainObjectName="Dishes"
+		<table tableName="dishes" domainObjectName="Dishes"
 		       enableCountByExample="false" enableUpdateByExample="false"
 		       enableDeleteByExample="false" enableSelectByExample="false"
 		       selectByExampleQueryId="false">
 		</table>
-		<table tableName="advertising" domainObjectName="DishesImages"
+		<table tableName="dishes_images" domainObjectName="DishesImages"
 		       enableCountByExample="false" enableUpdateByExample="false"
 		       enableDeleteByExample="false" enableSelectByExample="false"
 		       selectByExampleQueryId="false">
 		</table>
-		<table tableName="advertising" domainObjectName="Entertainment"
+		<table tableName="entertainment" domainObjectName="Entertainment"
 		       enableCountByExample="false" enableUpdateByExample="false"
 		       enableDeleteByExample="false" enableSelectByExample="false"
 		       selectByExampleQueryId="false">
 		</table>
-		<table tableName="advertising" domainObjectName="EntertainmentImages"
+		<table tableName="entertainment_images" domainObjectName="EntertainmentImages"
 		       enableCountByExample="false" enableUpdateByExample="false"
 		       enableDeleteByExample="false" enableSelectByExample="false"
 		       selectByExampleQueryId="false">
 		</table>
-		<table tableName="advertising" domainObjectName="Hotel"
+		<table tableName="hotel" domainObjectName="Hotel"
 		       enableCountByExample="false" enableUpdateByExample="false"
 		       enableDeleteByExample="false" enableSelectByExample="false"
 		       selectByExampleQueryId="false">
 		</table>
-		<table tableName="advertising" domainObjectName="HotelService"
+		<table tableName="hotel_service" domainObjectName="HotelService"
 		       enableCountByExample="false" enableUpdateByExample="false"
 		       enableDeleteByExample="false" enableSelectByExample="false"
 		       selectByExampleQueryId="false">
 		</table>
-		<table tableName="advertising" domainObjectName="HotelServiceImages"
+		<table tableName="hotel_service_images" domainObjectName="HotelServiceImages"
 		       enableCountByExample="false" enableUpdateByExample="false"
 		       enableDeleteByExample="false" enableSelectByExample="false"
 		       selectByExampleQueryId="false">
 		</table>
-		<table tableName="advertising" domainObjectName="JourneyBaseInfo"
+		<table tableName="journey_base_info" domainObjectName="JourneyBaseInfo"
 		       enableCountByExample="false" enableUpdateByExample="false"
 		       enableDeleteByExample="false" enableSelectByExample="false"
 		       selectByExampleQueryId="false">
 		</table>
-		<table tableName="advertising" domainObjectName="JourneyInfo"
+		<table tableName="journey_info" domainObjectName="JourneyInfo"
 		       enableCountByExample="false" enableUpdateByExample="false"
 		       enableDeleteByExample="false" enableSelectByExample="false"
 		       selectByExampleQueryId="false">
 		</table>
-		<table tableName="advertising" domainObjectName="Landscape"
+		<table tableName="landscape" domainObjectName="Landscape"
 		       enableCountByExample="false" enableUpdateByExample="false"
 		       enableDeleteByExample="false" enableSelectByExample="false"
 		       selectByExampleQueryId="false">
 		</table>
-		<table tableName="advertising" domainObjectName="LandscapeImages"
+		<table tableName="landscape_images" domainObjectName="LandscapeImages"
 		       enableCountByExample="false" enableUpdateByExample="false"
 		       enableDeleteByExample="false" enableSelectByExample="false"
 		       selectByExampleQueryId="false">
 		</table>
-		<table tableName="advertising" domainObjectName="LandscapeType"
+		<table tableName="landscape_type" domainObjectName="LandscapeType"
 		       enableCountByExample="false" enableUpdateByExample="false"
 		       enableDeleteByExample="false" enableSelectByExample="false"
 		       selectByExampleQueryId="false">
 		</table>
-		<table tableName="advertising" domainObjectName="Region"
+		<table tableName="region" domainObjectName="Region"
 		       enableCountByExample="false" enableUpdateByExample="false"
 		       enableDeleteByExample="false" enableSelectByExample="false"
 		       selectByExampleQueryId="false">
 		</table>
-		<table tableName="advertising" domainObjectName="Restaurant"
+		<table tableName="restaurant" domainObjectName="Restaurant"
 		       enableCountByExample="false" enableUpdateByExample="false"
 		       enableDeleteByExample="false" enableSelectByExample="false"
 		       selectByExampleQueryId="false">
 		</table>
-		<table tableName="advertising" domainObjectName="ScenicSpot"
+		<table tableName="scenic_spot" domainObjectName="ScenicSpot"
 		       enableCountByExample="false" enableUpdateByExample="false"
 		       enableDeleteByExample="false" enableSelectByExample="false"
 		       selectByExampleQueryId="false">
 		</table>
-		<table tableName="advertising" domainObjectName="ScenicSpotActivity"
+		<table tableName="scenic_spot_activity" domainObjectName="ScenicSpotActivity"
 		       enableCountByExample="false" enableUpdateByExample="false"
 		       enableDeleteByExample="false" enableSelectByExample="false"
 		       selectByExampleQueryId="false">
 		</table>
-		<table tableName="advertising" domainObjectName="ScenicSpotComments"
+		<table tableName="scenic_spot_comments" domainObjectName="ScenicSpotComments"
 		       enableCountByExample="false" enableUpdateByExample="false"
 		       enableDeleteByExample="false" enableSelectByExample="false"
 		       selectByExampleQueryId="false">
 		</table>
-		<table tableName="advertising" domainObjectName="ScenicSpotExtend"
+		<table tableName="scenic_spot_extend" domainObjectName="ScenicSpotExtend"
 		       enableCountByExample="false" enableUpdateByExample="false"
 		       enableDeleteByExample="false" enableSelectByExample="false"
 		       selectByExampleQueryId="false">
 		</table>
-		<table tableName="advertising" domainObjectName="ScenicSpotFeedback"
+		<table tableName="scenic_spot_feedback" domainObjectName="ScenicSpotFeedback"
 		       enableCountByExample="false" enableUpdateByExample="false"
 		       enableDeleteByExample="false" enableSelectByExample="false"
 		       selectByExampleQueryId="false">
 		</table>
-		<table tableName="advertising" domainObjectName="ScenicSpotHotelRela"
+		<table tableName="scenic_spot_hotel_rela" domainObjectName="ScenicSpotHotelRela"
 		       enableCountByExample="false" enableUpdateByExample="false"
 		       enableDeleteByExample="false" enableSelectByExample="false"
 		       selectByExampleQueryId="false">
 		</table>
-		<table tableName="advertising" domainObjectName="ScenicSpotImages"
+		<table tableName="scenic_spot_images" domainObjectName="ScenicSpotImages"
 		       enableCountByExample="false" enableUpdateByExample="false"
 		       enableDeleteByExample="false" enableSelectByExample="false"
 		       selectByExampleQueryId="false">
 		</table>
-		<table tableName="advertising" domainObjectName="ScenicSpotLive"
+		<table tableName="scenic_spot_live" domainObjectName="ScenicSpotLive"
 		       enableCountByExample="false" enableUpdateByExample="false"
 		       enableDeleteByExample="false" enableSelectByExample="false"
 		       selectByExampleQueryId="false">
 		</table>
-		<table tableName="advertising" domainObjectName="ScenicSpotPoints"
+		<table tableName="scenic_spot_points" domainObjectName="ScenicSpotPoints"
 		       enableCountByExample="false" enableUpdateByExample="false"
 		       enableDeleteByExample="false" enableSelectByExample="false"
 		       selectByExampleQueryId="false">
 		</table>
-		<table tableName="advertising" domainObjectName="ScenicSpotRestaurantRela"
+		<table tableName="scenic_spot_restaurant_rela" domainObjectName="ScenicSpotRestaurantRela"
 		       enableCountByExample="false" enableUpdateByExample="false"
 		       enableDeleteByExample="false" enableSelectByExample="false"
 		       selectByExampleQueryId="false">
 		</table>
-		<table tableName="advertising" domainObjectName="ScenicSpotSos"
+		<table tableName="scenic_spot_sos" domainObjectName="ScenicSpotSos"
 		       enableCountByExample="false" enableUpdateByExample="false"
 		       enableDeleteByExample="false" enableSelectByExample="false"
 		       selectByExampleQueryId="false">
 		</table>
-		<table tableName="advertising" domainObjectName="ScenicSpotTicket"
+		<table tableName="scenic_spot_ticket" domainObjectName="ScenicSpotTicket"
 		       enableCountByExample="false" enableUpdateByExample="false"
 		       enableDeleteByExample="false" enableSelectByExample="false"
 		       selectByExampleQueryId="false">
 		</table>
-		<table tableName="advertising" domainObjectName="ScenicSpotUserImages"
+		<table tableName="scenic_spot_user_images" domainObjectName="ScenicSpotUserImages"
 		       enableCountByExample="false" enableUpdateByExample="false"
 		       enableDeleteByExample="false" enableSelectByExample="false"
 		       selectByExampleQueryId="false">
 		</table>
-		<table tableName="advertising" domainObjectName="SearchIndex"
+		<table tableName="search_index" domainObjectName="SearchIndex"
 		       enableCountByExample="false" enableUpdateByExample="false"
 		       enableDeleteByExample="false" enableSelectByExample="false"
 		       selectByExampleQueryId="false">
 		</table>
-		<table tableName="advertising" domainObjectName="SpecialRecommendation"
+		<table tableName="special_recommendation" domainObjectName="SpecialRecommendation"
 		       enableCountByExample="false" enableUpdateByExample="false"
 		       enableDeleteByExample="false" enableSelectByExample="false"
 		       selectByExampleQueryId="false">
 		</table>
-		<table tableName="advertising" domainObjectName="SwimTogether"
+		<table tableName="swim_together" domainObjectName="SwimTogether"
 		       enableCountByExample="false" enableUpdateByExample="false"
 		       enableDeleteByExample="false" enableSelectByExample="false"
 		       selectByExampleQueryId="false">
 		</table>
-		<table tableName="advertising" domainObjectName="SwimTogetherRoute"
+		<table tableName="swim_together_route" domainObjectName="SwimTogetherRoute"
 		       enableCountByExample="false" enableUpdateByExample="false"
 		       enableDeleteByExample="false" enableSelectByExample="false"
 		       selectByExampleQueryId="false">
 		</table>
-		<table tableName="advertising" domainObjectName="TrafficExtend"
+		<table tableName="traffic_extend" domainObjectName="TrafficExtend"
 		       enableCountByExample="false" enableUpdateByExample="false"
 		       enableDeleteByExample="false" enableSelectByExample="false"
 		       selectByExampleQueryId="false">
 		</table>
-		<table tableName="advertising" domainObjectName="TravelStrategyBase"
+		<table tableName="travel_strategy_base" domainObjectName="TravelStrategyBase"
 		       enableCountByExample="false" enableUpdateByExample="false"
 		       enableDeleteByExample="false" enableSelectByExample="false"
 		       selectByExampleQueryId="false">
 		</table>
-		<table tableName="advertising" domainObjectName="TravelStrategyTrip"
+		<table tableName="travel_strategy_trip" domainObjectName="TravelStrategyTrip"
 		       enableCountByExample="false" enableUpdateByExample="false"
 		       enableDeleteByExample="false" enableSelectByExample="false"
 		       selectByExampleQueryId="false">
 		</table>
-		<table tableName="advertising" domainObjectName="UserPhotoAlbum"
+		<table tableName="user_photo_album" domainObjectName="UserPhotoAlbum"
 		       enableCountByExample="false" enableUpdateByExample="false"
 		       enableDeleteByExample="false" enableSelectByExample="false"
 		       selectByExampleQueryId="false">
 		</table>
-		<table tableName="advertising" domainObjectName="UserPhotoAlbumImages"
+		<table tableName="user_photo_album_images" domainObjectName="UserPhotoAlbumImages"
 		       enableCountByExample="false" enableUpdateByExample="false"
 		       enableDeleteByExample="false" enableSelectByExample="false"
 		       selectByExampleQueryId="false">
 		</table>
-		<table tableName="advertising" domainObjectName="Users"
+		<table tableName="users" domainObjectName="Users"
 		       enableCountByExample="false" enableUpdateByExample="false"
 		       enableDeleteByExample="false" enableSelectByExample="false"
 		       selectByExampleQueryId="false">
 		</table>
-		<table tableName="advertising" domainObjectName="UsersInfo"
+		<table tableName="users_info" domainObjectName="UsersInfo"
 		       enableCountByExample="false" enableUpdateByExample="false"
 		       enableDeleteByExample="false" enableSelectByExample="false"
 		       selectByExampleQueryId="false">
 		</table>
-		<table tableName="advertising" domainObjectName="UsersScenicSpotTrajectory"
+		<table tableName="users_scenic_spot_trajectory" domainObjectName="UsersScenicSpotTrajectory"
 		       enableCountByExample="false" enableUpdateByExample="false"
 		       enableDeleteByExample="false" enableSelectByExample="false"
 		       selectByExampleQueryId="false">
 		</table>
-		<table tableName="advertising" domainObjectName="UsersToken"
+		<table tableName="users_token" domainObjectName="UsersToken"
 		       enableCountByExample="false" enableUpdateByExample="false"
 		       enableDeleteByExample="false" enableSelectByExample="false"
 		       selectByExampleQueryId="false">
 		</table>
+		
 
 
     </context>

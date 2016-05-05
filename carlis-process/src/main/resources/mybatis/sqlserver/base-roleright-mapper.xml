@@ -2,105 +2,105 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="xyz.flym.carlis.persistence.mapper.BaseRolerightMapper" >
   <resultMap id="BaseResultMap" type="xyz.flym.carlis.persistence.domain.BaseRoleright" >
-    <id column="advertising_id" property="advertisingId" jdbcType="INTEGER" />
-    <result column="type" property="type" jdbcType="INTEGER" />
-    <result column="rela_id" property="relaId" jdbcType="INTEGER" />
-    <result column="created_on" property="createdOn" jdbcType="TIMESTAMP" />
-    <result column="modified_on" property="modifiedOn" jdbcType="TIMESTAMP" />
-    <result column="order_no" property="orderNo" jdbcType="INTEGER" />
+    <id column="RoleRight_ID" property="rolerightId" jdbcType="NVARCHAR" />
+    <result column="Roles_ID" property="rolesId" jdbcType="NVARCHAR" />
+    <result column="Menu_Id" property="menuId" jdbcType="NVARCHAR" />
+    <result column="CreateDate" property="createdate" jdbcType="TIMESTAMP" />
+    <result column="CreateUserId" property="createuserid" jdbcType="NVARCHAR" />
+    <result column="CreateUserName" property="createusername" jdbcType="NVARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
-    advertising_id, type, rela_id, created_on, modified_on, order_no
+    RoleRight_ID, Roles_ID, Menu_Id, CreateDate, CreateUserId, CreateUserName
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
     select 
     <include refid="Base_Column_List" />
-    from advertising
-    where advertising_id = #{advertisingId,jdbcType=INTEGER}
+    from base_roleright
+    where RoleRight_ID = #{rolerightId,jdbcType=NVARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from advertising
-    where advertising_id = #{advertisingId,jdbcType=INTEGER}
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from base_roleright
+    where RoleRight_ID = #{rolerightId,jdbcType=NVARCHAR}
   </delete>
   <insert id="insert" parameterType="xyz.flym.carlis.persistence.domain.BaseRoleright" >
-    insert into advertising (advertising_id, type, rela_id, 
-      created_on, modified_on, order_no
+    insert into base_roleright (RoleRight_ID, Roles_ID, Menu_Id, 
+      CreateDate, CreateUserId, CreateUserName
       )
-    values (#{advertisingId,jdbcType=INTEGER}, #{type,jdbcType=INTEGER}, #{relaId,jdbcType=INTEGER}, 
-      #{createdOn,jdbcType=TIMESTAMP}, #{modifiedOn,jdbcType=TIMESTAMP}, #{orderNo,jdbcType=INTEGER}
+    values (#{rolerightId,jdbcType=NVARCHAR}, #{rolesId,jdbcType=NVARCHAR}, #{menuId,jdbcType=NVARCHAR}, 
+      #{createdate,jdbcType=TIMESTAMP}, #{createuserid,jdbcType=NVARCHAR}, #{createusername,jdbcType=NVARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="xyz.flym.carlis.persistence.domain.BaseRoleright" >
-    insert into advertising
+    insert into base_roleright
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="advertisingId != null" >
-        advertising_id,
+      <if test="rolerightId != null" >
+        RoleRight_ID,
       </if>
-      <if test="type != null" >
-        type,
+      <if test="rolesId != null" >
+        Roles_ID,
       </if>
-      <if test="relaId != null" >
-        rela_id,
+      <if test="menuId != null" >
+        Menu_Id,
       </if>
-      <if test="createdOn != null" >
-        created_on,
+      <if test="createdate != null" >
+        CreateDate,
       </if>
-      <if test="modifiedOn != null" >
-        modified_on,
+      <if test="createuserid != null" >
+        CreateUserId,
       </if>
-      <if test="orderNo != null" >
-        order_no,
+      <if test="createusername != null" >
+        CreateUserName,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="advertisingId != null" >
-        #{advertisingId,jdbcType=INTEGER},
+      <if test="rolerightId != null" >
+        #{rolerightId,jdbcType=NVARCHAR},
       </if>
-      <if test="type != null" >
-        #{type,jdbcType=INTEGER},
+      <if test="rolesId != null" >
+        #{rolesId,jdbcType=NVARCHAR},
       </if>
-      <if test="relaId != null" >
-        #{relaId,jdbcType=INTEGER},
+      <if test="menuId != null" >
+        #{menuId,jdbcType=NVARCHAR},
       </if>
-      <if test="createdOn != null" >
-        #{createdOn,jdbcType=TIMESTAMP},
+      <if test="createdate != null" >
+        #{createdate,jdbcType=TIMESTAMP},
       </if>
-      <if test="modifiedOn != null" >
-        #{modifiedOn,jdbcType=TIMESTAMP},
+      <if test="createuserid != null" >
+        #{createuserid,jdbcType=NVARCHAR},
       </if>
-      <if test="orderNo != null" >
-        #{orderNo,jdbcType=INTEGER},
+      <if test="createusername != null" >
+        #{createusername,jdbcType=NVARCHAR},
       </if>
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="xyz.flym.carlis.persistence.domain.BaseRoleright" >
-    update advertising
+    update base_roleright
     <set >
-      <if test="type != null" >
-        type = #{type,jdbcType=INTEGER},
+      <if test="rolesId != null" >
+        Roles_ID = #{rolesId,jdbcType=NVARCHAR},
       </if>
-      <if test="relaId != null" >
-        rela_id = #{relaId,jdbcType=INTEGER},
+      <if test="menuId != null" >
+        Menu_Id = #{menuId,jdbcType=NVARCHAR},
       </if>
-      <if test="createdOn != null" >
-        created_on = #{createdOn,jdbcType=TIMESTAMP},
+      <if test="createdate != null" >
+        CreateDate = #{createdate,jdbcType=TIMESTAMP},
       </if>
-      <if test="modifiedOn != null" >
-        modified_on = #{modifiedOn,jdbcType=TIMESTAMP},
+      <if test="createuserid != null" >
+        CreateUserId = #{createuserid,jdbcType=NVARCHAR},
       </if>
-      <if test="orderNo != null" >
-        order_no = #{orderNo,jdbcType=INTEGER},
+      <if test="createusername != null" >
+        CreateUserName = #{createusername,jdbcType=NVARCHAR},
       </if>
     </set>
-    where advertising_id = #{advertisingId,jdbcType=INTEGER}
+    where RoleRight_ID = #{rolerightId,jdbcType=NVARCHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="xyz.flym.carlis.persistence.domain.BaseRoleright" >
-    update advertising
-    set type = #{type,jdbcType=INTEGER},
-      rela_id = #{relaId,jdbcType=INTEGER},
-      created_on = #{createdOn,jdbcType=TIMESTAMP},
-      modified_on = #{modifiedOn,jdbcType=TIMESTAMP},
-      order_no = #{orderNo,jdbcType=INTEGER}
-    where advertising_id = #{advertisingId,jdbcType=INTEGER}
+    update base_roleright
+    set Roles_ID = #{rolesId,jdbcType=NVARCHAR},
+      Menu_Id = #{menuId,jdbcType=NVARCHAR},
+      CreateDate = #{createdate,jdbcType=TIMESTAMP},
+      CreateUserId = #{createuserid,jdbcType=NVARCHAR},
+      CreateUserName = #{createusername,jdbcType=NVARCHAR}
+    where RoleRight_ID = #{rolerightId,jdbcType=NVARCHAR}
   </update>
 </mapper>

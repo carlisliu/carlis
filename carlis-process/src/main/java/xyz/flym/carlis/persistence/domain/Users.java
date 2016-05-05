@@ -3,40 +3,66 @@ package xyz.flym.carlis.persistence.domain;
 import java.util.Date;
 
 public class Users {
-    private Integer advertisingId;
+    private Integer userId;
 
-    private Integer type;
+    private String userName;
 
-    private Integer relaId;
+    private String password;
+
+    private Integer mobileCode;
+
+    private Date checkCodeTime;
+
+    private Integer status;
 
     private Date createdOn;
 
-    private Date modifiedOn;
-
-    private Integer orderNo;
-
-    public Integer getAdvertisingId() {
-        return advertisingId;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setAdvertisingId(Integer advertisingId) {
-        this.advertisingId = advertisingId;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
-    public Integer getType() {
-        return type;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setType(Integer type) {
-        this.type = type;
+    public void setUserName(String userName) {
+        this.userName = userName == null ? null : userName.trim();
     }
 
-    public Integer getRelaId() {
-        return relaId;
+    public String getPassword() {
+        return password;
     }
 
-    public void setRelaId(Integer relaId) {
-        this.relaId = relaId;
+    public void setPassword(String password) {
+        this.password = password == null ? null : password.trim();
+    }
+
+    public Integer getMobileCode() {
+        return mobileCode;
+    }
+
+    public void setMobileCode(Integer mobileCode) {
+        this.mobileCode = mobileCode;
+    }
+
+    public Date getCheckCodeTime() {
+        return checkCodeTime;
+    }
+
+    public void setCheckCodeTime(Date checkCodeTime) {
+        this.checkCodeTime = checkCodeTime;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 
     public Date getCreatedOn() {
@@ -45,21 +71,5 @@ public class Users {
 
     public void setCreatedOn(Date createdOn) {
         this.createdOn = createdOn;
-    }
-
-    public Date getModifiedOn() {
-        return modifiedOn;
-    }
-
-    public void setModifiedOn(Date modifiedOn) {
-        this.modifiedOn = modifiedOn;
-    }
-
-    public Integer getOrderNo() {
-        return orderNo;
-    }
-
-    public void setOrderNo(Integer orderNo) {
-        this.orderNo = orderNo;
     }
 }

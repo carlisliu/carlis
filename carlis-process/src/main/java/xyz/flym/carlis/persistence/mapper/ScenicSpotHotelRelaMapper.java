@@ -3,13 +3,13 @@ package xyz.flym.carlis.persistence.mapper;
 import xyz.flym.carlis.persistence.domain.ScenicSpotHotelRela;
 
 public interface ScenicSpotHotelRelaMapper {
-    int deleteByPrimaryKey(Integer advertisingId);
+    int deleteByPrimaryKey(int key);
 
     int insert(ScenicSpotHotelRela record);
 
     int insertSelective(ScenicSpotHotelRela record);
 
-    ScenicSpotHotelRela selectByPrimaryKey(Integer advertisingId);
+    ScenicSpotHotelRela selectByPrimaryKey(int key);
 
     int updateByPrimaryKeySelective(ScenicSpotHotelRela record);
 

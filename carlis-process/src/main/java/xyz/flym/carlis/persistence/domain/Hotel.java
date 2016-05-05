@@ -3,40 +3,48 @@ package xyz.flym.carlis.persistence.domain;
 import java.util.Date;
 
 public class Hotel {
-    private Integer advertisingId;
+    private Integer hotelId;
 
-    private Integer type;
+    private String name;
 
-    private Integer relaId;
+    private Double startLevel;
+
+    private String tel;
 
     private Date createdOn;
 
     private Date modifiedOn;
 
-    private Integer orderNo;
-
-    public Integer getAdvertisingId() {
-        return advertisingId;
+    public Integer getHotelId() {
+        return hotelId;
     }
 
-    public void setAdvertisingId(Integer advertisingId) {
-        this.advertisingId = advertisingId;
+    public void setHotelId(Integer hotelId) {
+        this.hotelId = hotelId;
     }
 
-    public Integer getType() {
-        return type;
+    public String getName() {
+        return name;
     }
 
-    public void setType(Integer type) {
-        this.type = type;
+    public void setName(String name) {
+        this.name = name == null ? null : name.trim();
     }
 
-    public Integer getRelaId() {
-        return relaId;
+    public Double getStartLevel() {
+        return startLevel;
     }
 
-    public void setRelaId(Integer relaId) {
-        this.relaId = relaId;
+    public void setStartLevel(Double startLevel) {
+        this.startLevel = startLevel;
+    }
+
+    public String getTel() {
+        return tel;
+    }
+
+    public void setTel(String tel) {
+        this.tel = tel == null ? null : tel.trim();
     }
 
     public Date getCreatedOn() {
@@ -53,13 +61,5 @@ public class Hotel {
 
     public void setModifiedOn(Date modifiedOn) {
         this.modifiedOn = modifiedOn;
-    }
-
-    public Integer getOrderNo() {
-        return orderNo;
-    }
-
-    public void setOrderNo(Integer orderNo) {
-        this.orderNo = orderNo;
     }
 }

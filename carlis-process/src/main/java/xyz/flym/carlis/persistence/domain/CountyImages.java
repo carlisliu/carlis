@@ -3,40 +3,38 @@ package xyz.flym.carlis.persistence.domain;
 import java.util.Date;
 
 public class CountyImages {
-    private Integer advertisingId;
+    private Integer countyImagesId;
 
-    private Integer type;
+    private String sourceImgPath;
 
-    private Integer relaId;
+    private String thumbnailPath;
 
     private Date createdOn;
 
     private Date modifiedOn;
 
-    private Integer orderNo;
-
-    public Integer getAdvertisingId() {
-        return advertisingId;
+    public Integer getCountyImagesId() {
+        return countyImagesId;
     }
 
-    public void setAdvertisingId(Integer advertisingId) {
-        this.advertisingId = advertisingId;
+    public void setCountyImagesId(Integer countyImagesId) {
+        this.countyImagesId = countyImagesId;
     }
 
-    public Integer getType() {
-        return type;
+    public String getSourceImgPath() {
+        return sourceImgPath;
     }
 
-    public void setType(Integer type) {
-        this.type = type;
+    public void setSourceImgPath(String sourceImgPath) {
+        this.sourceImgPath = sourceImgPath == null ? null : sourceImgPath.trim();
     }
 
-    public Integer getRelaId() {
-        return relaId;
+    public String getThumbnailPath() {
+        return thumbnailPath;
     }
 
-    public void setRelaId(Integer relaId) {
-        this.relaId = relaId;
+    public void setThumbnailPath(String thumbnailPath) {
+        this.thumbnailPath = thumbnailPath == null ? null : thumbnailPath.trim();
     }
 
     public Date getCreatedOn() {
@@ -53,13 +51,5 @@ public class CountyImages {
 
     public void setModifiedOn(Date modifiedOn) {
         this.modifiedOn = modifiedOn;
-    }
-
-    public Integer getOrderNo() {
-        return orderNo;
-    }
-
-    public void setOrderNo(Integer orderNo) {
-        this.orderNo = orderNo;
     }
 }

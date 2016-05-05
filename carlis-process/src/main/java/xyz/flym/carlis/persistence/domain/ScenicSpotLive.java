@@ -3,40 +3,78 @@ package xyz.flym.carlis.persistence.domain;
 import java.util.Date;
 
 public class ScenicSpotLive {
-    private Integer advertisingId;
+    private Integer scenicSpotLiveId;
 
-    private Integer type;
+    private Integer scenicSpotId;
 
-    private Integer relaId;
+    private Integer userId;
+
+    private String name;
+
+    private String nameEn;
+
+    private String sourceImgPath;
+
+    private String thumbnailPath;
 
     private Date createdOn;
 
     private Date modifiedOn;
 
-    private Integer orderNo;
-
-    public Integer getAdvertisingId() {
-        return advertisingId;
+    public Integer getScenicSpotLiveId() {
+        return scenicSpotLiveId;
     }
 
-    public void setAdvertisingId(Integer advertisingId) {
-        this.advertisingId = advertisingId;
+    public void setScenicSpotLiveId(Integer scenicSpotLiveId) {
+        this.scenicSpotLiveId = scenicSpotLiveId;
     }
 
-    public Integer getType() {
-        return type;
+    public Integer getScenicSpotId() {
+        return scenicSpotId;
     }
 
-    public void setType(Integer type) {
-        this.type = type;
+    public void setScenicSpotId(Integer scenicSpotId) {
+        this.scenicSpotId = scenicSpotId;
     }
 
-    public Integer getRelaId() {
-        return relaId;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setRelaId(Integer relaId) {
-        this.relaId = relaId;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name == null ? null : name.trim();
+    }
+
+    public String getNameEn() {
+        return nameEn;
+    }
+
+    public void setNameEn(String nameEn) {
+        this.nameEn = nameEn == null ? null : nameEn.trim();
+    }
+
+    public String getSourceImgPath() {
+        return sourceImgPath;
+    }
+
+    public void setSourceImgPath(String sourceImgPath) {
+        this.sourceImgPath = sourceImgPath == null ? null : sourceImgPath.trim();
+    }
+
+    public String getThumbnailPath() {
+        return thumbnailPath;
+    }
+
+    public void setThumbnailPath(String thumbnailPath) {
+        this.thumbnailPath = thumbnailPath == null ? null : thumbnailPath.trim();
     }
 
     public Date getCreatedOn() {
@@ -53,13 +91,5 @@ public class ScenicSpotLive {
 
     public void setModifiedOn(Date modifiedOn) {
         this.modifiedOn = modifiedOn;
-    }
-
-    public Integer getOrderNo() {
-        return orderNo;
-    }
-
-    public void setOrderNo(Integer orderNo) {
-        this.orderNo = orderNo;
     }
 }

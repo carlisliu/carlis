@@ -3,13 +3,13 @@ package xyz.flym.carlis.persistence.mapper;
 import xyz.flym.carlis.persistence.domain.ScenicSpotComments;
 
 public interface ScenicSpotCommentsMapper {
-    int deleteByPrimaryKey(Integer advertisingId);
+    int deleteByPrimaryKey(Integer scenicSpotCommentsId);
 
     int insert(ScenicSpotComments record);
 
     int insertSelective(ScenicSpotComments record);
 
-    ScenicSpotComments selectByPrimaryKey(Integer advertisingId);
+    ScenicSpotComments selectByPrimaryKey(Integer scenicSpotCommentsId);
 
     int updateByPrimaryKeySelective(ScenicSpotComments record);
 

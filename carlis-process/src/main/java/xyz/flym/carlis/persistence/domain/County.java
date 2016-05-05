@@ -1,42 +1,111 @@
 package xyz.flym.carlis.persistence.domain;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 public class County {
-    private Integer advertisingId;
+    private Integer countyId;
 
-    private Integer type;
+    private Integer regionId;
 
-    private Integer relaId;
+    private String description;
+
+    private String history;
+
+    private String touristSeason;
+
+    private String warmPrompt;
+
+    private String temperature;
+
+    private String thumbnailPath;
+
+    private BigDecimal pointX;
+
+    private BigDecimal pointY;
 
     private Date createdOn;
 
     private Date modifiedOn;
 
-    private Integer orderNo;
-
-    public Integer getAdvertisingId() {
-        return advertisingId;
+    public Integer getCountyId() {
+        return countyId;
     }
 
-    public void setAdvertisingId(Integer advertisingId) {
-        this.advertisingId = advertisingId;
+    public void setCountyId(Integer countyId) {
+        this.countyId = countyId;
     }
 
-    public Integer getType() {
-        return type;
+    public Integer getRegionId() {
+        return regionId;
     }
 
-    public void setType(Integer type) {
-        this.type = type;
+    public void setRegionId(Integer regionId) {
+        this.regionId = regionId;
     }
 
-    public Integer getRelaId() {
-        return relaId;
+    public String getDescription() {
+        return description;
     }
 
-    public void setRelaId(Integer relaId) {
-        this.relaId = relaId;
+    public void setDescription(String description) {
+        this.description = description == null ? null : description.trim();
+    }
+
+    public String getHistory() {
+        return history;
+    }
+
+    public void setHistory(String history) {
+        this.history = history == null ? null : history.trim();
+    }
+
+    public String getTouristSeason() {
+        return touristSeason;
+    }
+
+    public void setTouristSeason(String touristSeason) {
+        this.touristSeason = touristSeason == null ? null : touristSeason.trim();
+    }
+
+    public String getWarmPrompt() {
+        return warmPrompt;
+    }
+
+    public void setWarmPrompt(String warmPrompt) {
+        this.warmPrompt = warmPrompt == null ? null : warmPrompt.trim();
+    }
+
+    public String getTemperature() {
+        return temperature;
+    }
+
+    public void setTemperature(String temperature) {
+        this.temperature = temperature == null ? null : temperature.trim();
+    }
+
+    public String getThumbnailPath() {
+        return thumbnailPath;
+    }
+
+    public void setThumbnailPath(String thumbnailPath) {
+        this.thumbnailPath = thumbnailPath == null ? null : thumbnailPath.trim();
+    }
+
+    public BigDecimal getPointX() {
+        return pointX;
+    }
+
+    public void setPointX(BigDecimal pointX) {
+        this.pointX = pointX;
+    }
+
+    public BigDecimal getPointY() {
+        return pointY;
+    }
+
+    public void setPointY(BigDecimal pointY) {
+        this.pointY = pointY;
     }
 
     public Date getCreatedOn() {
@@ -53,13 +122,5 @@ public class County {
 
     public void setModifiedOn(Date modifiedOn) {
         this.modifiedOn = modifiedOn;
-    }
-
-    public Integer getOrderNo() {
-        return orderNo;
-    }
-
-    public void setOrderNo(Integer orderNo) {
-        this.orderNo = orderNo;
     }
 }

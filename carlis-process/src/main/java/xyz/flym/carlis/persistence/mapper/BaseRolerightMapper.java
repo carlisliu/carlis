@@ -3,13 +3,13 @@ package xyz.flym.carlis.persistence.mapper;
 import xyz.flym.carlis.persistence.domain.BaseRoleright;
 
 public interface BaseRolerightMapper {
-    int deleteByPrimaryKey(Integer advertisingId);
+    int deleteByPrimaryKey(String rolerightId);
 
     int insert(BaseRoleright record);
 
     int insertSelective(BaseRoleright record);
 
-    BaseRoleright selectByPrimaryKey(Integer advertisingId);
+    BaseRoleright selectByPrimaryKey(String rolerightId);
 
     int updateByPrimaryKeySelective(BaseRoleright record);
 

@@ -3,63 +3,44 @@ package xyz.flym.carlis.persistence.domain;
 import java.util.Date;
 
 public class ScenicSpotRestaurantRela {
-    private Integer advertisingId;
+	private Integer scenicSpotId;
 
-    private Integer type;
+	private Integer restaurantId;
 
-    private Integer relaId;
+	private Date createdOn;
 
-    private Date createdOn;
+	private Date modifiedOn;
 
-    private Date modifiedOn;
+	public Date getCreatedOn() {
+		return createdOn;
+	}
 
-    private Integer orderNo;
+	public void setCreatedOn(Date createdOn) {
+		this.createdOn = createdOn;
+	}
 
-    public Integer getAdvertisingId() {
-        return advertisingId;
-    }
+	public Date getModifiedOn() {
+		return modifiedOn;
+	}
 
-    public void setAdvertisingId(Integer advertisingId) {
-        this.advertisingId = advertisingId;
-    }
+	public void setModifiedOn(Date modifiedOn) {
+		this.modifiedOn = modifiedOn;
+	}
 
-    public Integer getType() {
-        return type;
-    }
+	public Integer getScenicSpotId() {
+		return scenicSpotId;
+	}
 
-    public void setType(Integer type) {
-        this.type = type;
-    }
+	public void setScenicSpotId(Integer scenicSpotId) {
+		this.scenicSpotId = scenicSpotId;
+	}
 
-    public Integer getRelaId() {
-        return relaId;
-    }
+	public Integer getRestaurantId() {
+		return restaurantId;
+	}
 
-    public void setRelaId(Integer relaId) {
-        this.relaId = relaId;
-    }
+	public void setRestaurantId(Integer restaurantId) {
+		this.restaurantId = restaurantId;
+	}
 
-    public Date getCreatedOn() {
-        return createdOn;
-    }
-
-    public void setCreatedOn(Date createdOn) {
-        this.createdOn = createdOn;
-    }
-
-    public Date getModifiedOn() {
-        return modifiedOn;
-    }
-
-    public void setModifiedOn(Date modifiedOn) {
-        this.modifiedOn = modifiedOn;
-    }
-
-    public Integer getOrderNo() {
-        return orderNo;
-    }
-
-    public void setOrderNo(Integer orderNo) {
-        this.orderNo = orderNo;
-    }
 }

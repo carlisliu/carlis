@@ -3,40 +3,38 @@ package xyz.flym.carlis.persistence.domain;
 import java.util.Date;
 
 public class UserPhotoAlbum {
-    private Integer advertisingId;
+    private Long userPhotoAlbumId;
 
-    private Integer type;
+    private Integer userId;
 
-    private Integer relaId;
+    private String name;
 
     private Date createdOn;
 
     private Date modifiedOn;
 
-    private Integer orderNo;
-
-    public Integer getAdvertisingId() {
-        return advertisingId;
+    public Long getUserPhotoAlbumId() {
+        return userPhotoAlbumId;
     }
 
-    public void setAdvertisingId(Integer advertisingId) {
-        this.advertisingId = advertisingId;
+    public void setUserPhotoAlbumId(Long userPhotoAlbumId) {
+        this.userPhotoAlbumId = userPhotoAlbumId;
     }
 
-    public Integer getType() {
-        return type;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setType(Integer type) {
-        this.type = type;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
-    public Integer getRelaId() {
-        return relaId;
+    public String getName() {
+        return name;
     }
 
-    public void setRelaId(Integer relaId) {
-        this.relaId = relaId;
+    public void setName(String name) {
+        this.name = name == null ? null : name.trim();
     }
 
     public Date getCreatedOn() {
@@ -53,13 +51,5 @@ public class UserPhotoAlbum {
 
     public void setModifiedOn(Date modifiedOn) {
         this.modifiedOn = modifiedOn;
-    }
-
-    public Integer getOrderNo() {
-        return orderNo;
-    }
-
-    public void setOrderNo(Integer orderNo) {
-        this.orderNo = orderNo;
     }
 }

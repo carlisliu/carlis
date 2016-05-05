@@ -3,40 +3,68 @@ package xyz.flym.carlis.persistence.domain;
 import java.util.Date;
 
 public class Restaurant {
-    private Integer advertisingId;
+    private Integer restaurantId;
 
-    private Integer type;
+    private String name;
 
-    private Integer relaId;
+    private Integer consumptionPerPerson;
+
+    private String priceUnit;
+
+    private Integer startLevel;
+
+    private String tel;
 
     private Date createdOn;
 
     private Date modifiedOn;
 
-    private Integer orderNo;
-
-    public Integer getAdvertisingId() {
-        return advertisingId;
+    public Integer getRestaurantId() {
+        return restaurantId;
     }
 
-    public void setAdvertisingId(Integer advertisingId) {
-        this.advertisingId = advertisingId;
+    public void setRestaurantId(Integer restaurantId) {
+        this.restaurantId = restaurantId;
     }
 
-    public Integer getType() {
-        return type;
+    public String getName() {
+        return name;
     }
 
-    public void setType(Integer type) {
-        this.type = type;
+    public void setName(String name) {
+        this.name = name == null ? null : name.trim();
     }
 
-    public Integer getRelaId() {
-        return relaId;
+    public Integer getConsumptionPerPerson() {
+        return consumptionPerPerson;
     }
 
-    public void setRelaId(Integer relaId) {
-        this.relaId = relaId;
+    public void setConsumptionPerPerson(Integer consumptionPerPerson) {
+        this.consumptionPerPerson = consumptionPerPerson;
+    }
+
+    public String getPriceUnit() {
+        return priceUnit;
+    }
+
+    public void setPriceUnit(String priceUnit) {
+        this.priceUnit = priceUnit == null ? null : priceUnit.trim();
+    }
+
+    public Integer getStartLevel() {
+        return startLevel;
+    }
+
+    public void setStartLevel(Integer startLevel) {
+        this.startLevel = startLevel;
+    }
+
+    public String getTel() {
+        return tel;
+    }
+
+    public void setTel(String tel) {
+        this.tel = tel == null ? null : tel.trim();
     }
 
     public Date getCreatedOn() {
@@ -53,13 +81,5 @@ public class Restaurant {
 
     public void setModifiedOn(Date modifiedOn) {
         this.modifiedOn = modifiedOn;
-    }
-
-    public Integer getOrderNo() {
-        return orderNo;
-    }
-
-    public void setOrderNo(Integer orderNo) {
-        this.orderNo = orderNo;
     }
 }

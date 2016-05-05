@@ -1,65 +1,33 @@
 package xyz.flym.carlis.persistence.domain;
 
-import java.util.Date;
-
 public class BaseUserScenicspot {
-    private Integer advertisingId;
+    private Integer id;
 
-    private Integer type;
+    private String userid;
 
-    private Integer relaId;
+    private Integer scenicSpotId;
 
-    private Date createdOn;
-
-    private Date modifiedOn;
-
-    private Integer orderNo;
-
-    public Integer getAdvertisingId() {
-        return advertisingId;
+    public Integer getId() {
+        return id;
     }
 
-    public void setAdvertisingId(Integer advertisingId) {
-        this.advertisingId = advertisingId;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public Integer getType() {
-        return type;
+    public String getUserid() {
+        return userid;
     }
 
-    public void setType(Integer type) {
-        this.type = type;
+    public void setUserid(String userid) {
+        this.userid = userid == null ? null : userid.trim();
     }
 
-    public Integer getRelaId() {
-        return relaId;
+    public Integer getScenicSpotId() {
+        return scenicSpotId;
     }
 
-    public void setRelaId(Integer relaId) {
-        this.relaId = relaId;
-    }
-
-    public Date getCreatedOn() {
-        return createdOn;
-    }
-
-    public void setCreatedOn(Date createdOn) {
-        this.createdOn = createdOn;
-    }
-
-    public Date getModifiedOn() {
-        return modifiedOn;
-    }
-
-    public void setModifiedOn(Date modifiedOn) {
-        this.modifiedOn = modifiedOn;
-    }
-
-    public Integer getOrderNo() {
-        return orderNo;
-    }
-
-    public void setOrderNo(Integer orderNo) {
-        this.orderNo = orderNo;
+    public void setScenicSpotId(Integer scenicSpotId) {
+        this.scenicSpotId = scenicSpotId;
     }
 }

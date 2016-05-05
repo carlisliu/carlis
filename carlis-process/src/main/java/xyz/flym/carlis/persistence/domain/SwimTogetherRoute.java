@@ -3,40 +3,78 @@ package xyz.flym.carlis.persistence.domain;
 import java.util.Date;
 
 public class SwimTogetherRoute {
-    private Integer advertisingId;
+    private Integer swimTogetherRouteId;
 
-    private Integer type;
+    private Integer swimTogetherId;
 
-    private Integer relaId;
+    private Integer scenicSpotId;
+
+    private Integer cityId;
+
+    private Integer countyId;
+
+    private Integer visitOften;
+
+    private Integer orderNo;
 
     private Date createdOn;
 
     private Date modifiedOn;
 
-    private Integer orderNo;
-
-    public Integer getAdvertisingId() {
-        return advertisingId;
+    public Integer getSwimTogetherRouteId() {
+        return swimTogetherRouteId;
     }
 
-    public void setAdvertisingId(Integer advertisingId) {
-        this.advertisingId = advertisingId;
+    public void setSwimTogetherRouteId(Integer swimTogetherRouteId) {
+        this.swimTogetherRouteId = swimTogetherRouteId;
     }
 
-    public Integer getType() {
-        return type;
+    public Integer getSwimTogetherId() {
+        return swimTogetherId;
     }
 
-    public void setType(Integer type) {
-        this.type = type;
+    public void setSwimTogetherId(Integer swimTogetherId) {
+        this.swimTogetherId = swimTogetherId;
     }
 
-    public Integer getRelaId() {
-        return relaId;
+    public Integer getScenicSpotId() {
+        return scenicSpotId;
     }
 
-    public void setRelaId(Integer relaId) {
-        this.relaId = relaId;
+    public void setScenicSpotId(Integer scenicSpotId) {
+        this.scenicSpotId = scenicSpotId;
+    }
+
+    public Integer getCityId() {
+        return cityId;
+    }
+
+    public void setCityId(Integer cityId) {
+        this.cityId = cityId;
+    }
+
+    public Integer getCountyId() {
+        return countyId;
+    }
+
+    public void setCountyId(Integer countyId) {
+        this.countyId = countyId;
+    }
+
+    public Integer getVisitOften() {
+        return visitOften;
+    }
+
+    public void setVisitOften(Integer visitOften) {
+        this.visitOften = visitOften;
+    }
+
+    public Integer getOrderNo() {
+        return orderNo;
+    }
+
+    public void setOrderNo(Integer orderNo) {
+        this.orderNo = orderNo;
     }
 
     public Date getCreatedOn() {
@@ -53,13 +91,5 @@ public class SwimTogetherRoute {
 
     public void setModifiedOn(Date modifiedOn) {
         this.modifiedOn = modifiedOn;
-    }
-
-    public Integer getOrderNo() {
-        return orderNo;
-    }
-
-    public void setOrderNo(Integer orderNo) {
-        this.orderNo = orderNo;
     }
 }

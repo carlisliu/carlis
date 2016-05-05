@@ -3,40 +3,58 @@ package xyz.flym.carlis.persistence.domain;
 import java.util.Date;
 
 public class HotelService {
-    private Integer advertisingId;
+    private Integer hotelServiceId;
 
-    private Integer type;
+    private Integer hotelId;
 
-    private Integer relaId;
+    private String name;
+
+    private Double price;
+
+    private String priceUnit;
 
     private Date createdOn;
 
     private Date modifiedOn;
 
-    private Integer orderNo;
-
-    public Integer getAdvertisingId() {
-        return advertisingId;
+    public Integer getHotelServiceId() {
+        return hotelServiceId;
     }
 
-    public void setAdvertisingId(Integer advertisingId) {
-        this.advertisingId = advertisingId;
+    public void setHotelServiceId(Integer hotelServiceId) {
+        this.hotelServiceId = hotelServiceId;
     }
 
-    public Integer getType() {
-        return type;
+    public Integer getHotelId() {
+        return hotelId;
     }
 
-    public void setType(Integer type) {
-        this.type = type;
+    public void setHotelId(Integer hotelId) {
+        this.hotelId = hotelId;
     }
 
-    public Integer getRelaId() {
-        return relaId;
+    public String getName() {
+        return name;
     }
 
-    public void setRelaId(Integer relaId) {
-        this.relaId = relaId;
+    public void setName(String name) {
+        this.name = name == null ? null : name.trim();
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    public String getPriceUnit() {
+        return priceUnit;
+    }
+
+    public void setPriceUnit(String priceUnit) {
+        this.priceUnit = priceUnit == null ? null : priceUnit.trim();
     }
 
     public Date getCreatedOn() {
@@ -53,13 +71,5 @@ public class HotelService {
 
     public void setModifiedOn(Date modifiedOn) {
         this.modifiedOn = modifiedOn;
-    }
-
-    public Integer getOrderNo() {
-        return orderNo;
-    }
-
-    public void setOrderNo(Integer orderNo) {
-        this.orderNo = orderNo;
     }
 }

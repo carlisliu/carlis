@@ -3,56 +3,28 @@ package xyz.flym.carlis.persistence.domain;
 import java.util.Date;
 
 public class LandscapeType {
-    private Integer advertisingId;
+    private Integer landscapeTypeId;
 
-    private Integer type;
-
-    private Integer relaId;
-
-    private Date createdOn;
-
-    private Date modifiedOn;
+    private String name;
 
     private Integer orderNo;
 
-    public Integer getAdvertisingId() {
-        return advertisingId;
+    private Date createdOn;
+
+    public Integer getLandscapeTypeId() {
+        return landscapeTypeId;
     }
 
-    public void setAdvertisingId(Integer advertisingId) {
-        this.advertisingId = advertisingId;
+    public void setLandscapeTypeId(Integer landscapeTypeId) {
+        this.landscapeTypeId = landscapeTypeId;
     }
 
-    public Integer getType() {
-        return type;
+    public String getName() {
+        return name;
     }
 
-    public void setType(Integer type) {
-        this.type = type;
-    }
-
-    public Integer getRelaId() {
-        return relaId;
-    }
-
-    public void setRelaId(Integer relaId) {
-        this.relaId = relaId;
-    }
-
-    public Date getCreatedOn() {
-        return createdOn;
-    }
-
-    public void setCreatedOn(Date createdOn) {
-        this.createdOn = createdOn;
-    }
-
-    public Date getModifiedOn() {
-        return modifiedOn;
-    }
-
-    public void setModifiedOn(Date modifiedOn) {
-        this.modifiedOn = modifiedOn;
+    public void setName(String name) {
+        this.name = name == null ? null : name.trim();
     }
 
     public Integer getOrderNo() {
@@ -61,5 +33,13 @@ public class LandscapeType {
 
     public void setOrderNo(Integer orderNo) {
         this.orderNo = orderNo;
+    }
+
+    public Date getCreatedOn() {
+        return createdOn;
+    }
+
+    public void setCreatedOn(Date createdOn) {
+        this.createdOn = createdOn;
     }
 }

@@ -3,40 +3,88 @@ package xyz.flym.carlis.persistence.domain;
 import java.util.Date;
 
 public class Entertainment {
-    private Integer advertisingId;
+    private Integer entertainmentId;
 
-    private Integer type;
+    private Integer scenicSpotId;
 
-    private Integer relaId;
+    private String description;
+
+    private String sourceImgPath;
+
+    private String thumbnailPath;
+
+    private String name;
+
+    private Double price;
+
+    private String priceUnit;
 
     private Date createdOn;
 
     private Date modifiedOn;
 
-    private Integer orderNo;
-
-    public Integer getAdvertisingId() {
-        return advertisingId;
+    public Integer getEntertainmentId() {
+        return entertainmentId;
     }
 
-    public void setAdvertisingId(Integer advertisingId) {
-        this.advertisingId = advertisingId;
+    public void setEntertainmentId(Integer entertainmentId) {
+        this.entertainmentId = entertainmentId;
     }
 
-    public Integer getType() {
-        return type;
+    public Integer getScenicSpotId() {
+        return scenicSpotId;
     }
 
-    public void setType(Integer type) {
-        this.type = type;
+    public void setScenicSpotId(Integer scenicSpotId) {
+        this.scenicSpotId = scenicSpotId;
     }
 
-    public Integer getRelaId() {
-        return relaId;
+    public String getDescription() {
+        return description;
     }
 
-    public void setRelaId(Integer relaId) {
-        this.relaId = relaId;
+    public void setDescription(String description) {
+        this.description = description == null ? null : description.trim();
+    }
+
+    public String getSourceImgPath() {
+        return sourceImgPath;
+    }
+
+    public void setSourceImgPath(String sourceImgPath) {
+        this.sourceImgPath = sourceImgPath == null ? null : sourceImgPath.trim();
+    }
+
+    public String getThumbnailPath() {
+        return thumbnailPath;
+    }
+
+    public void setThumbnailPath(String thumbnailPath) {
+        this.thumbnailPath = thumbnailPath == null ? null : thumbnailPath.trim();
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name == null ? null : name.trim();
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    public String getPriceUnit() {
+        return priceUnit;
+    }
+
+    public void setPriceUnit(String priceUnit) {
+        this.priceUnit = priceUnit == null ? null : priceUnit.trim();
     }
 
     public Date getCreatedOn() {
@@ -53,13 +101,5 @@ public class Entertainment {
 
     public void setModifiedOn(Date modifiedOn) {
         this.modifiedOn = modifiedOn;
-    }
-
-    public Integer getOrderNo() {
-        return orderNo;
-    }
-
-    public void setOrderNo(Integer orderNo) {
-        this.orderNo = orderNo;
     }
 }

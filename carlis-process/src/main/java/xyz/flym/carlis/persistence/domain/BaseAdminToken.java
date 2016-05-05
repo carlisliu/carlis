@@ -3,40 +3,46 @@ package xyz.flym.carlis.persistence.domain;
 import java.util.Date;
 
 public class BaseAdminToken {
-    private Integer advertisingId;
+    private String userid;
 
-    private Integer type;
+    private String token;
 
-    private Integer relaId;
+    private String refreshToken;
+
+    private Date expired;
 
     private Date createdOn;
 
-    private Date modifiedOn;
-
-    private Integer orderNo;
-
-    public Integer getAdvertisingId() {
-        return advertisingId;
+    public String getUserid() {
+        return userid;
     }
 
-    public void setAdvertisingId(Integer advertisingId) {
-        this.advertisingId = advertisingId;
+    public void setUserid(String userid) {
+        this.userid = userid == null ? null : userid.trim();
     }
 
-    public Integer getType() {
-        return type;
+    public String getToken() {
+        return token;
     }
 
-    public void setType(Integer type) {
-        this.type = type;
+    public void setToken(String token) {
+        this.token = token == null ? null : token.trim();
     }
 
-    public Integer getRelaId() {
-        return relaId;
+    public String getRefreshToken() {
+        return refreshToken;
     }
 
-    public void setRelaId(Integer relaId) {
-        this.relaId = relaId;
+    public void setRefreshToken(String refreshToken) {
+        this.refreshToken = refreshToken == null ? null : refreshToken.trim();
+    }
+
+    public Date getExpired() {
+        return expired;
+    }
+
+    public void setExpired(Date expired) {
+        this.expired = expired;
     }
 
     public Date getCreatedOn() {
@@ -45,21 +51,5 @@ public class BaseAdminToken {
 
     public void setCreatedOn(Date createdOn) {
         this.createdOn = createdOn;
-    }
-
-    public Date getModifiedOn() {
-        return modifiedOn;
-    }
-
-    public void setModifiedOn(Date modifiedOn) {
-        this.modifiedOn = modifiedOn;
-    }
-
-    public Integer getOrderNo() {
-        return orderNo;
-    }
-
-    public void setOrderNo(Integer orderNo) {
-        this.orderNo = orderNo;
     }
 }

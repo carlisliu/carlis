@@ -3,13 +3,13 @@ package xyz.flym.carlis.persistence.mapper;
 import xyz.flym.carlis.persistence.domain.JourneyInfo;
 
 public interface JourneyInfoMapper {
-    int deleteByPrimaryKey(Integer advertisingId);
+    int deleteByPrimaryKey(Long journeyInfoId);
 
     int insert(JourneyInfo record);
 
     int insertSelective(JourneyInfo record);
 
-    JourneyInfo selectByPrimaryKey(Integer advertisingId);
+    JourneyInfo selectByPrimaryKey(Long journeyInfoId);
 
     int updateByPrimaryKeySelective(JourneyInfo record);
 

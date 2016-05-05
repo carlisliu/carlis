@@ -2,45 +2,63 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="xyz.flym.carlis.persistence.mapper.CityExtendMapper" >
   <resultMap id="BaseResultMap" type="xyz.flym.carlis.persistence.domain.CityExtend" >
-    <id column="advertising_id" property="advertisingId" jdbcType="INTEGER" />
-    <result column="type" property="type" jdbcType="INTEGER" />
-    <result column="rela_id" property="relaId" jdbcType="INTEGER" />
+    <id column="city_extend_id" property="cityExtendId" jdbcType="INTEGER" />
+    <result column="city_id" property="cityId" jdbcType="INTEGER" />
+    <result column="title" property="title" jdbcType="NVARCHAR" />
+    <result column="description" property="description" jdbcType="NVARCHAR" />
+    <result column="img_path" property="imgPath" jdbcType="NVARCHAR" />
+    <result column="type" property="type" jdbcType="VARCHAR" />
+    <result column="order_no" property="orderNo" jdbcType="INTEGER" />
     <result column="created_on" property="createdOn" jdbcType="TIMESTAMP" />
     <result column="modified_on" property="modifiedOn" jdbcType="TIMESTAMP" />
-    <result column="order_no" property="orderNo" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Base_Column_List" >
-    advertising_id, type, rela_id, created_on, modified_on, order_no
+    city_extend_id, city_id, title, description, img_path, type, order_no, created_on, 
+    modified_on
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
-    from advertising
-    where advertising_id = #{advertisingId,jdbcType=INTEGER}
+    from city_extend
+    where city_extend_id = #{cityExtendId,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from advertising
-    where advertising_id = #{advertisingId,jdbcType=INTEGER}
+    delete from city_extend
+    where city_extend_id = #{cityExtendId,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="xyz.flym.carlis.persistence.domain.CityExtend" >
-    insert into advertising (advertising_id, type, rela_id, 
-      created_on, modified_on, order_no
+    insert into city_extend (city_extend_id, city_id, title, 
+      description, img_path, type, 
+      order_no, created_on, modified_on
       )
-    values (#{advertisingId,jdbcType=INTEGER}, #{type,jdbcType=INTEGER}, #{relaId,jdbcType=INTEGER}, 
-      #{createdOn,jdbcType=TIMESTAMP}, #{modifiedOn,jdbcType=TIMESTAMP}, #{orderNo,jdbcType=INTEGER}
+    values (#{cityExtendId,jdbcType=INTEGER}, #{cityId,jdbcType=INTEGER}, #{title,jdbcType=NVARCHAR}, 
+      #{description,jdbcType=NVARCHAR}, #{imgPath,jdbcType=NVARCHAR}, #{type,jdbcType=VARCHAR}, 
+      #{orderNo,jdbcType=INTEGER}, #{createdOn,jdbcType=TIMESTAMP}, #{modifiedOn,jdbcType=TIMESTAMP}
       )
   </insert>
   <insert id="insertSelective" parameterType="xyz.flym.carlis.persistence.domain.CityExtend" >
-    insert into advertising
+    insert into city_extend
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="advertisingId != null" >
-        advertising_id,
+      <if test="cityExtendId != null" >
+        city_extend_id,
+      </if>
+      <if test="cityId != null" >
+        city_id,
+      </if>
+      <if test="title != null" >
+        title,
+      </if>
+      <if test="description != null" >
+        description,
+      </if>
+      <if test="imgPath != null" >
+        img_path,
       </if>
       <if test="type != null" >
         type,
       </if>
-      <if test="relaId != null" >
-        rela_id,
+      <if test="orderNo != null" >
+        order_no,
       </if>
       <if test="createdOn != null" >
         created_on,
@@ -48,19 +66,28 @@
       <if test="modifiedOn != null" >
         modified_on,
       </if>
-      <if test="orderNo != null" >
-        order_no,
-      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="advertisingId != null" >
-        #{advertisingId,jdbcType=INTEGER},
+      <if test="cityExtendId != null" >
+        #{cityExtendId,jdbcType=INTEGER},
+      </if>
+      <if test="cityId != null" >
+        #{cityId,jdbcType=INTEGER},
+      </if>
+      <if test="title != null" >
+        #{title,jdbcType=NVARCHAR},
+      </if>
+      <if test="description != null" >
+        #{description,jdbcType=NVARCHAR},
+      </if>
+      <if test="imgPath != null" >
+        #{imgPath,jdbcType=NVARCHAR},
       </if>
       <if test="type != null" >
-        #{type,jdbcType=INTEGER},
+        #{type,jdbcType=VARCHAR},
       </if>
-      <if test="relaId != null" >
-        #{relaId,jdbcType=INTEGER},
+      <if test="orderNo != null" >
+        #{orderNo,jdbcType=INTEGER},
       </if>
       <if test="createdOn != null" >
         #{createdOn,jdbcType=TIMESTAMP},
@@ -68,19 +95,28 @@
       <if test="modifiedOn != null" >
         #{modifiedOn,jdbcType=TIMESTAMP},
       </if>
-      <if test="orderNo != null" >
-        #{orderNo,jdbcType=INTEGER},
-      </if>
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="xyz.flym.carlis.persistence.domain.CityExtend" >
-    update advertising
+    update city_extend
     <set >
-      <if test="type != null" >
-        type = #{type,jdbcType=INTEGER},
+      <if test="cityId != null" >
+        city_id = #{cityId,jdbcType=INTEGER},
       </if>
-      <if test="relaId != null" >
-        rela_id = #{relaId,jdbcType=INTEGER},
+      <if test="title != null" >
+        title = #{title,jdbcType=NVARCHAR},
+      </if>
+      <if test="description != null" >
+        description = #{description,jdbcType=NVARCHAR},
+      </if>
+      <if test="imgPath != null" >
+        img_path = #{imgPath,jdbcType=NVARCHAR},
+      </if>
+      <if test="type != null" >
+        type = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="orderNo != null" >
+        order_no = #{orderNo,jdbcType=INTEGER},
       </if>
       <if test="createdOn != null" >
         created_on = #{createdOn,jdbcType=TIMESTAMP},
@@ -88,19 +124,19 @@
       <if test="modifiedOn != null" >
         modified_on = #{modifiedOn,jdbcType=TIMESTAMP},
       </if>
-      <if test="orderNo != null" >
-        order_no = #{orderNo,jdbcType=INTEGER},
-      </if>
     </set>
-    where advertising_id = #{advertisingId,jdbcType=INTEGER}
+    where city_extend_id = #{cityExtendId,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="xyz.flym.carlis.persistence.domain.CityExtend" >
-    update advertising
-    set type = #{type,jdbcType=INTEGER},
-      rela_id = #{relaId,jdbcType=INTEGER},
+    update city_extend
+    set city_id = #{cityId,jdbcType=INTEGER},
+      title = #{title,jdbcType=NVARCHAR},
+      description = #{description,jdbcType=NVARCHAR},
+      img_path = #{imgPath,jdbcType=NVARCHAR},
+      type = #{type,jdbcType=VARCHAR},
+      order_no = #{orderNo,jdbcType=INTEGER},
       created_on = #{createdOn,jdbcType=TIMESTAMP},
-      modified_on = #{modifiedOn,jdbcType=TIMESTAMP},
-      order_no = #{orderNo,jdbcType=INTEGER}
-    where advertising_id = #{advertisingId,jdbcType=INTEGER}
+      modified_on = #{modifiedOn,jdbcType=TIMESTAMP}
+    where city_extend_id = #{cityExtendId,jdbcType=INTEGER}
   </update>
 </mapper>

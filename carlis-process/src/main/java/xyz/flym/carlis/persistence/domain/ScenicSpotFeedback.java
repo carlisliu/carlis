@@ -3,40 +3,56 @@ package xyz.flym.carlis.persistence.domain;
 import java.util.Date;
 
 public class ScenicSpotFeedback {
-    private Integer advertisingId;
+    private Integer scenicSpotFeedbackId;
 
-    private Integer type;
+    private Integer scenicSpotId;
 
-    private Integer relaId;
+    private Boolean type;
+
+    private String content;
+
+    private Integer userId;
 
     private Date createdOn;
 
-    private Date modifiedOn;
-
-    private Integer orderNo;
-
-    public Integer getAdvertisingId() {
-        return advertisingId;
+    public Integer getScenicSpotFeedbackId() {
+        return scenicSpotFeedbackId;
     }
 
-    public void setAdvertisingId(Integer advertisingId) {
-        this.advertisingId = advertisingId;
+    public void setScenicSpotFeedbackId(Integer scenicSpotFeedbackId) {
+        this.scenicSpotFeedbackId = scenicSpotFeedbackId;
     }
 
-    public Integer getType() {
+    public Integer getScenicSpotId() {
+        return scenicSpotId;
+    }
+
+    public void setScenicSpotId(Integer scenicSpotId) {
+        this.scenicSpotId = scenicSpotId;
+    }
+
+    public Boolean getType() {
         return type;
     }
 
-    public void setType(Integer type) {
+    public void setType(Boolean type) {
         this.type = type;
     }
 
-    public Integer getRelaId() {
-        return relaId;
+    public String getContent() {
+        return content;
     }
 
-    public void setRelaId(Integer relaId) {
-        this.relaId = relaId;
+    public void setContent(String content) {
+        this.content = content == null ? null : content.trim();
+    }
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     public Date getCreatedOn() {
@@ -45,21 +61,5 @@ public class ScenicSpotFeedback {
 
     public void setCreatedOn(Date createdOn) {
         this.createdOn = createdOn;
-    }
-
-    public Date getModifiedOn() {
-        return modifiedOn;
-    }
-
-    public void setModifiedOn(Date modifiedOn) {
-        this.modifiedOn = modifiedOn;
-    }
-
-    public Integer getOrderNo() {
-        return orderNo;
-    }
-
-    public void setOrderNo(Integer orderNo) {
-        this.orderNo = orderNo;
     }
 }

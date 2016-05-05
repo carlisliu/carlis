@@ -3,63 +3,63 @@ package xyz.flym.carlis.persistence.domain;
 import java.util.Date;
 
 public class BaseSysloginlog {
-    private Integer advertisingId;
+    private String sysLoginlogId;
 
-    private Integer type;
+    private String sysLoginlogIp;
 
-    private Integer relaId;
+    private Date sysLoginlogTime;
 
-    private Date createdOn;
+    private String userAccount;
 
-    private Date modifiedOn;
+    private Integer sysLoginlogStatus;
 
-    private Integer orderNo;
+    private String ownerAddress;
 
-    public Integer getAdvertisingId() {
-        return advertisingId;
+    public String getSysLoginlogId() {
+        return sysLoginlogId;
     }
 
-    public void setAdvertisingId(Integer advertisingId) {
-        this.advertisingId = advertisingId;
+    public void setSysLoginlogId(String sysLoginlogId) {
+        this.sysLoginlogId = sysLoginlogId == null ? null : sysLoginlogId.trim();
     }
 
-    public Integer getType() {
-        return type;
+    public String getSysLoginlogIp() {
+        return sysLoginlogIp;
     }
 
-    public void setType(Integer type) {
-        this.type = type;
+    public void setSysLoginlogIp(String sysLoginlogIp) {
+        this.sysLoginlogIp = sysLoginlogIp == null ? null : sysLoginlogIp.trim();
     }
 
-    public Integer getRelaId() {
-        return relaId;
+    public Date getSysLoginlogTime() {
+        return sysLoginlogTime;
     }
 
-    public void setRelaId(Integer relaId) {
-        this.relaId = relaId;
+    public void setSysLoginlogTime(Date sysLoginlogTime) {
+        this.sysLoginlogTime = sysLoginlogTime;
     }
 
-    public Date getCreatedOn() {
-        return createdOn;
+    public String getUserAccount() {
+        return userAccount;
     }
 
-    public void setCreatedOn(Date createdOn) {
-        this.createdOn = createdOn;
+    public void setUserAccount(String userAccount) {
+        this.userAccount = userAccount == null ? null : userAccount.trim();
     }
 
-    public Date getModifiedOn() {
-        return modifiedOn;
+    public Integer getSysLoginlogStatus() {
+        return sysLoginlogStatus;
     }
 
-    public void setModifiedOn(Date modifiedOn) {
-        this.modifiedOn = modifiedOn;
+    public void setSysLoginlogStatus(Integer sysLoginlogStatus) {
+        this.sysLoginlogStatus = sysLoginlogStatus;
     }
 
-    public Integer getOrderNo() {
-        return orderNo;
+    public String getOwnerAddress() {
+        return ownerAddress;
     }
 
-    public void setOrderNo(Integer orderNo) {
-        this.orderNo = orderNo;
+    public void setOwnerAddress(String ownerAddress) {
+        this.ownerAddress = ownerAddress == null ? null : ownerAddress.trim();
     }
 }

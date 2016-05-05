@@ -3,41 +3,13 @@ package xyz.flym.carlis.persistence.domain;
 import java.util.Date;
 
 public class ScenicSpotHotelRela {
-    private Integer advertisingId;
+	private Integer scenicSpotId;
+	
+	private Integer hotelId;
 
-    private Integer type;
-
-    private Integer relaId;
-
-    private Date createdOn;
+	private Date createdOn;
 
     private Date modifiedOn;
-
-    private Integer orderNo;
-
-    public Integer getAdvertisingId() {
-        return advertisingId;
-    }
-
-    public void setAdvertisingId(Integer advertisingId) {
-        this.advertisingId = advertisingId;
-    }
-
-    public Integer getType() {
-        return type;
-    }
-
-    public void setType(Integer type) {
-        this.type = type;
-    }
-
-    public Integer getRelaId() {
-        return relaId;
-    }
-
-    public void setRelaId(Integer relaId) {
-        this.relaId = relaId;
-    }
 
     public Date getCreatedOn() {
         return createdOn;
@@ -55,11 +27,20 @@ public class ScenicSpotHotelRela {
         this.modifiedOn = modifiedOn;
     }
 
-    public Integer getOrderNo() {
-        return orderNo;
-    }
+	public Integer getScenicSpotId() {
+		return scenicSpotId;
+	}
 
-    public void setOrderNo(Integer orderNo) {
-        this.orderNo = orderNo;
-    }
+	public void setScenicSpotId(Integer scenicSpotId) {
+		this.scenicSpotId = scenicSpotId;
+	}
+
+	public Integer getHotelId() {
+		return hotelId;
+	}
+
+	public void setHotelId(Integer hotelId) {
+		this.hotelId = hotelId;
+	}
+    
 }

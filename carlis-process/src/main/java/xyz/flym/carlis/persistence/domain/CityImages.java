@@ -3,40 +3,58 @@ package xyz.flym.carlis.persistence.domain;
 import java.util.Date;
 
 public class CityImages {
-    private Integer advertisingId;
+    private Integer cityImagesId;
 
-    private Integer type;
+    private Integer cityId;
 
-    private Integer relaId;
+    private String name;
+
+    private String sourceImgPath;
+
+    private String thumbnailPath;
 
     private Date createdOn;
 
     private Date modifiedOn;
 
-    private Integer orderNo;
-
-    public Integer getAdvertisingId() {
-        return advertisingId;
+    public Integer getCityImagesId() {
+        return cityImagesId;
     }
 
-    public void setAdvertisingId(Integer advertisingId) {
-        this.advertisingId = advertisingId;
+    public void setCityImagesId(Integer cityImagesId) {
+        this.cityImagesId = cityImagesId;
     }
 
-    public Integer getType() {
-        return type;
+    public Integer getCityId() {
+        return cityId;
     }
 
-    public void setType(Integer type) {
-        this.type = type;
+    public void setCityId(Integer cityId) {
+        this.cityId = cityId;
     }
 
-    public Integer getRelaId() {
-        return relaId;
+    public String getName() {
+        return name;
     }
 
-    public void setRelaId(Integer relaId) {
-        this.relaId = relaId;
+    public void setName(String name) {
+        this.name = name == null ? null : name.trim();
+    }
+
+    public String getSourceImgPath() {
+        return sourceImgPath;
+    }
+
+    public void setSourceImgPath(String sourceImgPath) {
+        this.sourceImgPath = sourceImgPath == null ? null : sourceImgPath.trim();
+    }
+
+    public String getThumbnailPath() {
+        return thumbnailPath;
+    }
+
+    public void setThumbnailPath(String thumbnailPath) {
+        this.thumbnailPath = thumbnailPath == null ? null : thumbnailPath.trim();
     }
 
     public Date getCreatedOn() {
@@ -53,13 +71,5 @@ public class CityImages {
 
     public void setModifiedOn(Date modifiedOn) {
         this.modifiedOn = modifiedOn;
-    }
-
-    public Integer getOrderNo() {
-        return orderNo;
-    }
-
-    public void setOrderNo(Integer orderNo) {
-        this.orderNo = orderNo;
     }
 }

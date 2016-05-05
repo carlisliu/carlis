@@ -1,65 +1,83 @@
 package xyz.flym.carlis.persistence.domain;
 
-import java.util.Date;
-
 public class Region {
-    private Integer advertisingId;
+    private Integer regionId;
 
-    private Integer type;
+    private String regionCode;
 
-    private Integer relaId;
+    private String regionName;
 
-    private Date createdOn;
+    private String parentId;
 
-    private Date modifiedOn;
+    private String regionLevel;
 
-    private Integer orderNo;
+    private String regionOrder;
 
-    public Integer getAdvertisingId() {
-        return advertisingId;
+    private String regionNameEn;
+
+    private String regionShortnameEn;
+
+    public Integer getRegionId() {
+        return regionId;
     }
 
-    public void setAdvertisingId(Integer advertisingId) {
-        this.advertisingId = advertisingId;
+    public void setRegionId(Integer regionId) {
+        this.regionId = regionId;
     }
 
-    public Integer getType() {
-        return type;
+    public String getRegionCode() {
+        return regionCode;
     }
 
-    public void setType(Integer type) {
-        this.type = type;
+    public void setRegionCode(String regionCode) {
+        this.regionCode = regionCode == null ? null : regionCode.trim();
     }
 
-    public Integer getRelaId() {
-        return relaId;
+    public String getRegionName() {
+        return regionName;
     }
 
-    public void setRelaId(Integer relaId) {
-        this.relaId = relaId;
+    public void setRegionName(String regionName) {
+        this.regionName = regionName == null ? null : regionName.trim();
     }
 
-    public Date getCreatedOn() {
-        return createdOn;
+    public String getParentId() {
+        return parentId;
     }
 
-    public void setCreatedOn(Date createdOn) {
-        this.createdOn = createdOn;
+    public void setParentId(String parentId) {
+        this.parentId = parentId == null ? null : parentId.trim();
     }
 
-    public Date getModifiedOn() {
-        return modifiedOn;
+    public String getRegionLevel() {
+        return regionLevel;
     }
 
-    public void setModifiedOn(Date modifiedOn) {
-        this.modifiedOn = modifiedOn;
+    public void setRegionLevel(String regionLevel) {
+        this.regionLevel = regionLevel == null ? null : regionLevel.trim();
     }
 
-    public Integer getOrderNo() {
-        return orderNo;
+    public String getRegionOrder() {
+        return regionOrder;
     }
 
-    public void setOrderNo(Integer orderNo) {
-        this.orderNo = orderNo;
+    public void setRegionOrder(String regionOrder) {
+        this.regionOrder = regionOrder == null ? null : regionOrder.trim();
+    }
+
+    public String getRegionNameEn() {
+        return regionNameEn;
+    }
+
+    public void setRegionNameEn(String regionNameEn) {
+        this.regionNameEn = regionNameEn == null ? null : regionNameEn.trim();
+    }
+
+    public String getRegionShortnameEn() {
+        return regionShortnameEn;
+    }
+
+    public void setRegionShortnameEn(String regionShortnameEn) {
+        this.regionShortnameEn = regionShortnameEn == null ? null : regionShortnameEn.trim();
     }
 }

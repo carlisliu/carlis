@@ -3,63 +3,163 @@ package xyz.flym.carlis.persistence.domain;
 import java.util.Date;
 
 public class BaseSysmenu {
-    private Integer advertisingId;
+    private String menuId;
 
-    private Integer type;
+    private String parentid;
 
-    private Integer relaId;
+    private String menuName;
 
-    private Date createdOn;
+    private String menuTitle;
 
-    private Date modifiedOn;
+    private String menuImg;
 
-    private Integer orderNo;
+    private String target;
 
-    public Integer getAdvertisingId() {
-        return advertisingId;
+    private Integer menuType;
+
+    private String navigateurl;
+
+    private Integer sortcode;
+
+    private Integer deletemark;
+
+    private Date createdate;
+
+    private String createuserid;
+
+    private String createusername;
+
+    private Date modifydate;
+
+    private String modifyuserid;
+
+    private String modifyusername;
+
+    public String getMenuId() {
+        return menuId;
     }
 
-    public void setAdvertisingId(Integer advertisingId) {
-        this.advertisingId = advertisingId;
+    public void setMenuId(String menuId) {
+        this.menuId = menuId == null ? null : menuId.trim();
     }
 
-    public Integer getType() {
-        return type;
+    public String getParentid() {
+        return parentid;
     }
 
-    public void setType(Integer type) {
-        this.type = type;
+    public void setParentid(String parentid) {
+        this.parentid = parentid == null ? null : parentid.trim();
     }
 
-    public Integer getRelaId() {
-        return relaId;
+    public String getMenuName() {
+        return menuName;
     }
 
-    public void setRelaId(Integer relaId) {
-        this.relaId = relaId;
+    public void setMenuName(String menuName) {
+        this.menuName = menuName == null ? null : menuName.trim();
     }
 
-    public Date getCreatedOn() {
-        return createdOn;
+    public String getMenuTitle() {
+        return menuTitle;
     }
 
-    public void setCreatedOn(Date createdOn) {
-        this.createdOn = createdOn;
+    public void setMenuTitle(String menuTitle) {
+        this.menuTitle = menuTitle == null ? null : menuTitle.trim();
     }
 
-    public Date getModifiedOn() {
-        return modifiedOn;
+    public String getMenuImg() {
+        return menuImg;
     }
 
-    public void setModifiedOn(Date modifiedOn) {
-        this.modifiedOn = modifiedOn;
+    public void setMenuImg(String menuImg) {
+        this.menuImg = menuImg == null ? null : menuImg.trim();
     }
 
-    public Integer getOrderNo() {
-        return orderNo;
+    public String getTarget() {
+        return target;
     }
 
-    public void setOrderNo(Integer orderNo) {
-        this.orderNo = orderNo;
+    public void setTarget(String target) {
+        this.target = target == null ? null : target.trim();
+    }
+
+    public Integer getMenuType() {
+        return menuType;
+    }
+
+    public void setMenuType(Integer menuType) {
+        this.menuType = menuType;
+    }
+
+    public String getNavigateurl() {
+        return navigateurl;
+    }
+
+    public void setNavigateurl(String navigateurl) {
+        this.navigateurl = navigateurl == null ? null : navigateurl.trim();
+    }
+
+    public Integer getSortcode() {
+        return sortcode;
+    }
+
+    public void setSortcode(Integer sortcode) {
+        this.sortcode = sortcode;
+    }
+
+    public Integer getDeletemark() {
+        return deletemark;
+    }
+
+    public void setDeletemark(Integer deletemark) {
+        this.deletemark = deletemark;
+    }
+
+    public Date getCreatedate() {
+        return createdate;
+    }
+
+    public void setCreatedate(Date createdate) {
+        this.createdate = createdate;
+    }
+
+    public String getCreateuserid() {
+        return createuserid;
+    }
+
+    public void setCreateuserid(String createuserid) {
+        this.createuserid = createuserid == null ? null : createuserid.trim();
+    }
+
+    public String getCreateusername() {
+        return createusername;
+    }
+
+    public void setCreateusername(String createusername) {
+        this.createusername = createusername == null ? null : createusername.trim();
+    }
+
+    public Date getModifydate() {
+        return modifydate;
+    }
+
+    public void setModifydate(Date modifydate) {
+        this.modifydate = modifydate;
+    }
+
+    public String getModifyuserid() {
+        return modifyuserid;
+    }
+
+    public void setModifyuserid(String modifyuserid) {
+        this.modifyuserid = modifyuserid == null ? null : modifyuserid.trim();
+    }
+
+    public String getModifyusername() {
+        return modifyusername;
+    }
+
+    public void setModifyusername(String modifyusername) {
+        this.modifyusername = modifyusername == null ? null : modifyusername.trim();
     }
 }

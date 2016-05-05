@@ -3,13 +3,13 @@ package xyz.flym.carlis.persistence.mapper;
 import xyz.flym.carlis.persistence.domain.Hotel;
 
 public interface HotelMapper {
-    int deleteByPrimaryKey(Integer advertisingId);
+    int deleteByPrimaryKey(Integer hotelId);
 
     int insert(Hotel record);
 
     int insertSelective(Hotel record);
 
-    Hotel selectByPrimaryKey(Integer advertisingId);
+    Hotel selectByPrimaryKey(Integer hotelId);
 
     int updateByPrimaryKeySelective(Hotel record);
 

@@ -3,40 +3,56 @@ package xyz.flym.carlis.persistence.domain;
 import java.util.Date;
 
 public class UsersToken {
-    private Integer advertisingId;
+    private Integer userTokenId;
 
-    private Integer type;
+    private Integer userId;
 
-    private Integer relaId;
+    private String token;
+
+    private String refreshToken;
+
+    private Date expiredTime;
 
     private Date createdOn;
 
-    private Date modifiedOn;
-
-    private Integer orderNo;
-
-    public Integer getAdvertisingId() {
-        return advertisingId;
+    public Integer getUserTokenId() {
+        return userTokenId;
     }
 
-    public void setAdvertisingId(Integer advertisingId) {
-        this.advertisingId = advertisingId;
+    public void setUserTokenId(Integer userTokenId) {
+        this.userTokenId = userTokenId;
     }
 
-    public Integer getType() {
-        return type;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setType(Integer type) {
-        this.type = type;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
-    public Integer getRelaId() {
-        return relaId;
+    public String getToken() {
+        return token;
     }
 
-    public void setRelaId(Integer relaId) {
-        this.relaId = relaId;
+    public void setToken(String token) {
+        this.token = token == null ? null : token.trim();
+    }
+
+    public String getRefreshToken() {
+        return refreshToken;
+    }
+
+    public void setRefreshToken(String refreshToken) {
+        this.refreshToken = refreshToken == null ? null : refreshToken.trim();
+    }
+
+    public Date getExpiredTime() {
+        return expiredTime;
+    }
+
+    public void setExpiredTime(Date expiredTime) {
+        this.expiredTime = expiredTime;
     }
 
     public Date getCreatedOn() {
@@ -45,21 +61,5 @@ public class UsersToken {
 
     public void setCreatedOn(Date createdOn) {
         this.createdOn = createdOn;
-    }
-
-    public Date getModifiedOn() {
-        return modifiedOn;
-    }
-
-    public void setModifiedOn(Date modifiedOn) {
-        this.modifiedOn = modifiedOn;
-    }
-
-    public Integer getOrderNo() {
-        return orderNo;
-    }
-
-    public void setOrderNo(Integer orderNo) {
-        this.orderNo = orderNo;
     }
 }

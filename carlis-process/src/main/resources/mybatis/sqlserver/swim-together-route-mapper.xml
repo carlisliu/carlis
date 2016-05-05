@@ -2,45 +2,63 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="xyz.flym.carlis.persistence.mapper.SwimTogetherRouteMapper" >
   <resultMap id="BaseResultMap" type="xyz.flym.carlis.persistence.domain.SwimTogetherRoute" >
-    <id column="advertising_id" property="advertisingId" jdbcType="INTEGER" />
-    <result column="type" property="type" jdbcType="INTEGER" />
-    <result column="rela_id" property="relaId" jdbcType="INTEGER" />
+    <id column="swim_together_route_id" property="swimTogetherRouteId" jdbcType="INTEGER" />
+    <result column="swim_together_id" property="swimTogetherId" jdbcType="INTEGER" />
+    <result column="scenic_spot_id" property="scenicSpotId" jdbcType="INTEGER" />
+    <result column="city_id" property="cityId" jdbcType="INTEGER" />
+    <result column="county_id" property="countyId" jdbcType="INTEGER" />
+    <result column="visit_often" property="visitOften" jdbcType="INTEGER" />
+    <result column="order_no" property="orderNo" jdbcType="INTEGER" />
     <result column="created_on" property="createdOn" jdbcType="TIMESTAMP" />
     <result column="modified_on" property="modifiedOn" jdbcType="TIMESTAMP" />
-    <result column="order_no" property="orderNo" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Base_Column_List" >
-    advertising_id, type, rela_id, created_on, modified_on, order_no
+    swim_together_route_id, swim_together_id, scenic_spot_id, city_id, county_id, visit_often, 
+    order_no, created_on, modified_on
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
-    from advertising
-    where advertising_id = #{advertisingId,jdbcType=INTEGER}
+    from swim_together_route
+    where swim_together_route_id = #{swimTogetherRouteId,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from advertising
-    where advertising_id = #{advertisingId,jdbcType=INTEGER}
+    delete from swim_together_route
+    where swim_together_route_id = #{swimTogetherRouteId,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="xyz.flym.carlis.persistence.domain.SwimTogetherRoute" >
-    insert into advertising (advertising_id, type, rela_id, 
-      created_on, modified_on, order_no
-      )
-    values (#{advertisingId,jdbcType=INTEGER}, #{type,jdbcType=INTEGER}, #{relaId,jdbcType=INTEGER}, 
-      #{createdOn,jdbcType=TIMESTAMP}, #{modifiedOn,jdbcType=TIMESTAMP}, #{orderNo,jdbcType=INTEGER}
-      )
+    insert into swim_together_route (swim_together_route_id, swim_together_id, 
+      scenic_spot_id, city_id, county_id, 
+      visit_often, order_no, created_on, 
+      modified_on)
+    values (#{swimTogetherRouteId,jdbcType=INTEGER}, #{swimTogetherId,jdbcType=INTEGER}, 
+      #{scenicSpotId,jdbcType=INTEGER}, #{cityId,jdbcType=INTEGER}, #{countyId,jdbcType=INTEGER}, 
+      #{visitOften,jdbcType=INTEGER}, #{orderNo,jdbcType=INTEGER}, #{createdOn,jdbcType=TIMESTAMP}, 
+      #{modifiedOn,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="xyz.flym.carlis.persistence.domain.SwimTogetherRoute" >
-    insert into advertising
+    insert into swim_together_route
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="advertisingId != null" >
-        advertising_id,
+      <if test="swimTogetherRouteId != null" >
+        swim_together_route_id,
       </if>
-      <if test="type != null" >
-        type,
+      <if test="swimTogetherId != null" >
+        swim_together_id,
       </if>
-      <if test="relaId != null" >
-        rela_id,
+      <if test="scenicSpotId != null" >
+        scenic_spot_id,
+      </if>
+      <if test="cityId != null" >
+        city_id,
+      </if>
+      <if test="countyId != null" >
+        county_id,
+      </if>
+      <if test="visitOften != null" >
+        visit_often,
+      </if>
+      <if test="orderNo != null" >
+        order_no,
       </if>
       <if test="createdOn != null" >
         created_on,
@@ -48,19 +66,28 @@
       <if test="modifiedOn != null" >
         modified_on,
       </if>
-      <if test="orderNo != null" >
-        order_no,
-      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="advertisingId != null" >
-        #{advertisingId,jdbcType=INTEGER},
+      <if test="swimTogetherRouteId != null" >
+        #{swimTogetherRouteId,jdbcType=INTEGER},
       </if>
-      <if test="type != null" >
-        #{type,jdbcType=INTEGER},
+      <if test="swimTogetherId != null" >
+        #{swimTogetherId,jdbcType=INTEGER},
       </if>
-      <if test="relaId != null" >
-        #{relaId,jdbcType=INTEGER},
+      <if test="scenicSpotId != null" >
+        #{scenicSpotId,jdbcType=INTEGER},
+      </if>
+      <if test="cityId != null" >
+        #{cityId,jdbcType=INTEGER},
+      </if>
+      <if test="countyId != null" >
+        #{countyId,jdbcType=INTEGER},
+      </if>
+      <if test="visitOften != null" >
+        #{visitOften,jdbcType=INTEGER},
+      </if>
+      <if test="orderNo != null" >
+        #{orderNo,jdbcType=INTEGER},
       </if>
       <if test="createdOn != null" >
         #{createdOn,jdbcType=TIMESTAMP},
@@ -68,19 +95,28 @@
       <if test="modifiedOn != null" >
         #{modifiedOn,jdbcType=TIMESTAMP},
       </if>
-      <if test="orderNo != null" >
-        #{orderNo,jdbcType=INTEGER},
-      </if>
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="xyz.flym.carlis.persistence.domain.SwimTogetherRoute" >
-    update advertising
+    update swim_together_route
     <set >
-      <if test="type != null" >
-        type = #{type,jdbcType=INTEGER},
+      <if test="swimTogetherId != null" >
+        swim_together_id = #{swimTogetherId,jdbcType=INTEGER},
       </if>
-      <if test="relaId != null" >
-        rela_id = #{relaId,jdbcType=INTEGER},
+      <if test="scenicSpotId != null" >
+        scenic_spot_id = #{scenicSpotId,jdbcType=INTEGER},
+      </if>
+      <if test="cityId != null" >
+        city_id = #{cityId,jdbcType=INTEGER},
+      </if>
+      <if test="countyId != null" >
+        county_id = #{countyId,jdbcType=INTEGER},
+      </if>
+      <if test="visitOften != null" >
+        visit_often = #{visitOften,jdbcType=INTEGER},
+      </if>
+      <if test="orderNo != null" >
+        order_no = #{orderNo,jdbcType=INTEGER},
       </if>
       <if test="createdOn != null" >
         created_on = #{createdOn,jdbcType=TIMESTAMP},
@@ -88,19 +124,19 @@
       <if test="modifiedOn != null" >
         modified_on = #{modifiedOn,jdbcType=TIMESTAMP},
       </if>
-      <if test="orderNo != null" >
-        order_no = #{orderNo,jdbcType=INTEGER},
-      </if>
     </set>
-    where advertising_id = #{advertisingId,jdbcType=INTEGER}
+    where swim_together_route_id = #{swimTogetherRouteId,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="xyz.flym.carlis.persistence.domain.SwimTogetherRoute" >
-    update advertising
-    set type = #{type,jdbcType=INTEGER},
-      rela_id = #{relaId,jdbcType=INTEGER},
+    update swim_together_route
+    set swim_together_id = #{swimTogetherId,jdbcType=INTEGER},
+      scenic_spot_id = #{scenicSpotId,jdbcType=INTEGER},
+      city_id = #{cityId,jdbcType=INTEGER},
+      county_id = #{countyId,jdbcType=INTEGER},
+      visit_often = #{visitOften,jdbcType=INTEGER},
+      order_no = #{orderNo,jdbcType=INTEGER},
       created_on = #{createdOn,jdbcType=TIMESTAMP},
-      modified_on = #{modifiedOn,jdbcType=TIMESTAMP},
-      order_no = #{orderNo,jdbcType=INTEGER}
-    where advertising_id = #{advertisingId,jdbcType=INTEGER}
+      modified_on = #{modifiedOn,jdbcType=TIMESTAMP}
+    where swim_together_route_id = #{swimTogetherRouteId,jdbcType=INTEGER}
   </update>
 </mapper>

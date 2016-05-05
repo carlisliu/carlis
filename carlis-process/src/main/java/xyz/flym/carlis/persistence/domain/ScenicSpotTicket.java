@@ -3,40 +3,88 @@ package xyz.flym.carlis.persistence.domain;
 import java.util.Date;
 
 public class ScenicSpotTicket {
-    private Integer advertisingId;
+    private Integer scenicSpotTicketId;
 
-    private Integer type;
+    private String name;
 
-    private Integer relaId;
+    private String nameEn;
+
+    private String exchangeWay;
+
+    private String appointmentTime;
+
+    private String refundRules;
+
+    private Double price;
+
+    private Integer discount;
 
     private Date createdOn;
 
     private Date modifiedOn;
 
-    private Integer orderNo;
-
-    public Integer getAdvertisingId() {
-        return advertisingId;
+    public Integer getScenicSpotTicketId() {
+        return scenicSpotTicketId;
     }
 
-    public void setAdvertisingId(Integer advertisingId) {
-        this.advertisingId = advertisingId;
+    public void setScenicSpotTicketId(Integer scenicSpotTicketId) {
+        this.scenicSpotTicketId = scenicSpotTicketId;
     }
 
-    public Integer getType() {
-        return type;
+    public String getName() {
+        return name;
     }
 
-    public void setType(Integer type) {
-        this.type = type;
+    public void setName(String name) {
+        this.name = name == null ? null : name.trim();
     }
 
-    public Integer getRelaId() {
-        return relaId;
+    public String getNameEn() {
+        return nameEn;
     }
 
-    public void setRelaId(Integer relaId) {
-        this.relaId = relaId;
+    public void setNameEn(String nameEn) {
+        this.nameEn = nameEn == null ? null : nameEn.trim();
+    }
+
+    public String getExchangeWay() {
+        return exchangeWay;
+    }
+
+    public void setExchangeWay(String exchangeWay) {
+        this.exchangeWay = exchangeWay == null ? null : exchangeWay.trim();
+    }
+
+    public String getAppointmentTime() {
+        return appointmentTime;
+    }
+
+    public void setAppointmentTime(String appointmentTime) {
+        this.appointmentTime = appointmentTime == null ? null : appointmentTime.trim();
+    }
+
+    public String getRefundRules() {
+        return refundRules;
+    }
+
+    public void setRefundRules(String refundRules) {
+        this.refundRules = refundRules == null ? null : refundRules.trim();
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    public Integer getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(Integer discount) {
+        this.discount = discount;
     }
 
     public Date getCreatedOn() {
@@ -53,13 +101,5 @@ public class ScenicSpotTicket {
 
     public void setModifiedOn(Date modifiedOn) {
         this.modifiedOn = modifiedOn;
-    }
-
-    public Integer getOrderNo() {
-        return orderNo;
-    }
-
-    public void setOrderNo(Integer orderNo) {
-        this.orderNo = orderNo;
     }
 }

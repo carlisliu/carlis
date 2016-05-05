@@ -2,45 +2,77 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="xyz.flym.carlis.persistence.mapper.ScenicSpotUserImagesMapper" >
   <resultMap id="BaseResultMap" type="xyz.flym.carlis.persistence.domain.ScenicSpotUserImages" >
-    <id column="advertising_id" property="advertisingId" jdbcType="INTEGER" />
-    <result column="type" property="type" jdbcType="INTEGER" />
-    <result column="rela_id" property="relaId" jdbcType="INTEGER" />
+    <id column="scenic_spot_user_images_id" property="scenicSpotUserImagesId" jdbcType="INTEGER" />
+    <result column="scenic_spot_id" property="scenicSpotId" jdbcType="INTEGER" />
+    <result column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="NVARCHAR" />
+    <result column="source_img_path" property="sourceImgPath" jdbcType="VARCHAR" />
+    <result column="thumbnail_path" property="thumbnailPath" jdbcType="VARCHAR" />
+    <result column="view_count" property="viewCount" jdbcType="BIGINT" />
+    <result column="praise_count" property="praiseCount" jdbcType="BIGINT" />
+    <result column="point_x" property="pointX" jdbcType="DECIMAL" />
+    <result column="point_y" property="pointY" jdbcType="DECIMAL" />
     <result column="created_on" property="createdOn" jdbcType="TIMESTAMP" />
     <result column="modified_on" property="modifiedOn" jdbcType="TIMESTAMP" />
-    <result column="order_no" property="orderNo" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Base_Column_List" >
-    advertising_id, type, rela_id, created_on, modified_on, order_no
+    scenic_spot_user_images_id, scenic_spot_id, user_id, name, source_img_path, thumbnail_path, 
+    view_count, praise_count, point_x, point_y, created_on, modified_on
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
-    from advertising
-    where advertising_id = #{advertisingId,jdbcType=INTEGER}
+    from scenic_spot_user_images
+    where scenic_spot_user_images_id = #{scenicSpotUserImagesId,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from advertising
-    where advertising_id = #{advertisingId,jdbcType=INTEGER}
+    delete from scenic_spot_user_images
+    where scenic_spot_user_images_id = #{scenicSpotUserImagesId,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="xyz.flym.carlis.persistence.domain.ScenicSpotUserImages" >
-    insert into advertising (advertising_id, type, rela_id, 
-      created_on, modified_on, order_no
-      )
-    values (#{advertisingId,jdbcType=INTEGER}, #{type,jdbcType=INTEGER}, #{relaId,jdbcType=INTEGER}, 
-      #{createdOn,jdbcType=TIMESTAMP}, #{modifiedOn,jdbcType=TIMESTAMP}, #{orderNo,jdbcType=INTEGER}
-      )
+    insert into scenic_spot_user_images (scenic_spot_user_images_id, scenic_spot_id, 
+      user_id, name, source_img_path, 
+      thumbnail_path, view_count, praise_count, 
+      point_x, point_y, created_on, 
+      modified_on)
+    values (#{scenicSpotUserImagesId,jdbcType=INTEGER}, #{scenicSpotId,jdbcType=INTEGER}, 
+      #{userId,jdbcType=INTEGER}, #{name,jdbcType=NVARCHAR}, #{sourceImgPath,jdbcType=VARCHAR}, 
+      #{thumbnailPath,jdbcType=VARCHAR}, #{viewCount,jdbcType=BIGINT}, #{praiseCount,jdbcType=BIGINT}, 
+      #{pointX,jdbcType=DECIMAL}, #{pointY,jdbcType=DECIMAL}, #{createdOn,jdbcType=TIMESTAMP}, 
+      #{modifiedOn,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="xyz.flym.carlis.persistence.domain.ScenicSpotUserImages" >
-    insert into advertising
+    insert into scenic_spot_user_images
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="advertisingId != null" >
-        advertising_id,
+      <if test="scenicSpotUserImagesId != null" >
+        scenic_spot_user_images_id,
       </if>
-      <if test="type != null" >
-        type,
+      <if test="scenicSpotId != null" >
+        scenic_spot_id,
       </if>
-      <if test="relaId != null" >
-        rela_id,
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="sourceImgPath != null" >
+        source_img_path,
+      </if>
+      <if test="thumbnailPath != null" >
+        thumbnail_path,
+      </if>
+      <if test="viewCount != null" >
+        view_count,
+      </if>
+      <if test="praiseCount != null" >
+        praise_count,
+      </if>
+      <if test="pointX != null" >
+        point_x,
+      </if>
+      <if test="pointY != null" >
+        point_y,
       </if>
       <if test="createdOn != null" >
         created_on,
@@ -48,19 +80,37 @@
       <if test="modifiedOn != null" >
         modified_on,
       </if>
-      <if test="orderNo != null" >
-        order_no,
-      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="advertisingId != null" >
-        #{advertisingId,jdbcType=INTEGER},
+      <if test="scenicSpotUserImagesId != null" >
+        #{scenicSpotUserImagesId,jdbcType=INTEGER},
       </if>
-      <if test="type != null" >
-        #{type,jdbcType=INTEGER},
+      <if test="scenicSpotId != null" >
+        #{scenicSpotId,jdbcType=INTEGER},
       </if>
-      <if test="relaId != null" >
-        #{relaId,jdbcType=INTEGER},
+      <if test="userId != null" >
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=NVARCHAR},
+      </if>
+      <if test="sourceImgPath != null" >
+        #{sourceImgPath,jdbcType=VARCHAR},
+      </if>
+      <if test="thumbnailPath != null" >
+        #{thumbnailPath,jdbcType=VARCHAR},
+      </if>
+      <if test="viewCount != null" >
+        #{viewCount,jdbcType=BIGINT},
+      </if>
+      <if test="praiseCount != null" >
+        #{praiseCount,jdbcType=BIGINT},
+      </if>
+      <if test="pointX != null" >
+        #{pointX,jdbcType=DECIMAL},
+      </if>
+      <if test="pointY != null" >
+        #{pointY,jdbcType=DECIMAL},
       </if>
       <if test="createdOn != null" >
         #{createdOn,jdbcType=TIMESTAMP},
@@ -68,19 +118,37 @@
       <if test="modifiedOn != null" >
         #{modifiedOn,jdbcType=TIMESTAMP},
       </if>
-      <if test="orderNo != null" >
-        #{orderNo,jdbcType=INTEGER},
-      </if>
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="xyz.flym.carlis.persistence.domain.ScenicSpotUserImages" >
-    update advertising
+    update scenic_spot_user_images
     <set >
-      <if test="type != null" >
-        type = #{type,jdbcType=INTEGER},
+      <if test="scenicSpotId != null" >
+        scenic_spot_id = #{scenicSpotId,jdbcType=INTEGER},
       </if>
-      <if test="relaId != null" >
-        rela_id = #{relaId,jdbcType=INTEGER},
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        name = #{name,jdbcType=NVARCHAR},
+      </if>
+      <if test="sourceImgPath != null" >
+        source_img_path = #{sourceImgPath,jdbcType=VARCHAR},
+      </if>
+      <if test="thumbnailPath != null" >
+        thumbnail_path = #{thumbnailPath,jdbcType=VARCHAR},
+      </if>
+      <if test="viewCount != null" >
+        view_count = #{viewCount,jdbcType=BIGINT},
+      </if>
+      <if test="praiseCount != null" >
+        praise_count = #{praiseCount,jdbcType=BIGINT},
+      </if>
+      <if test="pointX != null" >
+        point_x = #{pointX,jdbcType=DECIMAL},
+      </if>
+      <if test="pointY != null" >
+        point_y = #{pointY,jdbcType=DECIMAL},
       </if>
       <if test="createdOn != null" >
         created_on = #{createdOn,jdbcType=TIMESTAMP},
@@ -88,19 +156,22 @@
       <if test="modifiedOn != null" >
         modified_on = #{modifiedOn,jdbcType=TIMESTAMP},
       </if>
-      <if test="orderNo != null" >
-        order_no = #{orderNo,jdbcType=INTEGER},
-      </if>
     </set>
-    where advertising_id = #{advertisingId,jdbcType=INTEGER}
+    where scenic_spot_user_images_id = #{scenicSpotUserImagesId,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="xyz.flym.carlis.persistence.domain.ScenicSpotUserImages" >
-    update advertising
-    set type = #{type,jdbcType=INTEGER},
-      rela_id = #{relaId,jdbcType=INTEGER},
+    update scenic_spot_user_images
+    set scenic_spot_id = #{scenicSpotId,jdbcType=INTEGER},
+      user_id = #{userId,jdbcType=INTEGER},
+      name = #{name,jdbcType=NVARCHAR},
+      source_img_path = #{sourceImgPath,jdbcType=VARCHAR},
+      thumbnail_path = #{thumbnailPath,jdbcType=VARCHAR},
+      view_count = #{viewCount,jdbcType=BIGINT},
+      praise_count = #{praiseCount,jdbcType=BIGINT},
+      point_x = #{pointX,jdbcType=DECIMAL},
+      point_y = #{pointY,jdbcType=DECIMAL},
       created_on = #{createdOn,jdbcType=TIMESTAMP},
-      modified_on = #{modifiedOn,jdbcType=TIMESTAMP},
-      order_no = #{orderNo,jdbcType=INTEGER}
-    where advertising_id = #{advertisingId,jdbcType=INTEGER}
+      modified_on = #{modifiedOn,jdbcType=TIMESTAMP}
+    where scenic_spot_user_images_id = #{scenicSpotUserImagesId,jdbcType=INTEGER}
   </update>
 </mapper>

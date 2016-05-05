@@ -1,26 +1,53 @@
 package xyz.flym.carlis.persistence.domain;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 public class ScenicSpotPoints {
-    private Integer advertisingId;
+    private Long scenicSpotPointsId;
+
+    private Integer scenicSpotId;
+
+    private BigDecimal pointX;
+
+    private BigDecimal pointY;
 
     private Integer type;
-
-    private Integer relaId;
 
     private Date createdOn;
 
     private Date modifiedOn;
 
-    private Integer orderNo;
-
-    public Integer getAdvertisingId() {
-        return advertisingId;
+    public Long getScenicSpotPointsId() {
+        return scenicSpotPointsId;
     }
 
-    public void setAdvertisingId(Integer advertisingId) {
-        this.advertisingId = advertisingId;
+    public void setScenicSpotPointsId(Long scenicSpotPointsId) {
+        this.scenicSpotPointsId = scenicSpotPointsId;
+    }
+
+    public Integer getScenicSpotId() {
+        return scenicSpotId;
+    }
+
+    public void setScenicSpotId(Integer scenicSpotId) {
+        this.scenicSpotId = scenicSpotId;
+    }
+
+    public BigDecimal getPointX() {
+        return pointX;
+    }
+
+    public void setPointX(BigDecimal pointX) {
+        this.pointX = pointX;
+    }
+
+    public BigDecimal getPointY() {
+        return pointY;
+    }
+
+    public void setPointY(BigDecimal pointY) {
+        this.pointY = pointY;
     }
 
     public Integer getType() {
@@ -29,14 +56,6 @@ public class ScenicSpotPoints {
 
     public void setType(Integer type) {
         this.type = type;
-    }
-
-    public Integer getRelaId() {
-        return relaId;
-    }
-
-    public void setRelaId(Integer relaId) {
-        this.relaId = relaId;
     }
 
     public Date getCreatedOn() {
@@ -53,13 +72,5 @@ public class ScenicSpotPoints {
 
     public void setModifiedOn(Date modifiedOn) {
         this.modifiedOn = modifiedOn;
-    }
-
-    public Integer getOrderNo() {
-        return orderNo;
-    }
-
-    public void setOrderNo(Integer orderNo) {
-        this.orderNo = orderNo;
     }
 }

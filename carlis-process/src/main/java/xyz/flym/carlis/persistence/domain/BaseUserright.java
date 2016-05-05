@@ -3,63 +3,63 @@ package xyz.flym.carlis.persistence.domain;
 import java.util.Date;
 
 public class BaseUserright {
-    private Integer advertisingId;
+    private String userrightId;
 
-    private Integer type;
+    private String userId;
 
-    private Integer relaId;
+    private String menuId;
 
-    private Date createdOn;
+    private Date createdate;
 
-    private Date modifiedOn;
+    private String createuserid;
 
-    private Integer orderNo;
+    private String createusername;
 
-    public Integer getAdvertisingId() {
-        return advertisingId;
+    public String getUserrightId() {
+        return userrightId;
     }
 
-    public void setAdvertisingId(Integer advertisingId) {
-        this.advertisingId = advertisingId;
+    public void setUserrightId(String userrightId) {
+        this.userrightId = userrightId == null ? null : userrightId.trim();
     }
 
-    public Integer getType() {
-        return type;
+    public String getUserId() {
+        return userId;
     }
 
-    public void setType(Integer type) {
-        this.type = type;
+    public void setUserId(String userId) {
+        this.userId = userId == null ? null : userId.trim();
     }
 
-    public Integer getRelaId() {
-        return relaId;
+    public String getMenuId() {
+        return menuId;
     }
 
-    public void setRelaId(Integer relaId) {
-        this.relaId = relaId;
+    public void setMenuId(String menuId) {
+        this.menuId = menuId == null ? null : menuId.trim();
     }
 
-    public Date getCreatedOn() {
-        return createdOn;
+    public Date getCreatedate() {
+        return createdate;
     }
 
-    public void setCreatedOn(Date createdOn) {
-        this.createdOn = createdOn;
+    public void setCreatedate(Date createdate) {
+        this.createdate = createdate;
     }
 
-    public Date getModifiedOn() {
-        return modifiedOn;
+    public String getCreateuserid() {
+        return createuserid;
     }
 
-    public void setModifiedOn(Date modifiedOn) {
-        this.modifiedOn = modifiedOn;
+    public void setCreateuserid(String createuserid) {
+        this.createuserid = createuserid == null ? null : createuserid.trim();
     }
 
-    public Integer getOrderNo() {
-        return orderNo;
+    public String getCreateusername() {
+        return createusername;
     }
 
-    public void setOrderNo(Integer orderNo) {
-        this.orderNo = orderNo;
+    public void setCreateusername(String createusername) {
+        this.createusername = createusername == null ? null : createusername.trim();
     }
 }

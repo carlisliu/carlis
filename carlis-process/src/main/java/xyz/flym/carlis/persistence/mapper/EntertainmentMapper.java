@@ -3,13 +3,13 @@ package xyz.flym.carlis.persistence.mapper;
 import xyz.flym.carlis.persistence.domain.Entertainment;
 
 public interface EntertainmentMapper {
-    int deleteByPrimaryKey(Integer advertisingId);
+    int deleteByPrimaryKey(Integer entertainmentId);
 
     int insert(Entertainment record);
 
     int insertSelective(Entertainment record);
 
-    Entertainment selectByPrimaryKey(Integer advertisingId);
+    Entertainment selectByPrimaryKey(Integer entertainmentId);
 
     int updateByPrimaryKeySelective(Entertainment record);
 
