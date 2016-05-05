@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="introductionAction" class="xyz.flym.carlis.web.action.admin.scenic.IntroductionAction" scope="prototype">
+	</bean>
+	
+	<bean id="scenicPhotoAction" class="xyz.flym.carlis.web.action.admin.scenic.ScenicPhotoAction" scope="prototype">
+	</bean>
+	
+	<bean id="scenicAlbumAction" class="xyz.flym.carlis.web.action.admin.scenic.ScenicAlbumAction" scope="prototype">
+	</bean>
+	
+	<bean id="entertainmentProjectAction" class="xyz.flym.carlis.web.action.admin.scenic.EntertainmentProjectAction" scope="prototype">
+	</bean>
+	
+	<bean id="scenicNavigationAction" class="xyz.flym.carlis.web.action.admin.scenic.ScenicNavigationAction" scope="prototype">
+	</bean>
+	
+	<bean id="landscapeExplanationAction" class="xyz.flym.carlis.web.action.admin.scenic.LandscapeExplanationAction" scope="prototype">
+	</bean>
+	
+	<bean id="trafficGuidenceAction" class="xyz.flym.carlis.web.action.admin.scenic.TrafficGuidenceAction" scope="prototype">
+	</bean>
+	
+	<bean id="aiyouTicketAction" class="xyz.flym.carlis.web.action.admin.scenic.AiyouTicketAction" scope="prototype">
+	</bean>
+	
+	<bean id="sosAction" class="xyz.flym.carlis.web.action.admin.scenic.SosAction" scope="prototype">
+	</bean>
+	
+	<bean id="commentAction" class="xyz.flym.carlis.web.action.admin.scenic.CommentAction" scope="prototype">
+	</bean>
+	
+	<bean id="activityAction" class="xyz.flym.carlis.web.action.admin.scenic.ActivityAction" scope="prototype">
+	</bean>
+	
+	<bean id="cateringAccommodationAction" class="xyz.flym.carlis.web.action.admin.scenic.CateringAccommodationAction" scope="prototype">
+	</bean>
+	
+	<bean id="onTripAction" class="xyz.flym.carlis.web.action.admin.scenic.OnTripAction" scope="prototype">
+	</bean>
+	
+</beans>

@@ -1,0 +1,781 @@
+@charset "utf-8";
+.main-box{
+    width:100%;
+    min-height: 100%;
+    position:relative;
+}
+/*head*/
+.header{
+    width:100%;
+    height: 84px;
+    background: #404040;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    z-index: 10;
+}
+.header .logo{
+    width:248px;
+    height: 84px;
+    background:url(../images/logo.jpg) center center no-repeat ;
+    float: left;
+}
+.header .head-nav{
+    width: 776px;
+    padding: 0 12px;
+    height: 84px;
+    float: left;
+}
+.header .choose{
+    width: 150px;
+    height: 84px;
+    float: right;
+}
+.header .head-nav h1{
+    font-size:18px;
+    color:#fff;
+    font-weight: bold;
+    padding:18px 0 12px 0;
+}
+.header .head-nav ul li{
+    float: left;
+    margin-right:30px;
+}
+.header .head-nav ul li a{
+    font-size: 14px;
+    color:#999;
+    padding-left:22px;
+}
+.head-nav ul li a.login{
+    background: url(../images/icon.png) 0 1px no-repeat;
+}
+.head-nav ul li a.msg{
+    background: url(../images/icon.png) 0 -35px no-repeat;
+    position: relative;
+}
+.head-nav ul li a.msg .num{
+    display: inline-block;
+    width: 28px;
+    height: 14px;
+    background: #ea5d5d;
+    border-radius: 8px;
+    color: #fff;
+    position: absolute;
+    top: -5px;
+    left: 8px;
+    font-size: 10px;
+    line-height: 14px;
+    text-align: center;
+}
+.head-nav ul li a.help{
+    background: url(../images/icon.png) 0 -73px no-repeat;
+}
+.header .choose .select-city{
+    width: 114px;
+    height: 28px;
+    background: #363636;
+    border-radius: 20px;
+    margin: 28px auto;
+    text-align: center;
+    line-height: 28px;
+    cursor: pointer;
+}
+.header .choose .select-city span{
+    font-size: 14px;
+    color:#fff;
+    display:inline-block;
+    padding-right: 16px;
+    background: url(../images/icon.png) 62px -171px no-repeat;
+}
+/*菜单*/
+.nav{
+    width:240px;
+    position: absolute;
+    left: 0;
+    min-height: 100%;
+    padding-top:102px;
+    background: #333;
+    z-index: 9;
+}
+.nav .main-nav li .arrow{
+    display: inline-block;
+    width:10px;
+    height: 50px;
+    float:right;
+    background: url(../images/icon.png) 0px -161px no-repeat;
+}
+.nav .main-nav li a{
+    font-size: 16px;
+    color: #cccccc;
+    width: 159px;
+    border-left:3px solid #333 ;
+    padding:0 20px 0 58px;
+    line-height: 50px;
+}
+.nav .main-nav li a.map{
+    background: url(../images/icon.png) 28px -242px no-repeat;
+}
+.nav .main-nav li a.data{
+    background: url(../images/icon.png) 28px -286px no-repeat;
+}
+.nav .main-nav li a.spot-management{
+    background: url(../images/icon.png) 28px -198px no-repeat;
+}
+.nav .main-nav li a.selected{
+    border-left:3px solid #ff9800;
+    background-color:#292929;
+}
+.nav .second-nav{
+    background: #292929;
+}
+.nav .second-nav a{
+   padding-left: 60px;
+    width: 180px;
+    height: 42px;
+    line-height: 42px;
+    font-size: 14px;
+    color: #808080;
+}
+.nav .second-nav a.selected{
+    color:#ccc;
+}
+.nav .second-nav a .not-com{
+    color:#808080;
+    display: inline-block;
+    float: right;
+    padding-left: 10px;
+    margin-right:18px;
+    background: url(../images/icon.png) 0px -322px no-repeat;
+}
+/*内容*/
+/*景区评论*/
+.wrap-box{
+    padding-top:84px;
+    position: absolute;
+    left: 0px;
+    min-height: 100%;
+    width: 100%;
+    z-index: 8;
+    background: #ebebeb;
+}
+.wrap-box .wrap{
+    padding:0 20px 0 260px;
+}
+.wrap .release{
+    height: 48px;
+    background: #fff;
+    box-shadow: 1px 1px 1px #d7d7d7;
+}
+.wrap .release .msg{
+    display: block;
+    float: left;
+    height: 48px;
+    line-height: 48px;
+    font-size: 16px;
+    color: #666;
+    width: 81.3%;
+    padding-left: 22px;
+}
+.wrap .release .push{
+    display: block;
+    float: right;
+    height: 36px;
+    line-height: 36px;
+    font-size: 16px;
+    color: #fff;
+    width: 112px;
+    margin:6px 20px;
+    background: #ff9800;
+    text-align: center;
+    border-radius: 4px;
+}
+.wrap .title-one{
+    background:url(../images/icon.png) 0px -346px no-repeat;
+    font-size: 16px;
+    color: #666;
+    padding:23px 0 10px 15px;
+    overflow: hidden;
+}
+.wrap .title-one span{
+    background:url(../images/icon.png) 0px -346px no-repeat;
+    font-size: 16px;
+    color: #666;
+    width: 80%;
+    float: left;
+}
+.wrap .title-one a{
+    font-size: 14px;
+    color: #999;
+    width: 30px;
+    padding-left: 15px;
+    float: right;
+}
+.wrap .title-one a.editr{
+    background:url(../images/icon.png) 0px -407px no-repeat;
+}
+.wrap .title-one a.editg{
+    background:url(../images/icon.png) 0px -445px no-repeat;
+}
+.tab-box .tab-btn{
+    border:1px solid #dbdbdb;
+    border-bottom: 0;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: top;
+}
+.tab-box .tab-btn li{
+    float: left;
+}
+.tab-box .tab-btn li a{
+    width:98px;
+    height: 36px;
+    border-bottom: 1px solid #dbdbdb;
+    background: #f0f0f0;
+    font-size: 16px;
+    color:#999;
+    text-align: center;
+    line-height: 36px;
+}
+.tab-box .tab-btn li a.active{
+    border-bottom: 1px solid #fff;
+    background: #fff;
+}
+.tab-box .tab-btn li a .num{
+    color: #ff9800;
+    font-size: 24px;
+}
+
+.tab-box .tab-con{
+    width: 100%;
+    background: #fff;
+    margin-top: -1px;
+    border:1px solid #dbdbdb;
+}
+.tab-box .tab-con .score{
+    margin:20px 20px 0 20px;
+}
+.tab-box .tab-con .score .score-wrap{
+    padding-bottom: 20px;
+}
+.tab-con .score .score-name{
+    overflow: hidden;
+}
+.tab-con .score .score-name .score-class{
+    float: left;
+    font-size: 16px;
+    color: #666;
+}
+.tab-con .score .score-name .score-per{
+    float: right;
+    font-size: 16px;
+    color: #999;
+}
+.tab-con .score .scroll-per{
+    width:100%;
+    height: 16px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+.tab-con .score .scroll-per .per-totle{
+    display: block;
+    height: 16px;
+    width:100%;
+    background: #f0f0f0;
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.tab-con .score .scroll-per .per-actual{
+    display: block;
+    height: 16px;
+    width:50%;
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.tab-con .score .scroll-per .g{
+    background: #66cc33;
+}
+.tab-con .score .scroll-per .o{
+    background: #ff9933;
+}
+.tab-con .score .scroll-per .r{
+    background: #ff6666;
+}
+.tab-con .list-comment{
+    overflow: hidden;
+    margin: 20px 20px 20px 20px;
+    position: relative;
+    border-bottom: 1px solid #f0f0f0;
+} 
+.tab-con .list-comment dt{
+    width: 40px;
+    height: 40px;
+    float: left;
+}
+.tab-con .list-comment dd{
+    padding-left:50px;
+    height: 90px;
+}
+.tab-con .list-comment dd li.line1{
+    overflow: hidden;
+    height: 26px;
+}
+.list-comment li.line1 .title{
+    font-size: 16px;
+    color: #333;
+    width: 90%;
+    float: left;
+}
+.list-comment li.line1 .del{
+    width: 30px;
+    float: right;
+    font-size: 14px;
+    color: #999;
+    padding-left: 15px;
+    background:url(../images/icon.png) 0px -146px no-repeat;
+}
+.tab-con .list-comment dd li.line2{
+    overflow: hidden;
+    height: 26px;
+}
+.list-comment li.line2 .time{
+    font-size: 16px;
+    color: #999;
+    width:170px;
+    float: left;
+}
+.list-comment li.line2 .good{
+    width: 30px;
+    float: left;
+    font-size: 14px;
+    color: #999;
+    padding-left: 15px;
+    background:url(../images/icon.png) 0px -109px no-repeat;
+}
+.tab-con .list-comment dd li.line3{
+    height: 36px;
+    width: 100%;
+    font-size: 14px;
+    color: #999;
+    line-height: 36px;
+}
+.wrap .con-box{
+    padding-bottom: 60px;
+}
+.tab-con .no-border{
+    border: 0;
+}
+/*shadow&&chioce*/
+.shadow{
+    width:100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #000;
+    opacity: 0.3;
+    filter: alpha(opacity=30);
+    display: none;
+}
+.choice{
+    width:220px;
+    height: 290px;
+    background: #f0f0f0;
+    position: absolute;
+    top: 84px;
+    right: 20px;
+    display: none;
+}
+
+.choice .title{
+    width:220px;
+    height: 52px;
+    line-height: 52px;
+    color: #666;
+    font-size: 14px;
+    text-align: center;
+}
+.choice .select,
+.edit-basic .select{
+    width: 180px;
+    height: 36px;
+    margin: 0 auto 20px auto;
+    border-radius: 5px;
+    background: #fff;
+    clear: both;
+    cursor: pointer;
+}
+.choice .error{
+    width: 180px;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+    font-size: 12px;
+    color: #ff6666;
+    margin: -18px auto 0 auto;
+}
+.choice .select .text,
+.edit-basic .select .text{
+    width: 149px;
+    height: 18px;
+    line-height: 18px;
+    background: #fff;
+    font-size: 14px;
+    color: #999999;
+    text-align: center;
+    display: inline-block;
+    border-right: 1px solid #dbdbdb;
+    float: left;
+    margin-top: 9px;
+}
+.choice .select .arrow,
+.edit-basic .select .arrow{
+    width: 30px;
+    height: 36px;
+    float: left;
+    background:url(../images/icon.png) 9px -168px no-repeat;
+}
+/*.choice .select select{
+    width: 180px;
+    height: 36px;
+    background: #fff;
+    font-size: 14px;
+    color: #999999;
+    border: none;
+    text-align: center;
+}*/
+.choice .btn{
+    width: 180px;
+    height: 42px;
+    line-height: 42px;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    margin: 0 auto 20px auto;
+    border-radius: 5px;
+    background: #ff9800;
+}
+.option-box{
+    width: 132px;
+    height: 95px;
+    padding: 10px;
+    overflow-y: auto;
+    background: #fff;
+    border-radius: 3px;
+    position: absolute;
+    z-index: 12;
+    display: none;
+}
+.option-box .select-option li{
+    width: 132px;
+    height: 22px;
+    text-align: center;
+    line-height: 22px;
+    color: #999999;
+    font-size: 14px;
+}
+/*景区介绍*/
+.con-box .basic-spot{
+    width:100%;
+    border: 1px solid #dbdbdb;
+}
+.con-box .basic-spot li{
+    height: 40px;
+    line-height: 40px;
+    padding: 0 20px;
+}
+.con-box .basic-spot li.j{
+    background: #fff;
+}
+.con-box .basic-spot li.o{
+    background: #f5f5f5;
+}
+.con-box .basic-spot li .title{
+    font-size: 14px;
+    color: #999;
+}
+.con-box .basic-spot li .con{
+    font-size: 14px;
+    color: #4c4c4c;
+}
+.con-box .introduce-spot{
+    border: 1px solid #dbdbdb;
+    padding: 16px;
+    background: #fff;
+}
+.con-box .introduce-spot p{
+    font-size: 16px;
+    color: #666;
+    line-height: 22px;
+}
+.con-box .introduce-spot .introduce-spot-img{
+    width: 270px;
+    height: 240px;
+    margin-top: 20px;
+}
+/*基本信息编辑*/
+.edit-basic{
+    width: 820px;
+    height: 632px;
+    padding: 30px;
+    background: #f0f0f0;
+    border-radius: 5px;
+    position: absolute;
+    top: 104px;
+    left: 50%;
+    margin-left: -346px;
+    display: none;
+}
+.edit-box .title-edit{
+    font-size: 18px;
+    color: #666666;
+    padding-bottom: 20px;
+    text-align: center;
+}
+.edit-box .title{
+    font-size: 14px;
+    color: #666666;
+    height: 40px;
+    line-height: 40px;
+}
+.edit-box .title .r{
+    background:url(../images/icon.png) 3px -468px no-repeat;
+    display: inline-block;
+    width: 20px;
+    height: 40px;
+    vertical-align: top;
+}
+.edit-box .select-list{
+    overflow: auto;
+}
+.edit-box .select-list li{
+    float: left;
+    margin-right:20px ;
+}
+.edit-box .line .input-text{
+    height: 40px;
+    width: 360px;
+    background: #fff;
+    border-radius: 3px;
+}
+.edit-box .line .input-box{
+    height: 40px;
+    width: 290px;
+    float: left;
+}
+.edit-box .line .input-box input{
+    height: 40px;
+    width: 270px;
+    line-height: 40px;
+    border: 0;
+    padding-left: 20px;
+    font-size: 14px;
+    color: #666;
+    outline:none;
+}
+.edit-box .line .num{
+    height: 40px;
+    width: 70px;
+    float: right;
+}
+.edit-box .line .num p{
+    height: 40px;
+    width: 40px;
+    padding: 0 20px 0 10px;
+    line-height: 40px;
+    font-size: 14px;
+    color: #999;
+}
+.edit-box .line .num .r{
+    color: #ff9999;
+}
+.edit-box .line .lable{
+    overflow: auto;
+}
+.edit-box .line .lable li{
+    float:left;
+    margin-right: 20px;
+    width: 80px;
+    position: relative;
+}
+.edit-box .line .lable .lable-btn{
+    width: 80px;
+    height: 36px;
+    background: #fff;
+    border-radius: 3px;
+    font-size: 14px;
+    color: #999;
+    text-align: center;
+    line-height: 36px;
+    position: relative;
+    z-index: 1;
+}
+.edit-box .line .lable .lable-del{
+    width: 80px;
+    height: 22px;
+    background: #ff9800;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    font-size: 14px;
+    text-align: center;
+    line-height: 24px;
+    display: none;
+    position: absolute;
+    top: 32px;
+    left: 0px;
+    z-index: 0;
+    cursor: pointer;
+    color: #ffffff;
+}
+.edit-box .line li.add{
+    position: relative;
+}
+.edit-box .line li.add .lable-btn{
+    background: url(../images/add.png) center center no-repeat #fff;
+}
+.edit-box .edit-btn-box ul{
+    overflow: auto;
+    width: 400px;
+    margin: 40px auto;
+}
+.edit-box .edit-btn-box li{
+    width: 180px;
+    height: 48px;
+    float: left;
+    margin:0 10px;
+    background: #ff9800;
+    color: #ffffff;
+    border-radius: 3px;
+}
+.edit-box .edit-btn-box li a{
+    color: #ffffff;
+    line-height: 48px;
+    text-align: center;
+    font-size: 16px;
+}
+.edit-box .edit-btn-box li.no{
+    background: #999999;
+}
+.lable-mine{
+    width: 257px;
+    height: 36px;
+    border-radius: 3px;
+    overflow: hidden;
+    position: absolute;
+    display: none;
+}
+.lable-mine .text{
+    width: 185px;
+    height: 36px;
+    background: #fff;
+    float: left;
+}
+.lable-mine .text input{
+    width: 120px;
+    height: 36px;
+    border:none;
+    line-height: 36px;
+    padding-left: 10px;
+    font-size: 14px;
+    color: #999999;
+    outline: none;
+}
+.lable-mine .text .num{
+    width: 40px;
+    height: 36px;
+    padding-right: 5px;
+    line-height: 36px;
+    font-size: 14px;
+    color: #999999;
+    text-align: right;
+}
+.lable-mine .btn{
+    width: 72px;
+    height: 36px;
+    background: #ff9800;
+    color: #fff;
+    line-height: 36px;
+    text-align: center;
+    font-size: 14px;
+    float: left;
+}
+/*景点编辑*/
+.edit-sport,.edit-history{
+    width: 920px;
+    height: 740px;
+    padding: 30px;
+    background: #f0f0f0;
+    border-radius: 5px;
+    position: absolute;
+    top: 104px;
+    left: 50%;
+    margin-left: -346px;
+    display: none;
+}
+.edit-box .textarea-box{
+    width: 790px;
+    height: 150px;
+    padding: 15px;
+    background: #fff;
+    border-radius: 3px;
+}
+.edit-box .textarea-box textarea{
+    width: 790px;
+    height: 120px;
+    border: 0;
+    outline: none;
+    font-size: 14px;
+    color: #999;
+    resize: none;
+}
+.edit-box .textarea-box .num{
+    width: 830px;
+    height: 30px;
+    font-size: 14px;
+    color: #999;
+    text-align: right;
+    line-height: 40px;
+}
+.edit-box .image-box .file-uplode{
+    height: 70px;
+}
+.edit-box .image-box .file-uplode .flie-btn{
+    height: 60px;
+    width: 120px;
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+    line-height: 60px;
+    background: #ff9800;
+    float: left;
+    margin-right: 20px;
+    border-radius: 3px;
+}
+.edit-box .image-box .file-uplode .tip{
+    font-size: 14px;
+    color: #999;
+    line-height: 60px;
+    float: left;
+}
+.edit-box .image-box .img-detile,
+.edit-box .image-box .img-detile img{
+    width: 280px;
+    height: 280px;
+}
+
+.edit-time{
+    width: 820px;
+    height: 370px;
+    padding: 30px;
+    background: #f0f0f0;
+    border-radius: 5px;
+    position: absolute;
+    top: 104px;
+    left: 50%;
+    margin-left: -346px;
+    display: none;
+}

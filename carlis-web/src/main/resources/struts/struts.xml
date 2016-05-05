@@ -32,5 +32,7 @@
 	<include file="struts/security-struts.xml" />
 	<include file="struts/auth/auth-struts.xml" />
 	<include file="struts/showcase/showcase-struts.xml" />
+	<include file="struts/scenic/introduction-struts.xml" />
+	<include file="struts/scenic/comment-struts.xml" />
 	
 </struts>
