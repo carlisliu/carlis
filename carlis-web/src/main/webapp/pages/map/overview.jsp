@@ -7,6 +7,11 @@
 <title>地图概览</title>
 </head>
 <body>
+	<!--内容s-->
+	<div class="wrap-box">
+		<div class="wrap">
 	<h1>Welcome Home</h1>
+		</div>
+	</div>
 </body>
 </html>

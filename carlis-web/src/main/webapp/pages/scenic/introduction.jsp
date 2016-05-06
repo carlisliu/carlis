@@ -10,8 +10,7 @@
 		<div class="wrap">
 			<!--发布栏s-->
 			<div class="release">
-				<span class="msg">带红色全部编辑完成才可以发布...</span> <a href="javascript:;"
-					class="push">发布</a>
+				<span class="msg">带红色全部编辑完成才可以发布...</span> <a href="javascript:;" class="push">发布</a>
 			</div>
 			<!--发布栏e-->
 			<!--基本信息s-->

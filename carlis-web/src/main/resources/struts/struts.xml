@@ -31,8 +31,30 @@
 
 	<include file="struts/security-struts.xml" />
 	<include file="struts/auth/auth-struts.xml" />
+	<!-- 	statistics start -->
+	<include file="struts/statistics/statistics-struts.xml" />
+	<!-- 	statistics end -->
+	<!-- 	map start -->
+	<include file="struts/map/map-struts.xml" />
+	<!-- 	map end -->
+	<!-- 	showcase start -->
 	<include file="struts/showcase/showcase-struts.xml" />
+	<!-- 	showcase end -->
+	<!-- 	scenic start -->
+	<include file="struts/scenic/activity-struts.xml" />
+	<include file="struts/scenic/aiyou-tickets-struts.xml" />
+	<include file="struts/scenic/album-struts.xml" />
+	<include file="struts/scenic/catering-accommodation-struts.xml" />
+	<include file="struts/scenic/entertainment-struts.xml" />
+	<include file="struts/scenic/landscape-struts.xml" />
+	<include file="struts/scenic/navigation-struts.xml" />
+	<include file="struts/scenic/ontrip-struts.xml" />
+	<include file="struts/scenic/photo-struts.xml" />
+	<include file="struts/scenic/sos-struts.xml" />
 	<include file="struts/scenic/introduction-struts.xml" />
 	<include file="struts/scenic/comment-struts.xml" />
+	
+<include file="struts/scenic/traffic-struts.xml" />
+	<!-- 	scenic end -->
 	
 </struts>

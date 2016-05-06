@@ -5,6 +5,9 @@
 
 <struts>
 	<package name="statistics" namespace="/statistics" extends="security">
-		
+		<action name="index" class="statisticsAction">
+			<result name="success">/pages/statistics/index.jsp</result>
+			<interceptor-ref name="loginStack"></interceptor-ref>
+		</action>
 	</package>
 </struts>

@@ -7,6 +7,11 @@
 <title>游客统计</title>
 </head>
 <body>
-	<h1>Welcome Home</h1>
+	<!--内容s-->
+	<div class="wrap-box">
+		<div class="wrap">
+			<h1>Welcome Home,游客统计</h1>
+		</div>
+	</div>
 </body>
 </html>
