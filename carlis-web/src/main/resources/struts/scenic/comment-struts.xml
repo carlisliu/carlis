@@ -11,5 +11,13 @@
 			<interceptor-ref name="loginStack"></interceptor-ref>
 		</action>
 		
+	<action name="findComments" class="commentAction">
+			<result name="success" type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">status,message,comments\[\d+\]\..+$</param>
+			</result>
+			<interceptor-ref name="loginStack"></interceptor-ref>
+		</action>
+		
 	</package>
 </struts>

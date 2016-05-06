@@ -17,7 +17,15 @@ public interface BaseMapper<T, PK extends Serializable> {
 	 * 
 	 * @param t
 	 */
-	public void save(T t);
+	public int insert(T t);
+
+	/**
+	 * insert columns based on parameter.
+	 * 
+	 * @param t
+	 * @return
+	 */
+	public int insertSelective(T t);
 
 	/**
 	 * update entity.
@@ -25,7 +33,14 @@ public interface BaseMapper<T, PK extends Serializable> {
 	 * @param t
 	 * @return
 	 */
-	public int update(T t);
+	public int updateByPrimaryKey(T t);
+
+	/**
+	 * 
+	 * @param t
+	 * @return
+	 */
+	public int updateByPrimaryKeySelective(T t);
 
 	/**
 	 * get entity
@@ -33,7 +48,7 @@ public interface BaseMapper<T, PK extends Serializable> {
 	 * @param id
 	 * @return
 	 */
-	public T get(PK id);
+	public T selectByPrimaryKey(PK id);
 
 	/**
 	 * find entities by specified attributes.
@@ -49,7 +64,7 @@ public interface BaseMapper<T, PK extends Serializable> {
 	 * @param id
 	 * @return
 	 */
-	public int delete(PK id);
+	public int deleteByPrimaryKey(PK id);
 
 	/**
 	 * get all entities.

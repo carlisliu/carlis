@@ -19,6 +19,8 @@
     <result column="ModifyUserId" property="modifyuserid" jdbcType="NVARCHAR" />
     <result column="ModifyUserName" property="modifyusername" jdbcType="NVARCHAR" />
     <result column="User_Remark" property="userRemark" jdbcType="NVARCHAR" />
+  <collection property="scenicSports" ofType="baseUserScenicspot" resultMap="xyz.flym.carlis.persistence.mapper.BaseUserScenicspotMapper.BaseResultMap">
+    </collection>
   </resultMap>
   <sql id="Base_Column_List" >
     User_ID, User_Code, User_Account, User_Pwd, User_Name, Title, Email, Question, AnswerQuestion, 
@@ -232,4 +234,12 @@
       User_Remark = #{userRemark,jdbcType=NVARCHAR}
     where User_ID = #{userId,jdbcType=NVARCHAR}
   </update>
+  
+  <select id="findBy" resultMap="BaseResultMap" parameterType="baseAdminuserinfo" >
+    select 
+    <include refid="Base_Column_List" />
+    , userid,  scenic_spot_id
+    from base_adminuserinfo a left join base_user_scenicspot b on a.User_ID = b.userid
+    where a.User_Account = #{userAccount,jdbcType=NVARCHAR}
+  </select>
 </mapper>

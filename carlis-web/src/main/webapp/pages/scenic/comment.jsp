@@ -109,6 +109,26 @@
 			<!--综合评分d-->
 		</div>
 	</div>
+	<script type="x/template" id="commit-template">
+		<dl class="list-comment">
+			<dt>
+				<img src="" />
+			</dt>
+			<dd>
+				<ul>
+					<li class="line1">
+						<span class="title cutWord">{title}</span>
+							<a href="" class="del">删除</a>
+					</li>
+					<li class="line2">
+						<span class="time">{date}</span>
+						<a href="" class="good">{}</a>
+					</li>
+					<li class="line3 cutWord">{}</li>
+				</ul>
+			</dd>
+		</dl>
+	</script>
 	<!--内容e-->
 	<script type="text/javascript">
 		seajs.use('static/scenic/comment/event');

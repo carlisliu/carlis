@@ -32,6 +32,7 @@
 	</bean>
 	
 	<bean id="commentAction" class="xyz.flym.carlis.web.action.admin.scenic.CommentAction" scope="prototype">
+	<property name="commentService" ref="commentService"></property>
 	</bean>
 	
 	<bean id="activityAction" class="xyz.flym.carlis.web.action.admin.scenic.ActivityAction" scope="prototype">

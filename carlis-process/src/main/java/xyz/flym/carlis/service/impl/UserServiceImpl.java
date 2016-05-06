@@ -2,10 +2,8 @@ package xyz.flym.carlis.service.impl;
 
 import java.util.List;
 
-import com.github.pagehelper.PageHelper;
-
-import xyz.flym.carlis.persistence.domain.User;
-import xyz.flym.carlis.persistence.mapper.UserMapper;
+import xyz.flym.carlis.persistence.domain.BaseAdminuserinfo;
+import xyz.flym.carlis.persistence.mapper.BaseAdminuserinfoMapper;
 import xyz.flym.carlis.service.UserService;
 
 /**
@@ -16,39 +14,28 @@ import xyz.flym.carlis.service.UserService;
 public class UserServiceImpl implements UserService {
 
 	// Injected by spring.
-	private UserMapper userMapper;
+	private BaseAdminuserinfoMapper baseAdminuserinfoMapper;
 
 	/**
 	 * find user.
 	 */
 	@Override
-	public User findUser(String loginId) {
-		List<User> users = userMapper.findBy(new User(loginId));
+	public BaseAdminuserinfo findUser(String loginId) {
+		List<BaseAdminuserinfo> users = baseAdminuserinfoMapper.findBy(new BaseAdminuserinfo(loginId));
 		return users == null || users.isEmpty() ? null : users.get(0);
 	}
 
-	@Override
-	public void updatePassword(String loginId, String newPassword) {
-		userMapper.updatePassword(loginId, newPassword);
+	public BaseAdminuserinfoMapper getBaseAdminuserinfoMapper() {
+		return baseAdminuserinfoMapper;
 	}
 
-	@Override
-	public List<User> findUserByPager(int page, int pageSize) {
-		PageHelper.startPage(page, pageSize);
-		return userMapper.getAll();
-	}
-	
-	@Override
-	public List<User> simpleGetAll() {
-		return userMapper.getAll();
+	public void setBaseAdminuserinfoMapper(BaseAdminuserinfoMapper baseAdminuserinfoMapper) {
+		this.baseAdminuserinfoMapper = baseAdminuserinfoMapper;
 	}
 
-	public UserMapper getUserMapper() {
-		return userMapper;
-	}
-
-	public void setUserMapper(UserMapper userMapper) {
-		this.userMapper = userMapper;
-	}
+	/*
+	 * @Override public List<User> findUserByPager(int page, int pageSize) {
+	 * PageHelper.startPage(page, pageSize); return userMapper.getAll(); }
+	 */
 
 }

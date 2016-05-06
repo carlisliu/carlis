@@ -30,14 +30,14 @@ public class ShowCase extends SecurityBaseAction {
 	public String testPager() {
 		System.out.println(this.page);
 		System.out.println(this.pageSize);
-		this.users = userService.findUserByPager(this.page, this.pageSize);
+		//this.users = userService.findUserByPager(this.page, this.pageSize);
 		return Action.SUCCESS;
 	}
 
 	public String testNoPager() {
 		System.out.println(this.page);
 		System.out.println(this.pageSize);
-		this.users = userService.simpleGetAll();
+		//this.users = userService.simpleGetAll();
 		return Action.SUCCESS;
 	}
 

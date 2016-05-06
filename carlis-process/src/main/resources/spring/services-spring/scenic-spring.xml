@@ -4,13 +4,13 @@
     http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<!-- Mybatis Dao Mapper -->
-	<bean id="baseAdminuserinfoMapper" parent="baseDao">
-		<property name="mapperInterface" value="xyz.flym.carlis.persistence.mapper.BaseAdminuserinfoMapper" />
+	<bean id="scenicSpotCommentsMapper" parent="baseDao">
+		<property name="mapperInterface" value="xyz.flym.carlis.persistence.mapper.ScenicSpotCommentsMapper" />
 	</bean>
 	
 	<!-- Service -->
-	<bean id="userService" class="xyz.flym.carlis.service.impl.UserServiceImpl">
-		<property name="baseAdminuserinfoMapper" ref="baseAdminuserinfoMapper" />
+	<bean id="commentService" class="xyz.flym.carlis.service.scenic.impl.CommentServiceImpl">
+		<property name="scenicSpotCommentsMapper" ref="scenicSpotCommentsMapper" />
 	</bean>
 	
 </beans>

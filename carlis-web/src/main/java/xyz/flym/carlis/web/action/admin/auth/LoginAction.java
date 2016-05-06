@@ -2,14 +2,14 @@ package xyz.flym.carlis.web.action.admin.auth;
 
 import org.apache.commons.lang3.StringUtils;
 
-import xyz.flym.carlis.persistence.domain.User;
+import com.opensymphony.xwork2.Action;
+import com.opensymphony.xwork2.ActionContext;
+
+import xyz.flym.carlis.persistence.domain.BaseAdminuserinfo;
 import xyz.flym.carlis.service.UserService;
 import xyz.flym.carlis.utils.security.Encrypt;
 import xyz.flym.carlis.web.action.admin.SecurityBaseAction;
 import xyz.flym.carlis.web.utils.Const;
-
-import com.opensymphony.xwork2.Action;
-import com.opensymphony.xwork2.ActionContext;
 
 /**
  * 
@@ -34,12 +34,12 @@ public class LoginAction extends SecurityBaseAction {
 	 * @return
 	 */
 	public String execute() {
-		User user = userService.findUser(this.loginId);
+		BaseAdminuserinfo user = userService.findUser(this.loginId);
 		if (user == null) {
 			this.addActionError("该登录ID未注册");
 			return Action.INPUT;
 		}
-		if (!Encrypt.MD5(this.password).equals(user.getPassword())) {
+		if (!Encrypt.MD5(this.password).equals(user.getUserPwd())) {
 			this.addActionError("密码错误");
 			return Action.INPUT;
 		}

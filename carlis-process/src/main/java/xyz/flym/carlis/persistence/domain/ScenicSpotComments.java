@@ -25,6 +25,8 @@ public class ScenicSpotComments {
 
     private Long treadCount;
 
+	private UsersInfo usersInfo;
+
     public Integer getScenicSpotCommentsId() {
         return scenicSpotCommentsId;
     }
@@ -112,4 +114,13 @@ public class ScenicSpotComments {
     public void setTreadCount(Long treadCount) {
         this.treadCount = treadCount;
     }
+
+	public UsersInfo getUsersInfo() {
+		return usersInfo;
+	}
+
+	public void setUsersInfo(UsersInfo usersInfo) {
+		this.usersInfo = usersInfo;
+	}
+
 }

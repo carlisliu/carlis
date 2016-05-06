@@ -13,6 +13,7 @@
     <result column="created_on" property="createdOn" jdbcType="TIMESTAMP" />
     <result column="modified_on" property="modifiedOn" jdbcType="TIMESTAMP" />
     <result column="tread_count" property="treadCount" jdbcType="BIGINT" />
+  <association property="usersInfo" column="user_id" javaType="UsersInfo" resultMap="xyz.flym.carlis.persistence.mapper.UsersInfoMapper.BaseResultMap"/>
   </resultMap>
   <sql id="Base_Column_List" >
     scenic_spot_comments_id, scenic_spot_id, title, content, type, praise_count, score, 
@@ -163,4 +164,15 @@
       tread_count = #{treadCount,jdbcType=BIGINT}
     where scenic_spot_comments_id = #{scenicSpotCommentsId,jdbcType=INTEGER}
   </update>
+  
+  
+  <select id="findBy" resultMap="BaseResultMap" parameterType="xyz.flym.carlis.persistence.domain.ScenicSpotComments" >
+    select 
+    <include refid="Base_Column_List" />
+    , b.head_pic
+    from scenic_spot_comments a
+    left join users_info b on a.user_id = b.user_id
+    where a.scenic_spot_comments_id = #{scenicSpotCommentsId,jdbcType=INTEGER}
+    and a.type = #{type,jdbcType=INTEGER}
+  </select>
 </mapper>

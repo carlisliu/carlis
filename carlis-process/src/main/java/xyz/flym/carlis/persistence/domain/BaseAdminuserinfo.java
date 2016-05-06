@@ -1,6 +1,7 @@
 package xyz.flym.carlis.persistence.domain;
 
 import java.util.Date;
+import java.util.List;
 
 public class BaseAdminuserinfo {
     private String userId;
@@ -36,6 +37,15 @@ public class BaseAdminuserinfo {
     private String modifyusername;
 
     private String userRemark;
+
+	private List<BaseUserScenicspot> scenicSports;
+
+	public BaseAdminuserinfo() {
+	}
+
+	public BaseAdminuserinfo(String loginId) {
+		this.userAccount = loginId;
+	}
 
     public String getUserId() {
         return userId;
@@ -172,4 +182,13 @@ public class BaseAdminuserinfo {
     public void setUserRemark(String userRemark) {
         this.userRemark = userRemark == null ? null : userRemark.trim();
     }
+
+	public List<BaseUserScenicspot> getScenicSports() {
+		return scenicSports;
+	}
+
+	public void setScenicSports(List<BaseUserScenicspot> scenicSports) {
+		this.scenicSports = scenicSports;
+	}
+
 }

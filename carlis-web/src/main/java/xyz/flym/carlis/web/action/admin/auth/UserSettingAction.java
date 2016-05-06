@@ -5,13 +5,13 @@ import java.util.Map;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.struts2.interceptor.SessionAware;
 
-import xyz.flym.carlis.persistence.domain.User;
+import com.opensymphony.xwork2.Action;
+
+import xyz.flym.carlis.persistence.domain.BaseAdminuserinfo;
 import xyz.flym.carlis.service.UserService;
 import xyz.flym.carlis.utils.security.Encrypt;
 import xyz.flym.carlis.web.action.admin.SecurityBaseAction;
 import xyz.flym.carlis.web.utils.Const;
-
-import com.opensymphony.xwork2.Action;
 
 /**
  * 
@@ -40,19 +40,20 @@ public class UserSettingAction extends SecurityBaseAction implements SessionAwar
 			if (!newPasswordDuplication.equals(newPassword)) {
 				this.addJsonExecutionError("两次输入的新密码不一致");
 			} else {
-				User loginUser = (User) session.get(Const.LOGIN_USER_SESSION_IDENTIFIER);
+				BaseAdminuserinfo loginUser = (BaseAdminuserinfo) session.get(Const.LOGIN_USER_SESSION_IDENTIFIER);
 				if (loginUser == null) {
 					return Action.LOGIN;
 				}
-				loginUser = userService.findUser(loginUser.getLoginId());
+				loginUser = userService.findUser(loginUser.getUserAccount());
 				if (loginUser == null) {
 					this.addJsonExecutionError("当前用户不存在");
 				} else {
 					String encrypted = Encrypt.MD5(newPassword);
-					if (encrypted.equals(loginUser.getPassword())) {
+					if (encrypted.equals(loginUser.getUserPwd())) {
 						this.addJsonExecutionError("新旧密码不能相同");
 					} else {
-						userService.updatePassword(loginUser.getLoginId(), encrypted);
+						// userService.updatePassword(loginUser.getLoginId(),
+						// encrypted);
 					}
 				}
 			}
