@@ -11,5 +11,21 @@
 			<interceptor-ref name="loginStack"></interceptor-ref>
 		</action>
 		
-	</package>
+	<action name="publish" class="introductionAction" method="publish"> 
+			<result name="success" type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">status,message</param>
+			</result>
+			<interceptor-ref name="loginStack"></interceptor-ref>
+		</action>
+		
+		<action name="save" class="introductionAction" method="save"> 
+			<result name="success" type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">status,message</param>
+			</result>
+			<interceptor-ref name="loginStack"></interceptor-ref>
+		</action>
+
+</package>
 </struts>

@@ -29,6 +29,10 @@
 		<typeAlias alias="baseAdminuserinfo" type="xyz.flym.carlis.persistence.domain.BaseAdminuserinfo" />
 		<typeAlias alias="baseUserScenicspot" type="xyz.flym.carlis.persistence.domain.BaseUserScenicspot" />
 		
+<typeAlias alias="baseAdminScenicSoptRela" type="xyz.flym.carlis.persistence.domain.BaseAdminScenicSoptRela" />
+		<typeAlias alias="scenicSpotExtend" type="xyz.flym.carlis.persistence.domain.ScenicSpotExtend" />
+		<typeAlias alias="Country" type="xyz.flym.carlis.persistence.domain.County" />
+		
 		
 	</typeAliases>
 	

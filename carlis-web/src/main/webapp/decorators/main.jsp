@@ -39,6 +39,97 @@
                 </div>
             </div>
         </div>
+        <!--choice s-->
+        <div class="choice">
+			<h2 class="title">选择区域</h2>
+			<p class="select" id="choiceS">
+				<!--<select>
+                        <option>askjfdasdj</option>
+                    </select>-->
+				<span class="text">省/直辖市</span> <i class="arrow"></i>
+			</p>
+			<!--下拉s-->
+			<div class="option-box" data-id="choiceS">
+				<ul class="select-option">
+					<li>sdafasdfas</li>
+					<li>sdafasdfas</li>
+					<li>sdafasdfas</li>
+					<li>sdafasdfas</li>
+					<li>sdafasdfas</li>
+					<li>sdafasdfas</li>
+					<li>sdafasdfas</li>
+					<li>sdafasdfas</li>
+					<li>sdafasdfas</li>
+					<li>sdafasdfas</li>
+					<li>sdafasdfas</li>
+					<li>sdafasdfas</li>
+					<li>sdafasdfas</li>
+					<li>sdafasdfas</li>
+					<li>sdafasdfas</li>
+					<li>sdafasdfas</li>
+					<li>sdafasdfas</li>
+					<li>sdafasdfas</li>
+				</ul>
+			</div>
+			<!--下拉e-->
+			<p class="select" id="choiceCity">
+				<span class="text">市/区</span> <i class="arrow"></i>
+			</p>
+			<!--下拉e-->
+			<div class="option-box" data-id="choiceCity">
+				<ul class="select-option">
+					<li>sdafasdfas</li>
+					<li>sdafasdfas</li>
+					<li>sdafasdfas</li>
+					<li>sdafasdfas</li>
+					<li>sdafasdfas</li>
+					<li>sdafasdfas</li>
+					<li>sdafasdfas</li>
+					<li>sdafasdfas</li>
+					<li>sdafasdfas</li>
+					<li>sdafasdfas</li>
+					<li>sdafasdfas</li>
+					<li>sdafasdfas</li>
+					<li>sdafasdfas</li>
+					<li>sdafasdfas</li>
+					<li>sdafasdfas</li>
+					<li>sdafasdfas</li>
+					<li>sdafasdfas</li>
+					<li>sdafasdfas</li>
+				</ul>
+			</div>
+			<!--下拉s-->
+			<p class="select" id="choiceSport">
+				<span class="text">景点</span> <i class="arrow"></i>
+			</p>
+			<!--下拉s-->
+			<div class="option-box" data-id="choiceSport">
+				<ul class="select-option">
+					<li>sdafasdfas</li>
+					<li>sdafasdfas</li>
+					<li>sdafasdfas</li>
+					<li>sdafasdfas</li>
+					<li>sdafasdfas</li>
+					<li>sdafasdfas</li>
+					<li>sdafasdfas</li>
+					<li>sdafasdfas</li>
+					<li>sdafasdfas</li>
+					<li>sdafasdfas</li>
+					<li>sdafasdfas</li>
+					<li>sdafasdfas</li>
+					<li>sdafasdfas</li>
+					<li>sdafasdfas</li>
+					<li>sdafasdfas</li>
+					<li>sdafasdfas</li>
+					<li>sdafasdfas</li>
+					<li>sdafasdfas</li>
+				</ul>
+			</div>
+			<!--下拉e-->
+			<p class="error">对不起，您没有该区域的权限</p>
+			<a href="javascript:;" class="btn">确定</a>
+		</div>
+		<!--choice e-->
         <!--头部e-->
 
         <!--菜单s-->

@@ -19,7 +19,7 @@
     <result column="ModifyUserId" property="modifyuserid" jdbcType="NVARCHAR" />
     <result column="ModifyUserName" property="modifyusername" jdbcType="NVARCHAR" />
     <result column="User_Remark" property="userRemark" jdbcType="NVARCHAR" />
-  <collection property="scenicSports" ofType="baseUserScenicspot" resultMap="xyz.flym.carlis.persistence.mapper.BaseUserScenicspotMapper.BaseResultMap">
+  <collection property="scenicSports" ofType="baseAdminScenicSoptRela" resultMap="xyz.flym.carlis.persistence.mapper.BaseAdminScenicSoptRelaMapper.BaseResultMap">
     </collection>
   </resultMap>
   <sql id="Base_Column_List" >
@@ -238,8 +238,8 @@
   <select id="findBy" resultMap="BaseResultMap" parameterType="baseAdminuserinfo" >
     select 
     <include refid="Base_Column_List" />
-    , userid,  scenic_spot_id
-    from base_adminuserinfo a left join base_user_scenicspot b on a.User_ID = b.userid
+    , amdin_userid,  scenic_spot_id
+    from base_adminuserinfo a left join base_admin_scenic_sopt_rela b on a.User_ID = b.amdin_userid
     where a.User_Account = #{userAccount,jdbcType=NVARCHAR}
   </select>
 </mapper>

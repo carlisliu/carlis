@@ -43,6 +43,10 @@ public class LoginAction extends SecurityBaseAction {
 			this.addActionError("密码错误");
 			return Action.INPUT;
 		}
+		if (user.getScenicSports() == null || user.getScenicSports().isEmpty()) {
+			this.addActionError("该用户未关联任何景点，请联系系统管理员");
+			return Action.INPUT;
+		}
 		ActionContext.getContext().getSession().put(Const.LOGIN_USER_SESSION_IDENTIFIER, user);
 		return Action.SUCCESS;
 	}

@@ -8,9 +8,18 @@
 		<property name="mapperInterface" value="xyz.flym.carlis.persistence.mapper.ScenicSpotCommentsMapper" />
 	</bean>
 	
+<bean id="scenicSpotMapper" parent="baseDao">
+		<property name="mapperInterface" value="xyz.flym.carlis.persistence.mapper.ScenicSpotMapper" />
+	</bean>
+	
 	<!-- Service -->
 	<bean id="commentService" class="xyz.flym.carlis.service.scenic.impl.CommentServiceImpl">
 		<property name="scenicSpotCommentsMapper" ref="scenicSpotCommentsMapper" />
 	</bean>
+	
+<bean id="introductionService" class="xyz.flym.carlis.service.scenic.impl.IntroductionServiceImpl">
+		<property name="scenicSpotMapper" ref="scenicSpotMapper" />
+	</bean>
+	
 	
 </beans>

@@ -15,7 +15,7 @@
 <!-- 		<default-interceptor-ref name="loginStack"></default-interceptor-ref> -->
 		<default-action-ref name="notFound" />
 		<global-results>
-			<result name="error" type="redirect">/500.jsp?msg=redirect</result>
+			<result name="error" type="redirect">/error.jsp?msg=redirect</result>
 			<result name="login" type="redirect">/login.jsp</result>
 		</global-results>
 		<global-exception-mappings>
@@ -31,6 +31,9 @@
 
 	<include file="struts/security-struts.xml" />
 	<include file="struts/auth/auth-struts.xml" />
+	<!-- 	statistics start -->
+	<include file="struts/common/common-struts.xml" />
+	<!-- 	statistics end -->
 	<!-- 	statistics start -->
 	<include file="struts/statistics/statistics-struts.xml" />
 	<!-- 	statistics end -->

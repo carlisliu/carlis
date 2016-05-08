@@ -23,7 +23,7 @@
 		<filter-name>login-filter</filter-name>
 		<init-param>
 			<param-name>ignore</param-name>
-			<param-value>login.jsp,404.jsp,500.jsp</param-value>
+			<param-value>login.jsp,404.jsp,500.jsp,error.jsp</param-value>
 		</init-param>
 		<filter-class>xyz.flym.carlis.web.filter.AdminLoginFilter</filter-class>
 	</filter>

@@ -5,6 +5,7 @@
     http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<bean id="introductionAction" class="xyz.flym.carlis.web.action.admin.scenic.IntroductionAction" scope="prototype">
+	<property name="introductionService" ref="introductionService"></property>
 	</bean>
 	
 	<bean id="scenicPhotoAction" class="xyz.flym.carlis.web.action.admin.scenic.ScenicPhotoAction" scope="prototype">

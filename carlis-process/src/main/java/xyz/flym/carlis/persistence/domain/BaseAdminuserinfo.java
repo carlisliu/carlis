@@ -38,7 +38,7 @@ public class BaseAdminuserinfo {
 
     private String userRemark;
 
-	private List<BaseUserScenicspot> scenicSports;
+	private List<BaseAdminScenicSoptRela> scenicSports;
 
 	public BaseAdminuserinfo() {
 	}
@@ -183,11 +183,11 @@ public class BaseAdminuserinfo {
         this.userRemark = userRemark == null ? null : userRemark.trim();
     }
 
-	public List<BaseUserScenicspot> getScenicSports() {
+	public List<BaseAdminScenicSoptRela> getScenicSports() {
 		return scenicSports;
 	}
 
-	public void setScenicSports(List<BaseUserScenicspot> scenicSports) {
+	public void setScenicSports(List<BaseAdminScenicSoptRela> scenicSports) {
 		this.scenicSports = scenicSports;
 	}
 

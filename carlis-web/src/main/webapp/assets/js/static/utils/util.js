@@ -46,13 +46,30 @@ define(function(require, exports, module) {
 				return data[i] || '';
 			});
 		},
-		getData: function(container){
+		getData : function(container) {
 			var data = {};
 			container.find('input[type=text], input[type=hidden], textarea, select').each(function(index, content) {
 				var $this = $(this), val = $.trim($this.val()), key = $this.attr('data-property');
-				data[key] = val;
+				key && (data[key] = val);
 			});
 			return data;
+		},
+		updateContainer : function(container, data) {
+			if (container) {
+				var targets = container.find('[data-property]');
+				targets.each(function() {
+					var $target = $(this);
+					var key = $target.attr('data-property');
+					if (key) {
+						var isValueEl = $target.is('input') || $target.is('select') || $target.is('textarea');
+						if (isValueEl) {
+							$target.val(data[key] || '');
+						} else {
+							$target.html(data[key] || '');
+						}
+					}
+				});
+			}
 		}
 	}
 });

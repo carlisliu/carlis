@@ -4,6 +4,7 @@
   <resultMap id="BaseResultMap" type="xyz.flym.carlis.persistence.domain.ScenicSpot" >
     <id column="scenic_spot_id" property="scenicSpotId" jdbcType="INTEGER" />
     <result column="region_id" property="regionId" jdbcType="INTEGER" />
+    <result column="region_name" property="regionName" jdbcType="NVARCHAR" />
     <result column="name" property="name" jdbcType="NVARCHAR" />
     <result column="name_en" property="nameEn" jdbcType="VARCHAR" />
     <result column="center_point_x" property="centerPointX" jdbcType="DECIMAL" />
@@ -42,6 +43,8 @@
     <result column="is_hot_search" property="isHotSearch" jdbcType="BIT" />
     <result column="img_traffic" property="imgTraffic" jdbcType="NVARCHAR" />
     <result column="tags" property="tags" jdbcType="NVARCHAR" />
+  <collection property="scenicSportExtends" ofType="scenicSpotExtend" resultMap="xyz.flym.carlis.persistence.mapper.ScenicSpotExtendMapper.BaseResultMap">
+    </collection>
   </resultMap>
   <sql id="Base_Column_List" >
     scenic_spot_id, region_id, name, name_en, center_point_x, center_point_y, description, 
@@ -52,11 +55,23 @@
     createusername, modifyuserid, modifyusername, isdelete, is_hot_search, img_traffic, 
     tags
   </sql>
+  <sql id="Base_Column_Alais_List" >
+    a.scenic_spot_id, a.region_id, a.name, a.name_en, a.center_point_x, a.center_point_y, a.description, 
+    a.address, a.bus_line, a.driving_directions, a.start_level, a.history, a.price, a.discount, a.start_time1, 
+    a.end_time1, a.start_time2, a.end_time2, a.recommended_play_season, a.recommended_play_time, 
+    a.comments_count, a.sos_tel, a.police_tel, a.created_on, a.modified_on, a.slogan, a.thumbnail_path, 
+    a.his_thumbnail_path, a.img_cover, a.img_hot_search, a.img_search, a.status, a.createuserid, 
+    a.createusername, a.modifyuserid, a.modifyusername, a.isdelete, a.is_hot_search, a.img_traffic, 
+    a.tags
+  </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
-    <include refid="Base_Column_List" />
-    from scenic_spot
-    where scenic_spot_id = #{scenicSpotId,jdbcType=INTEGER}
+    <include refid="Base_Column_Alais_List" />
+    , b.scenic_spot_extend_id, b.scenic_spot_id, b.title, b.description, b.img_path,
+    c.description as region_name
+    from scenic_spot a left join county c on a.region_id = c.region_id
+    left join scenic_spot_extend b on a.scenic_spot_id = b.scenic_spot_id
+    where a.scenic_spot_id = #{scenicSpotId,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from scenic_spot

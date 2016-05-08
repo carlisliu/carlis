@@ -30,7 +30,7 @@ public class CommentServiceImpl implements CommentService {
 			LOG.debug("User context is empty");
 			return UtilHelper.emptyList();
 		}
-		// comment.setScenicSpotId(userContext.getBaseUserScenicspot().getScenicSpotId());
+		//comment.setScenicSpotId(userContext.getBaseAdminuserinfo().getScenicSports());
 		return scenicSpotCommentsMapper.findBy(comment);
 	}
 

@@ -203,6 +203,10 @@
     width: 80%;
     float: left;
 }
+.wrap .title-one .hui{
+    font-size: 14px;
+    color: #999;
+}
 .wrap .title-one a{
     font-size: 14px;
     color: #999;
@@ -318,7 +322,8 @@
 }
 .tab-con .list-comment dd{
     padding-left:50px;
-    height: 90px;
+    padding-bottom: 10px;
+    /*height: 90px;*/
 }
 .tab-con .list-comment dd li.line1{
     overflow: hidden;
@@ -357,11 +362,13 @@
     background:url(../images/icon.png) 0px -109px no-repeat;
 }
 .tab-con .list-comment dd li.line3{
-    height: 36px;
+    /*height: 36px;*/
     width: 100%;
     font-size: 14px;
     color: #999;
-    line-height: 36px;
+    line-height: 20px;
+    word-wrap: break-word;
+    white-space: pre-wrap;
 }
 .wrap .con-box{
     padding-bottom: 60px;
@@ -389,6 +396,7 @@
     top: 84px;
     right: 20px;
     display: none;
+    z-index: 10;
 }
 
 .choice .title{
@@ -400,7 +408,9 @@
     text-align: center;
 }
 .choice .select,
-.edit-basic .select{
+.edit-basic .select,
+.album-btn .select,
+.edit-ticket .select{
     width: 180px;
     height: 36px;
     margin: 0 auto 20px auto;
@@ -419,7 +429,9 @@
     margin: -18px auto 0 auto;
 }
 .choice .select .text,
-.edit-basic .select .text{
+.edit-basic .select .text,
+.album-btn .select .text,
+.edit-ticket .select .text{
     width: 149px;
     height: 18px;
     line-height: 18px;
@@ -433,7 +445,9 @@
     margin-top: 9px;
 }
 .choice .select .arrow,
-.edit-basic .select .arrow{
+.edit-basic .select .arrow,
+.album-btn .select .arrow,
+.edit-ticket .select .arrow{
     width: 30px;
     height: 36px;
     float: left;
@@ -484,7 +498,7 @@
     border: 1px solid #dbdbdb;
 }
 .con-box .basic-spot li{
-    height: 40px;
+    /*height: 40px;*/
     line-height: 40px;
     padding: 0 20px;
 }
@@ -520,8 +534,8 @@
 /*基本信息编辑*/
 .edit-basic{
     width: 820px;
-    height: 632px;
     padding: 30px;
+    padding-bottom: 0;
     background: #f0f0f0;
     border-radius: 5px;
     position: absolute;
@@ -529,6 +543,9 @@
     left: 50%;
     margin-left: -346px;
     display: none;
+}
+.edit-box {
+	z-index: 9;
 }
 .edit-box .title-edit{
     font-size: 18px;
@@ -557,20 +574,21 @@
     margin-right:20px ;
 }
 .edit-box .line .input-text{
-    height: 40px;
+    height: 36px;
     width: 360px;
     background: #fff;
     border-radius: 3px;
+    overflow: hidden;
 }
 .edit-box .line .input-box{
-    height: 40px;
+    height: 36px;
     width: 290px;
     float: left;
 }
 .edit-box .line .input-box input{
-    height: 40px;
+    height: 36px;
     width: 270px;
-    line-height: 40px;
+    line-height: 36px;
     border: 0;
     padding-left: 20px;
     font-size: 14px;
@@ -578,15 +596,15 @@
     outline:none;
 }
 .edit-box .line .num{
-    height: 40px;
+    height: 36px;
     width: 70px;
     float: right;
 }
 .edit-box .line .num p{
-    height: 40px;
+    height: 36px;
     width: 40px;
     padding: 0 20px 0 10px;
-    line-height: 40px;
+    line-height: 36px;
     font-size: 14px;
     color: #999;
 }
@@ -705,9 +723,9 @@
 }
 /*景点编辑*/
 .edit-sport,.edit-history{
-    width: 920px;
-    height: 740px;
+    width: 820px;
     padding: 30px;
+    padding-bottom: 0;
     background: #f0f0f0;
     border-radius: 5px;
     position: absolute;
@@ -741,15 +759,15 @@
     line-height: 40px;
 }
 .edit-box .image-box .file-uplode{
-    height: 70px;
+    height: 60px;
 }
 .edit-box .image-box .file-uplode .flie-btn{
-    height: 60px;
+    height: 42px;
     width: 120px;
-    font-size: 14px;
+    font-size: 16px;
     color: #fff;
     text-align: center;
-    line-height: 60px;
+    line-height: 42px;
     background: #ff9800;
     float: left;
     margin-right: 20px;
@@ -758,18 +776,52 @@
 .edit-box .image-box .file-uplode .tip{
     font-size: 14px;
     color: #999;
-    line-height: 60px;
+    line-height: 42px;
     float: left;
 }
-.edit-box .image-box .img-detile,
-.edit-box .image-box .img-detile img{
+.edit-box .image-box .img-detile{
     width: 280px;
     height: 280px;
 }
 
 .edit-time{
     width: 820px;
-    height: 370px;
+    padding: 30px;
+    padding-bottom: 0;
+    background: #f0f0f0;
+    border-radius: 5px;
+    position: absolute;
+    top: 104px;
+    left: 50%;
+    margin-left: -346px;
+    display: none;
+}
+/*景区照片*/
+.con-box .left-img{
+    width: 421px;
+    float: left;
+    padding-right: 15px;
+}
+
+.con-box .right-img{
+    width: 436px;
+    float: left;
+}
+.con-box .left-img .img-f{
+    width: 420px;
+    height: 380px;
+}
+.con-box .right-img .img-index{
+    width: 405px;
+    height: 180px;
+}
+.con-box .right-img .img-s{
+    width: 405px;
+    height: 145px;
+}
+.edit-f-img{
+    width: 820px;
+    height: 545px;
     padding: 30px;
     background: #f0f0f0;
     border-radius: 5px;
@@ -778,4 +830,696 @@
     left: 50%;
     margin-left: -346px;
     display: none;
+}
+.edit-box.edit-f-img .img-detile{
+    width: 280px;
+    height: 280px;
+}
+.edit-index-img{
+    width: 820px;
+    padding: 30px;
+    padding-bottom: 0;
+    background: #f0f0f0;
+    border-radius: 5px;
+    position: absolute;
+    top: 104px;
+    left: 50%;
+    margin-left: -346px;
+    display: none;
+}
+.edit-box.edit-index-img .img-detile{
+    width: 300px;
+    height: 240px;
+}
+.edit-s-img{
+    width: 820px;
+    padding: 30px;
+    padding-bottom: 0;
+    background: #f0f0f0;
+    border-radius: 5px;
+    position: absolute;
+    top: 104px;
+    left: 50%;
+    margin-left: -346px;
+    display: none;
+}
+.edit-box.edit-s-img .img-detile{
+    width: 400px;
+    height: 250px;
+}
+/*景区相册*/
+.con-box .album-btn{
+    height: 90px;
+    overflow: hidden;
+}
+.con-box .album-btn .choose-img{
+    width: 120px;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    background: #ff9800;
+    border-radius: 3px;
+    float: left;
+    margin: 20px 20px 20px 0;
+}
+.con-box .album-btn .del-img{
+    width: 118px;
+    height: 46px;
+    border: 1px solid #cccccc;
+    line-height: 46px;
+    text-align: center;
+    color: #666666;
+    font-size: 16px;
+    background: #fff;
+    border-radius: 3px;
+    float: left;
+    margin: 20px 20px 20px 0;
+}
+.con-box .album-btn .del-img.r{
+    border: 1px solid #ff6666;
+    color: #fff;
+    background: #ff6666;
+}
+.con-box .album-list{
+    overflow: hidden;
+}
+.con-box .album-list li {
+    width: 260px;
+    height: 256px;
+    float: left;
+    margin: 0 30px 30px 0;
+    position: relative;
+}
+.con-box .album-list .photo-shadow{
+    width: 260px;
+    height: 256px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #000;
+    opacity: 0.3;
+    filter: alpha(opacity=30);
+    display: none;
+}
+.con-box .album-list .photo-box{
+    width: 260px;
+    height: 256px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.con-box .album-list .photo-box img{
+    width: 260px;
+    height: 200px;
+}
+.con-box .album-list .photo-box .tip{
+    display: block;
+    width: 240px;
+    height: 36px;
+    line-height: 36px;
+    padding: 10px;
+    font-size: 16px;
+    color: #666666;
+    background: #fff;
+}
+.con-box .album-list .photo-edit{
+    width: 260px;
+    height: 256px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+.con-box .album-list a{
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    line-height: 24px;
+}
+.con-box .album-list a.edit{
+    margin-top: 76px;
+}
+.con-box .album-list .edit-s{
+    width: 260px;
+    height: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.con-box .edit-s .select-arrow{
+    width: 20px;
+    height: 20px;
+    float: right;
+    margin: 7px 10px 0 0 ;
+    border-radius: 3px;
+    background: url(../images/album-icon.png) 3px 6px no-repeat #22447a;
+}
+.con-box .edit-s .select-arrow.select{
+    background: url(../images/album-icon.png) 3px -62px no-repeat;
+}
+.con-box .edit-s .del-arrow{
+    width: 20px;
+    height: 20px;
+    float: left;
+    margin: 7px 0 0 10px ;
+    border-radius: 3px;
+    background:#fff;
+    display: none;
+}
+.con-box .edit-s .del-arrow.select{
+    background: url(../images/album-icon.png) 3px -28px no-repeat #ff9800;
+}
+.edit-album-des{
+    width: 820px;
+    padding: 30px;
+    padding-bottom: 0;
+    background: #f0f0f0;
+    border-radius: 5px;
+    position: absolute;
+    top: 104px;
+    left: 50%;
+    margin-left: -346px;
+    display: none;
+}
+.edit-box .album-right .textarea-box{
+    width: 490px;
+}
+.edit-box .album-right .textarea-box textarea{
+    width: 490px;
+    height: 80px;
+}
+.edit-box .album-right .textarea-box .num{
+    width: 490px;
+}
+.edit-box .album-line{
+    overflow: hidden;
+    height: 257px;
+}
+.edit-box .album-left{
+    width: 240px;
+    padding-right: 60px;
+    height: 240px;
+    float: left;
+}
+.edit-box .album-left img{
+    width: 240px;
+    height: 200px;
+}
+.edit-box .album-left .del-btn{
+    width: 240px;
+    height: 42px;
+    background: #ffffff;
+    border-radius: 3px;
+    margin-top: 12px;
+    font-size:16px ;
+    color: #666;
+    text-align: center;
+    line-height: 42px;
+}
+.edit-box .album-right{
+    width: 520px;
+    height: 240px;
+    float: left;
+}
+.edit-album-uplode{
+    width: 820px;
+    padding: 30px;
+    padding-bottom: 0;
+    background: #f0f0f0;
+    border-radius: 5px;
+    position: absolute;
+    top: 104px;
+    left: 50%;
+    margin-left: -346px;
+    display: none;
+}
+.album-line{
+    margin-bottom: 30px;
+}
+/*娱乐项目*/
+
+.edit-entertainment{
+    width: 820px;
+    padding: 30px;
+    padding-bottom: 0;
+    background: #f0f0f0;
+    border-radius: 5px;
+    position: absolute;
+    top: 104px;
+    left: 50%;
+    margin-left: -346px;
+    display: none;
+}
+.edit-entertainment.edit-box .textarea-box,
+.edit-land.edit-box .textarea-box{
+    width: 820px;
+    height: 230px;
+    padding: 0;
+    background: #fff;
+    border-radius: 3px;
+    overflow: hidden;
+}
+.edit-entertainment.edit-box .textarea-box textarea,
+.edit-land.edit-box .textarea-box textarea{
+    padding:10px 15px;
+}
+.edit-entertainment.edit-box .textarea-box .num ,
+.edit-land.edit-box .textarea-box .num {
+    width:805px;
+    padding-right: 15px;
+    height: 30px;
+    font-size: 14px;
+    color: #999;
+    text-align: right;
+    line-height: 40px;
+}
+.edit-box .textarea-box .btn-line{
+    width: 100%;
+    height: 30px;
+    padding: 10px 0;
+    background: #666666;
+}
+.edit-box .textarea-box .btn-line a{
+    width: 96px;
+    height: 30px;
+    margin:0 10px;
+    background: #ff9800;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    line-height: 30px;
+    float: right;
+}
+.edit-box .edit-btn-box ul.t{
+    width: 600px;
+}
+
+
+.con-box .enter-list{
+    overflow: hidden;
+}
+.con-box .enter-list li {
+    width: 420px;
+    height: 260px;
+    float: left;
+    margin: 0 30px 30px 0;
+    position: relative;
+}
+.con-box .enter-list .photo-shadow{
+    width: 420px;
+    height: 260px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #000;
+    opacity: 0.3;
+    filter: alpha(opacity=30);
+    display: none;
+}
+.con-box .enter-list .photo-box{
+    width: 420px;
+    height: 260px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.con-box .enter-list .photo-box img{
+    width: 420px;
+    height: 200px;
+}
+.con-box .enter-list .photo-box .tip{
+    display: block;
+    width: 400px;
+    height: 36px;
+    padding: 10px;
+    font-size: 16px;
+    color: #666666;
+    background: #fff;
+}
+.con-box .enter-list .photo-edit{
+    width: 420px;
+    height: 260px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+.con-box .enter-list a{
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    line-height: 24px;
+}
+.con-box .enter-list a.edit{
+    margin-top: 76px;
+}
+.con-box .enter-list .edit-s{
+    width: 420px;
+    height: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.con-box .enter-list .photo-box .tip2{
+    display: block;
+    font-size: 14px;
+    color: #999;
+    margin-top: 3px;
+}
+.album-list .enter-list .tip2 i{
+    color: #ff9800;
+}
+/*预览*/
+.pre-entertainment{
+    width: 820px;
+    padding: 30px;
+    padding-bottom: 0;
+    position: absolute;
+    top: 104px;
+    left: 50%;
+    margin-left: -346px;
+    display: none;
+}
+.preview-box .head-img-pre{
+    width: 100%;
+}
+.preview-box .des-pre{
+    width: 100%;
+    height: 75px;
+}
+.preview-box .des-pre .left-pre{
+    width:580px;
+    height: 55px;
+    padding: 10px 0;
+    float: left;
+}
+.preview-box .des-pre .left-pre span{
+    display: block;
+    font-size: 16px;
+    line-height: 20px;
+    color: #ffffff;
+}
+.des-pre .left-pre span i{
+    color: #ff9800;
+}
+.preview-box .des-pre .right-pre{
+    width:240px;
+    height: 55px;
+    padding: 10px 0;
+    float: left;
+    text-align: right;
+}
+.preview-box .des-pre .right-pre a{
+    display: inline-block;
+    font-size: 14px;
+    color: #3ea1ed;
+    text-align: center;
+    line-height: 20px;
+    margin-left: 10px;
+}
+.preview-box .des-pre .text{
+    font-size: 14px;
+    color: #fff;
+    line-height: 20px;
+}
+.preview-box .des-pre .text img{
+    height: auto;
+    width: auto;
+    display: block;
+    margin: 10px 0;
+}
+/*景观讲解*/
+.con-box .enter-list .photo-box .tip-land{
+    line-height: 36px;
+    display: block;
+    width: 400px;
+    height: 36px;
+    padding: 10px;
+    font-size: 16px;
+    color: #666666;
+    background: #fff;
+}
+.enter-list .photo-box .tip-land .tit{
+    display: inline-block;
+    float: left;
+    width: 325px;
+    border-right: 1px solid #dbdbdb;
+    height: 36px;
+    line-height: 36px;
+}
+.enter-list .photo-box .tip-land .v-timg{
+    display: inline-block;
+    float: left;
+    width: 74px;
+    height: 36px;
+    text-align: center;
+    line-height: 36px;
+    font-size: 14px;
+    color: #999;
+    cursor: pointer;
+}
+.tip-land .v-timg i{
+    display: inline-block;
+    padding-left: 18px;
+    background: url("../images/album-icon.png") 0px -98px no-repeat ;
+}
+
+.edit-land{
+    width: 820px;
+    padding: 30px;
+    padding-bottom: 0;
+    background: #f0f0f0;
+    border-radius: 5px;
+    position: absolute;
+    top: 104px;
+    left: 50%;
+    margin-left: -346px;
+    display: none;
+}
+.edit-box .image-box .file-uplode .flie-btn2{
+    height: 60px;
+    width: 120px;
+    font-size: 16px;
+    color: #999;
+    text-align: center;
+    line-height: 60px;
+    background: #fff;
+    float: left;
+    margin-right: 20px;
+    border-radius: 3px;
+}
+.pre-land{
+    width: 820px;
+    padding: 30px;
+    padding-bottom: 0;
+    position: absolute;
+    top: 104px;
+    left: 50%;
+    margin-left: -346px;
+    display: none;
+}
+.pre-land.preview-box .des-pre{
+    height: 50px;
+}
+.pre-land.preview-box .v-box{
+    padding: 6px 6px 6px 22px;
+    background: url("../images/album-icon.png") 7px -144px no-repeat #2d1f13;
+    font-size: 14px;
+    color: #fff;
+    display: inline-block;
+    border-radius: 3px;
+    position: relative;
+    top: -45px;
+    left: 12px;
+}
+.album-btn .select{
+    margin:27px 0;
+}
+.wrap .title-two{
+    padding: 0;
+    background: none;
+    overflow: hidden;
+    cursor: pointer;
+}
+.wrap .title-two span{
+    background: none;
+    color: #ff9800;
+    font-size: 14px;
+    width: 80%;
+    float: left;
+}
+.wrap .title-two a.editg {
+    font-size: 14px;
+    color: #999;
+    width: 30px;
+    padding-left: 15px;
+    float: right;
+    background: url(../images/icon.png) 0px -433px no-repeat;
+}
+.con-box .basic-spot li.p-traffic-img{
+    padding-bottom: 20px;
+}
+.con-box .basic-spot li .map-img,
+.edit-box .img-detile .map-img{
+    width: 200px;
+    height: 160px;
+    margin: 0 20px 0 0;
+}
+.mar-traffic{
+    margin-bottom: 20px;
+}
+.edit-traffic{
+    width: 820px;
+    padding: 30px;
+    padding-bottom: 0;
+    background: #f0f0f0;
+    border-radius: 5px;
+    position: absolute;
+    top: 104px;
+    left: 50%;
+    margin-left: -346px;
+    display: none;
+}
+.edit-box.edit-traffic .img-detile{
+    width: 100%;
+    height: auto;
+}
+.wrap .title-one a.add{
+    background: url(../images/album-icon.png) 0px -189px no-repeat;
+}
+
+/*爱游票务*/
+.table{
+    border: 1px solid #dbdbdb;
+    background: #fff;
+}
+.table.t{
+    margin-bottom: 10px;
+}
+.table .line{
+    padding: 13px 0;
+    overflow: hidden;
+}
+.table .line.g{
+    background: #f5f5f5;
+}
+.table .line .tr li{
+    float: left;
+    text-align: center;
+    padding:0 5px;
+    border-right: 1px solid #dbdbdb ;
+    font-size: 14px;
+    color: #999999;
+}
+.table .line .tr li.td1{
+    width: 60px;
+}
+.table .line .tr li.td2{
+    width: 160px;
+}
+.table .line .tr li.td3{
+    width: 120px;
+}
+.table .line .tr li.td4{
+    width: 80px;
+}
+.table .line .tr li.td5{
+    width: 80px;
+}
+.table .line .tr li.td6{
+    width: 80px;
+}
+.table .line .tr li.o{
+    color: #ff9800;
+}
+.table .line .tr li.btn{
+    float: right;
+    width: 170px;
+    border: none;
+    text-align: right;
+}
+.table .line .tr li.btn a{
+    padding-left: 20px;
+    display: inline-block;
+    color: #999;
+    font-size: 14px;
+    margin-right: 15px;
+}
+.table .line .tr li.btn a.edit{
+    background: url("../images/icon.png") 0 -444px no-repeat;
+}
+.table .line .tr li.btn a.del{
+    background: url("../images/album-icon.png") 0 -236px no-repeat;
+}
+.edit-ticket{
+    width: 820px;
+    padding: 30px;
+    padding-bottom: 0;
+    background: #f0f0f0;
+    border-radius: 5px;
+    position: absolute;
+    top: 104px;
+    left: 50%;
+    margin-left: -346px;
+    display: none;
+}
+.edit-ticket .select{
+    margin: 0;
+}
+.edit-ticket .select.s{
+    width: 86px;
+}
+.edit-ticket .select.s .text{
+    width: 55px;
+}
+.edit-box .line-more{
+    width: auto;
+    float: left;
+    margin-right: 10px;
+}
+.edit-ticket .line{
+    overflow: hidden;
+}
+.lf{
+    float: left;
+}
+.edit-ticket .select.mr10{
+    margin-right: 10px;
+}
+.edit-ticket .grayBg,
+.edit-ticket .select.s .text.grayBg{
+    background-color: #e6e6e6;
+}
+.edit-box .input{
+    width: 125px;
+    height:36px ;
+    border-radius: 3px;
+    overflow: hidden;
+}
+.edit-box .input input{
+    width: 66px;
+    padding: 0 10px;
+    height:36px;
+    line-height: 36px;
+    border: 0;
+    font-size: 14px;
+    color: #999;
+    outline: none;
+}
+.edit-box .input span{
+    width: 49px;
+    height:36px;
+    line-height: 36px;
+    font-size: 14px;
+    color: #999;
+}
+.edit-box .href-btn{
+    line-height: 36px;
+    font-size: 14px;
+    color: #3ba3e6;
+    padding-top: 20px;
 }

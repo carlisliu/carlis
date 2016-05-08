@@ -27,7 +27,7 @@ public class CommentAction extends SecurityBaseAction {
 	/**
 	 * 评论类型（0为差评；1为好评；2为一般）
 	 */
-	private int level = -1;
+	private int level = Comment.GOOD.value();
 
 	public String execute() {
 		if (Comment.valueOf(this.level) == null) {

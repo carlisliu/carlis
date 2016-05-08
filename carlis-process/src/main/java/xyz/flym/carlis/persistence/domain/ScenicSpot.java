@@ -2,11 +2,14 @@ package xyz.flym.carlis.persistence.domain;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
 public class ScenicSpot {
     private Integer scenicSpotId;
 
     private Integer regionId;
+
+	private String regionName;
 
     private String name;
 
@@ -83,6 +86,8 @@ public class ScenicSpot {
     private String imgTraffic;
 
     private String tags;
+
+	private List<ScenicSpotExtend> scenicSportExtends;
 
     public Integer getScenicSpotId() {
         return scenicSpotId;
@@ -403,4 +408,21 @@ public class ScenicSpot {
     public void setTags(String tags) {
         this.tags = tags == null ? null : tags.trim();
     }
+
+	public List<ScenicSpotExtend> getScenicSportExtends() {
+		return scenicSportExtends;
+	}
+
+	public void setScenicSportExtends(List<ScenicSpotExtend> scenicSportExtends) {
+		this.scenicSportExtends = scenicSportExtends;
+	}
+
+	public String getRegionName() {
+		return regionName;
+	}
+
+	public void setRegionName(String regionName) {
+		this.regionName = regionName;
+	}
+
 }

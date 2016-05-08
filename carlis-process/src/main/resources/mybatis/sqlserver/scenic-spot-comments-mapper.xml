@@ -19,6 +19,10 @@
     scenic_spot_comments_id, scenic_spot_id, title, content, type, praise_count, score, 
     user_id, created_on, modified_on, tread_count
   </sql>
+  <sql id="Base_Column_Alias_List" >
+    a.scenic_spot_comments_id, a.scenic_spot_id, a.title, a.content, a.type, a.praise_count, a.score, 
+    a.user_id, a.created_on, a.modified_on, a.tread_count
+  </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
@@ -168,7 +172,7 @@
   
   <select id="findBy" resultMap="BaseResultMap" parameterType="xyz.flym.carlis.persistence.domain.ScenicSpotComments" >
     select 
-    <include refid="Base_Column_List" />
+    <include refid="Base_Column_Alias_List" />
     , b.head_pic
     from scenic_spot_comments a
     left join users_info b on a.user_id = b.user_id
