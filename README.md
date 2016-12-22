@@ -1,2 +1,2 @@
 # carlis
-## java-web framework
+## java-web framework (spring+struts2+mybatis)
